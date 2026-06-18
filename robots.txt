@@ -1,0 +1,10 @@
+# robots.txt for Corstar Communications
+# Allow all reputable crawlers full access
+User-agent: *
+Allow: /
+
+# Block the custom 404 page from being indexed as content
+Disallow: /404.html
+
+# Point crawlers to the sitemap
+Sitemap: https://www.corstar.com/sitemap.xml

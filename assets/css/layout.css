@@ -1,0 +1,88 @@
+/* ── Container ── */
+.container {
+  width: 100%;
+  max-width: var(--container);
+  margin-inline: auto;
+  padding-inline: var(--gutter);
+}
+.container--wide {
+  max-width: var(--container-wide);
+}
+
+/* ── Section wrappers ── */
+.section {
+  padding-block: var(--section-pad);
+}
+.section--dark {
+  background: var(--c-forest);
+  color: var(--c-white);
+}
+.section--alt {
+  background: var(--c-off-white);
+}
+.section--olive {
+  background: var(--c-olive);
+  color: var(--c-white);
+}
+.section--royal {
+  background: var(--c-royal);
+  color: var(--c-white);
+}
+
+/* ── Grid ── */
+.grid {
+  display: grid;
+  gap: var(--sp-8);
+}
+.grid--2 { grid-template-columns: repeat(2, 1fr); }
+.grid--3 { grid-template-columns: repeat(3, 1fr); }
+.grid--4 { grid-template-columns: repeat(4, 1fr); }
+
+@media (max-width: 900px) {
+  .grid--4 { grid-template-columns: repeat(2, 1fr); }
+  .grid--3 { grid-template-columns: repeat(2, 1fr); }
+}
+@media (max-width: 600px) {
+  .grid--4,
+  .grid--3,
+  .grid--2 { grid-template-columns: 1fr; }
+}
+
+/* ── Flex utilities ── */
+.flex       { display: flex; }
+.flex-wrap  { flex-wrap: wrap; }
+.flex-col   { flex-direction: column; }
+.items-center { align-items: center; }
+.items-start  { align-items: flex-start; }
+.justify-between { justify-content: space-between; }
+.justify-center  { justify-content: center; }
+.gap-4  { gap: var(--sp-4); }
+.gap-6  { gap: var(--sp-6); }
+.gap-8  { gap: var(--sp-8); }
+
+/* ── Stack (vertical spacing) ── */
+.stack > * + * { margin-top: var(--sp-6); }
+.stack--sm > * + * { margin-top: var(--sp-3); }
+.stack--lg > * + * { margin-top: var(--sp-10); }
+
+/* ── Two-column sidebar layout ── */
+.layout-sidebar {
+  display: grid;
+  grid-template-columns: 2fr 1fr;
+  gap: var(--sp-12);
+  align-items: start;
+}
+@media (max-width: 900px) {
+  .layout-sidebar { grid-template-columns: 1fr; }
+}
+
+/* ── Text alignment ── */
+.text-center { text-align: center; }
+.text-left   { text-align: left; }
+
+/* ── Spacing helpers ── */
+.mt-4  { margin-top: var(--sp-4); }
+.mt-8  { margin-top: var(--sp-8); }
+.mt-12 { margin-top: var(--sp-12); }
+.mb-4  { margin-bottom: var(--sp-4); }
+.mb-8  { margin-bottom: var(--sp-8); }

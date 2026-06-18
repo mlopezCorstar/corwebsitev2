@@ -1,0 +1,103 @@
+:root {
+  /* ════════════════════════════════════════════
+     LEGACY TECH design system
+     Variable NAMES are preserved from the previous
+     system so page-level inline styles inherit the
+     new look automatically. Only the VALUES changed.
+  ════════════════════════════════════════════ */
+
+  /* ── Core brand ── */
+  --c-royal:   #213784;   /* primary blue */
+  --c-steel:   #7686bc;   /* muted blue */
+  --c-white:   #FFFFFF;
+  --c-forest:  #1a1c1d;   /* dark band (sections / hero band / footer) */
+  --c-olive:   #536259;   /* secondary green-gray */
+
+  /* ── Derived tints / shades ── */
+  --c-royal-light: #3b4f9d;   /* primary-container */
+  --c-royal-dark:  #1a2b6b;   /* deeper navy */
+  --c-steel-light: #b7c4ff;   /* primary-fixed-dim — accents on dark */
+  --c-forest-light:#2a2d2f;   /* lighter dark surface (dark cards) */
+  --c-forest-dark: #141617;   /* darkest band (footer) */
+  --c-olive-light: #647063;
+
+  /* ── Surfaces ── */
+  --c-surface:           #fbf8ff;  /* page background */
+  --c-surface-alt:       #f8f9fa;  /* alternate sections */
+  --c-surface-container: #efedf4;  /* icon tiles / chips */
+
+  /* ── Neutrals ── */
+  --c-off-white: #f8f9fa;   /* surface-alt alias */
+  --c-gray-100:  #e3e1e9;   /* hairline borders / outline-variant-light */
+  --c-gray-300:  #c5c5d3;   /* light text on dark / dividers */
+  --c-gray-500:  #454651;   /* muted body text (on light) */
+  --c-gray-700:  #33343d;   /* strong body text */
+  --c-gray-900:  #1b1b20;   /* primary text / near-black */
+
+  /* outline tokens */
+  --c-outline:         #757682;
+  --c-outline-variant: #c5c5d3;
+
+  /* ── Typography ── */
+  --font-head: 'Space Grotesk', 'Trebuchet MS', sans-serif;
+  --font-body: 'IBM Plex Sans', 'Segoe UI', sans-serif;
+  --font-mono: 'IBM Plex Mono', 'Courier New', monospace;
+
+  /* ── Type Scale ── */
+  --text-xs:   0.75rem;
+  --text-sm:   0.875rem;
+  --text-base: 1rem;
+  --text-lg:   1.125rem;
+  --text-xl:   1.25rem;
+  --text-2xl:  1.5rem;
+  --text-3xl:  1.875rem;
+  --text-4xl:  2.25rem;
+  --text-5xl:  3rem;
+  --text-hero: clamp(2.5rem, 6vw, 4rem);
+  --text-display: clamp(3rem, 8vw, 5rem);
+
+  /* ── Spacing ── */
+  --sp-1:  0.25rem;
+  --sp-2:  0.5rem;
+  --sp-3:  0.75rem;
+  --sp-4:  1rem;
+  --sp-6:  1.5rem;
+  --sp-8:  2rem;
+  --sp-10: 2.5rem;
+  --sp-12: 3rem;
+  --sp-16: 4rem;
+  --sp-20: 5rem;
+  --sp-24: 6rem;
+  --sp-32: 8rem;
+
+  /* ── Layout ── */
+  --container:      1280px;
+  --container-wide: 1280px;
+  --gutter:         clamp(1rem, 4vw, 2rem);
+  --section-pad:    clamp(2.5rem, 5vw, 4rem);  /* 40px → 64px */
+
+  /* ── Border / radius ── */
+  --radius-sm: 2px;
+  --radius:    4px;     /* cards, inputs */
+  --radius-lg: 8px;     /* buttons */
+  --border:    1px solid var(--c-outline-variant);
+
+  /* ── Shadows: soft, ambient (no neobrutalist offsets) ── */
+  --shadow-sm:     0 1px 3px rgba(27,27,32,0.06);
+  --shadow:        0 4px 16px rgba(27,27,32,0.05);
+  --shadow-lg:     0 10px 30px rgba(27,27,32,0.08);
+  --shadow-royal:  0 10px 30px rgba(33,55,132,0.15);
+  --shadow-forest: 0 10px 30px rgba(0,0,0,0.18);
+
+  /* ── Motion ── */
+  --ease-out:   cubic-bezier(0.16, 1, 0.3, 1);
+  --ease-spring:cubic-bezier(0.34, 1.56, 0.64, 1);
+  --t-fast:  150ms;
+  --t-base:  250ms;
+  --t-slow:  400ms;
+
+  /* ── Z-index ── */
+  --z-nav:    100;
+  --z-modal:  200;
+  --z-tooltip: 300;
+}
