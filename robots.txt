@@ -7,4 +7,4 @@ Allow: /
 Disallow: /404.html
 
 # Point crawlers to the sitemap
-Sitemap: https://www.corstar.com/sitemap.xml
+Sitemap: https://mlopezcorstar.github.io/corwebsitev2/sitemap.xml
