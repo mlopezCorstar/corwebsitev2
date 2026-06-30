@@ -8,7 +8,7 @@
 - **Location Context:** Primary service area is Westchester County, NY (including Hawthorne, White Plains, Yonkers, New Rochelle, Scarsdale, Tarrytown, Harrison, and surrounding communities).
 
 ## Core Pages
-- [Home Page](https://mlopezcorstar.github.io/corwebsitev2/index.html): Overview of Corstar Communications, our core metrics (55+ years in business, 200+ clients, 99% retention, <4hr response time), and direct contact options.
+- [Home Page](https://mlopezcorstar.github.io/corwebsitev2/index.html): Overview of Corstar Communications, our core metrics (55+ years in business, 200+ clients, <4hr response time), and direct contact options.
 - [About Us](https://mlopezcorstar.github.io/corwebsitev2/about.html): Our 55-year history guiding Westchester businesses through technology shifts, our core values, and team overview.
 - [Contact Page](https://mlopezcorstar.github.io/corwebsitev2/contact.html): Connect with our engineers for a free IT assessment. Phone: (914) 347-2700, Email: info@corstar.com, Address: 22 Saw Mill River Road, Hawthorne, NY 10532.
 - [IT MSP FAQ](https://mlopezcorstar.github.io/corwebsitev2/faq.html): Frequently asked questions about managed IT support, cybersecurity foundations, service agreements, and response times.
