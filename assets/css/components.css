@@ -154,6 +154,10 @@
 }
 
 .nav__cta { flex-shrink: 0; }
+.nav__cta .btn--sm {
+  min-width: 190px;
+  padding-inline: var(--sp-4);
+}
 
 /* Mobile toggle */
 .nav__toggle {
