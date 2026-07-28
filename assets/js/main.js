@@ -24,6 +24,19 @@
       if (name.startsWith('services')) toggle.nextElementSibling.innerHTML = links(services, 'services');
       if (name.startsWith('industries')) toggle.nextElementSibling.innerHTML = links(industries, 'industries');
     });
+    const menu = document.querySelector('.nav__links');
+    if (menu) {
+      const order = ['about', 'industries', 'services', 'resources', 'contact'];
+      [...menu.querySelectorAll(':scope > .nav__item')]
+        .sort((a, b) => {
+          const label = (item) => ((item.querySelector('.nav__dropdown-toggle') || item.querySelector(':scope > a'))?.textContent.trim().split(/\s+/)[0] || '').toLowerCase();
+          return order.indexOf(label(a)) - order.indexOf(label(b));
+        })
+        .forEach((item) => menu.appendChild(item));
+    }
+    document.querySelectorAll('.nav__cta .btn, .nav__cta-mobile .btn').forEach((button) => {
+      if (/schedule an it assessment/i.test(button.textContent)) button.textContent = 'Talk To Our Experts';
+    });
     const grid = document.querySelector('.footer__grid');
     if (grid) {
       const brand = grid.querySelector('.footer__brand');
@@ -32,6 +45,17 @@
       const servicesCol = cols.find((col) => col.querySelector('.footer__title')?.textContent.trim() === 'Services');
       const industriesCol = cols.find((col) => col.querySelector('.footer__title')?.textContent.trim() === 'Industries');
       [brand, contact, servicesCol, industriesCol].filter(Boolean).forEach((item) => grid.appendChild(item));
+      const remoteCol = industriesCol || servicesCol || contact;
+      if (remoteCol && !remoteCol.querySelector('a[href$="remote-support.html"]')) {
+        const remoteItem = document.createElement('li');
+        const remoteLink = document.createElement('a');
+        remoteLink.className = 'btn btn--ghost btn--sm footer__remote-support-link';
+        remoteLink.href = /\/(services|industries|resources)\//.test(window.location.pathname) ? '../remote-support.html' : 'remote-support.html';
+        remoteLink.textContent = 'Remote Support';
+        remoteItem.appendChild(remoteLink);
+        const list = remoteCol.querySelector('ul:last-of-type') || remoteCol.appendChild(document.createElement('ul'));
+        list.appendChild(remoteItem);
+      }
     }
   }
 
