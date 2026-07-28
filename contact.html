@@ -101,7 +101,11 @@
             <span class="section-label">Send Us a Message</span>
             <h2>Get Your Free IT Assessment</h2>
             <p>Tell us a bit about your business and what you're dealing with. We'll follow up within one business day to schedule a 30-minute assessment — no cost, no obligation.</p>
-            <form class="contact-form mt-8" action="#" method="POST" novalidate>
+            <form class="contact-form mt-8" action="https://api.web3forms.com/submit" method="POST" novalidate>
+              <input type="hidden" name="access_key" value="e22cca9f-3a78-485e-bae7-54c13d8b4e90">
+              <input type="hidden" name="subject" value="New contact form submission from Corstar website">
+              <input type="hidden" name="from_name" value="Corstar website">
+              <input type="checkbox" name="botcheck" tabindex="-1" aria-hidden="true" style="display:none;">
               <div class="grid grid--2" style="gap: var(--sp-4);">
                 <div class="form__group">
                   <label class="form__label" for="name">Full Name *</label>
@@ -142,6 +146,7 @@
                 <span class="form__error" role="alert"></span>
               </div>
               <button type="submit" class="btn btn--primary btn--lg" style="width:100%;">Send Message</button>
+              <p class="form__status" role="status" aria-live="polite" hidden></p>
             </form>
           </div>
 

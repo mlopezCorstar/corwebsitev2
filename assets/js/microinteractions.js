@@ -40,6 +40,8 @@
     if (!form) return;
 
     const fields = form.querySelectorAll('[required]');
+    const submitButton = form.querySelector('button[type="submit"]');
+    const status = form.querySelector('.form__status');
 
     fields.forEach((field) => {
       field.addEventListener('blur', () => validateField(field));
@@ -50,16 +52,58 @@
       });
     });
 
-    form.addEventListener('submit', (e) => {
+    form.addEventListener('submit', async (e) => {
+      e.preventDefault();
       let valid = true;
       fields.forEach((field) => {
         if (!validateField(field)) valid = false;
       });
       if (!valid) {
-        e.preventDefault();
         fields[0].focus();
+        return;
+      }
+
+      setFormStatus(status, 'Sending your message…');
+      if (submitButton) submitButton.disabled = true;
+
+      try {
+        const response = await fetch(form.action, {
+          method: 'POST',
+          body: new FormData(form),
+          headers: { Accept: 'application/json' }
+        });
+        const result = await response.json().catch(() => ({}));
+        if (!response.ok || result.success === false) {
+          throw new Error(result.message || 'The form could not be submitted.');
+        }
+
+        form.reset();
+        clearValidationState(fields);
+        setFormStatus(status, 'Thanks — your message has been sent. We’ll follow up within one business day.', 'success');
+      } catch (error) {
+        setFormStatus(status, 'We could not send your message. Please try again or call us at (914) 347-2700.', 'error');
+      } finally {
+        if (submitButton) submitButton.disabled = false;
       }
     });
+  }
+
+  function clearValidationState(fields) {
+    fields.forEach((field) => {
+      const group = field.closest('.form__group');
+      const error = group && group.querySelector('.form__error');
+      if (group) group.classList.remove('has-error');
+      field.removeAttribute('aria-invalid');
+      if (error) error.textContent = '';
+    });
+  }
+
+  function setFormStatus(status, message, type) {
+    if (!status) return;
+    status.hidden = !message;
+    status.textContent = message;
+    status.classList.toggle('is-success', type === 'success');
+    status.classList.toggle('is-error', type === 'error');
   }
 
   function validateField(field) {
