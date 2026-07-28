@@ -177,6 +177,9 @@
 .nav--open .nav__toggle span:nth-child(2) { opacity: 0; }
 .nav--open .nav__toggle span:nth-child(3) { transform: translateY(-7px) rotate(-45deg); }
 
+/* Keep the mobile CTA hidden until the compact menu is opened. */
+.nav__cta-mobile { display: none; }
+
 /* Switch to the compact navigation before the desktop CTA can overflow. */
 @media (max-width: 960px) {
   .nav__toggle { display: flex; }
@@ -235,7 +238,6 @@
   .nav__cta-mobile { display: block; margin-top: var(--sp-5); }
   .nav__cta-mobile .btn { width: 100%; justify-content: center; }
 }
-.nav__cta-mobile { display: none; }
 
 
 /* ══════════════════════════════════════════
