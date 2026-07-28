@@ -2,6 +2,39 @@
 (function () {
   'use strict';
 
+  function initSiteMenus() {
+    const services = [
+      ['Backup and Data Recovery', 'backup-data-recovery.html'], ['Business Continuity', 'business-continuity.html'],
+      ['Cloud Migration', 'cloud-migration.html'], ['Cloud Solutions', 'cloud-solutions.html'],
+      ['Compliance', 'compliance.html'], ['Cybersecurity', 'cybersecurity.html'], ['Data Compliance', 'data-compliance.html'],
+      ['IT Support', 'it-support.html'], ['Managed IT Services', 'managed-it-services.html'], ['Managed Security', 'managed-security.html'],
+      ['Microsoft 365 Support', 'microsoft-365-support.html'], ['Network Security', 'network-security.html'],
+      ['Penetration & Vulnerability Testing', 'penetration-vulnerability-testing.html'], ['Secure AI Adoption', 'ai-security.html'],
+      ['Small Business IT', 'it-solutions-small-business.html'], ['Structured Cabling', 'structured-cabling.html']
+    ];
+    const industries = [
+      ['Construction Firms', 'construction-firms.html'], ['Family Offices', 'family-offices.html'], ['Financial Services', 'financial-services.html'],
+      ['Healthcare', 'healthcare.html'], ['Insurance', 'insurance.html'], ['Legal', 'legal.html'],
+      ['Professional Services', 'professional-services.html'], ['Real Estate', 'real-estate.html']
+    ];
+    const base = /\/(services|industries|resources)\//.test(window.location.pathname) ? '../' : '';
+    const links = (items, section) => `<li><a class="nav__dropdown-lead" href="${base}${section}/index.html">All ${section[0].toUpperCase() + section.slice(1)}</a></li>` + items.map(([label, file]) => `<li><a href="${base}${section}/${file}">${label}</a></li>`).join('');
+    document.querySelectorAll('.nav__dropdown-toggle').forEach((toggle) => {
+      const name = toggle.textContent.trim().toLowerCase();
+      if (name.startsWith('services')) toggle.nextElementSibling.innerHTML = links(services, 'services');
+      if (name.startsWith('industries')) toggle.nextElementSibling.innerHTML = links(industries, 'industries');
+    });
+    const grid = document.querySelector('.footer__grid');
+    if (grid) {
+      const brand = grid.querySelector('.footer__brand');
+      const cols = [...grid.querySelectorAll('.footer__col')];
+      const contact = cols.find((col) => col.querySelector('.footer__title')?.textContent.trim() === 'Contact');
+      const servicesCol = cols.find((col) => col.querySelector('.footer__title')?.textContent.trim() === 'Services');
+      const industriesCol = cols.find((col) => col.querySelector('.footer__title')?.textContent.trim() === 'Industries');
+      [brand, contact, servicesCol, industriesCol].filter(Boolean).forEach((item) => grid.appendChild(item));
+    }
+  }
+
   /* ── Mobile nav ── */
   function initNav() {
     const toggle = document.querySelector('.nav__toggle');
@@ -122,6 +155,7 @@
   }
 
   document.addEventListener('DOMContentLoaded', () => {
+    initSiteMenus();
     initNav();
     initLazyLoad();
     initCounters();

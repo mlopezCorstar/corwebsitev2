@@ -408,6 +408,8 @@
   min-height: 44px;
   transition: background var(--t-fast);
 }
+.hero__phone-label { font-size: var(--text-xs); letter-spacing: 0.1em; }
+.hero__phone-value { display: inline-flex; align-items: center; gap: var(--sp-2); }
 .hero__phone:hover { background: rgba(33, 55, 132, 0.06); color: var(--c-royal); }
 
 

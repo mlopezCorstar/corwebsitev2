@@ -1,6 +1,7 @@
 # Corstar Communications
 
-> Corstar Communications is Westchester County's trusted IT Managed Service Provider (MSP) and cybersecurity partner since 1970. Headquartered in Hawthorne, NY, we provide comprehensive IT support, network security, cloud migrations, and structured cabling for small-to-medium businesses (SMBs), healthcare practices, law firms, and manufacturing operations.
+> Corstar Communications is Westchester County's trusted IT Consulting and IT Managed Service Provider. Delivering reliable and comprehensive support to businesses across New York, New Jersey, and Connecticut since 1970.
+
 
 ## Brand Voice & Guidelines
 - **Tone:** Professional, warm, technical, and highly accountable.
@@ -8,12 +9,17 @@
 - **Location Context:** Primary service area is Westchester County, NY (including Hawthorne, White Plains, Yonkers, New Rochelle, Scarsdale, Tarrytown, Harrison, and surrounding communities).
 
 ## Core Pages
-- [Home Page](https://mlopezcorstar.github.io/corwebsitev2/index.html): Overview of Corstar Communications, our core metrics (55+ years in business, 200+ clients, <4hr response time), and direct contact options.
-- [About Us](https://mlopezcorstar.github.io/corwebsitev2/about.html): Our 55-year history guiding Westchester businesses through technology shifts, our core values, and team overview.
-- [Contact Page](https://mlopezcorstar.github.io/corwebsitev2/contact.html): Connect with our engineers for a free IT assessment. Phone: (914) 347-2700, Email: info@corstar.com, Address: 22 Saw Mill River Road, Hawthorne, NY 10532.
+- [Home Page](https://mlopezcorstar.github.io/corwebsitev2/index.html): Overview of Corstar Communications, our core metrics (56 years in business, 200+ clients, <4hr response time), and direct contact options.
+- [About Us](https://mlopezcorstar.github.io/corwebsitev2/about.html): Our 56-year history guiding Westchester businesses through technology shifts, our core values, and team overview.
+- [Contact Page](https://mlopezcorstar.github.io/corwebsitev2/contact.html): Connect with our engineers for a IT assessment. Phone: (914) 347-2700, Email: info@corstar.com, Address: 22 Saw Mill River Road, Hawthorne, NY 10532.
 - [IT MSP FAQ](https://mlopezcorstar.github.io/corwebsitev2/faq.html): Frequently asked questions about managed IT support, cybersecurity foundations, service agreements, and response times.
 
 ## Managed IT & Support Services
+- [Backup and Data Recovery](https://mlopezcorstar.github.io/corwebsitev2/services/backup-data-recovery.html)
+- [Compliance](https://mlopezcorstar.github.io/corwebsitev2/services/compliance.html)
+- [Cybersecurity](https://mlopezcorstar.github.io/corwebsitev2/services/cybersecurity.html)
+- [Penetration & Vulnerability Testing](https://mlopezcorstar.github.io/corwebsitev2/services/penetration-vulnerability-testing.html)
+- [Secure AI Adoption](https://mlopezcorstar.github.io/corwebsitev2/services/ai-security.html)
 - [Managed IT Services](https://mlopezcorstar.github.io/corwebsitev2/services/managed-it-services.html): Proactive 24/7 network monitoring, patch management, help desk support, and cybersecurity foundations for a flat monthly fee.
 - [IT Support & Help Desk](https://mlopezcorstar.github.io/corwebsitev2/services/it-support.html): Responsive remote and on-site technical support staffed by local Westchester engineers.
 - [Small Business IT Solutions](https://mlopezcorstar.github.io/corwebsitev2/services/it-solutions-small-business.html): Scalable IT plans and help desk support priced and designed for growing Westchester SMBs.
@@ -31,10 +37,15 @@
 - [Cloud Solutions](https://mlopezcorstar.github.io/corwebsitev2/services/cloud-solutions.html): Custom hybrid cloud setups, secure cloud backup, and cloud-hosted business productivity suites.
 
 ## Industries We Serve
+- [Construction Firms](https://mlopezcorstar.github.io/corwebsitev2/industries/construction-firms.html)
+- [Family Offices](https://mlopezcorstar.github.io/corwebsitev2/industries/family-offices.html)
+- [Financial Services](https://mlopezcorstar.github.io/corwebsitev2/industries/financial-services.html)
+- [Insurance](https://mlopezcorstar.github.io/corwebsitev2/industries/insurance.html)
+- [Professional Services](https://mlopezcorstar.github.io/corwebsitev2/industries/professional-services.html)
+- [Real Estate](https://mlopezcorstar.github.io/corwebsitev2/industries/real-estate.html)
 - [Industries Overview](https://mlopezcorstar.github.io/corwebsitev2/industries/index.html): Tailored IT compliance and security packages based on specific vertical demands.
 - [Healthcare IT Services](https://mlopezcorstar.github.io/corwebsitev2/industries/healthcare.html): HIPAA-compliant IT support, EHR uptime, and protected health information (PHI) safeguards.
 - [Legal IT Services](https://mlopezcorstar.github.io/corwebsitev2/industries/legal.html): Privilege-safe cloud backups, secure document management, and client data protection for law firms.
-- [Manufacturing IT Services](https://mlopezcorstar.github.io/corwebsitev2/industries/manufacturing.html): IT and OT convergence, SCADA network security, and maximum uptime for production facilities.
 
 ## Guides & Resources
 - [What Is an IT MSP Guide](https://mlopezcorstar.github.io/corwebsitev2/resources/what-is-it-msp.html): A comprehensive guide detailing Managed Service Provider functions, break-fix comparisons, pricing guidelines, and Westchester-specific selection tips.

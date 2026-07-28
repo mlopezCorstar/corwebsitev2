@@ -25,7 +25,6 @@
   <!-- Industry pages -->
   <url><loc>https://mlopezcorstar.github.io/corwebsitev2/industries/healthcare.html</loc><changefreq>monthly</changefreq><priority>0.8</priority></url>
   <url><loc>https://mlopezcorstar.github.io/corwebsitev2/industries/legal.html</loc><changefreq>monthly</changefreq><priority>0.8</priority></url>
-  <url><loc>https://mlopezcorstar.github.io/corwebsitev2/industries/manufacturing.html</loc><changefreq>monthly</changefreq><priority>0.8</priority></url>
 
   <!-- Resources / Hub pages -->
   <url><loc>https://mlopezcorstar.github.io/corwebsitev2/resources/what-is-it-msp.html</loc><changefreq>yearly</changefreq><priority>0.8</priority></url>
@@ -34,4 +33,15 @@
   <url><loc>https://mlopezcorstar.github.io/corwebsitev2/faq.html</loc><changefreq>monthly</changefreq><priority>0.7</priority></url>
   <url><loc>https://mlopezcorstar.github.io/corwebsitev2/about.html</loc><changefreq>yearly</changefreq><priority>0.7</priority></url>
   <url><loc>https://mlopezcorstar.github.io/corwebsitev2/contact.html</loc><changefreq>yearly</changefreq><priority>0.7</priority></url>
+  <url><loc>https://mlopezcorstar.github.io/corwebsitev2/industries/construction-firms.html</loc><priority>0.8</priority></url>
+  <url><loc>https://mlopezcorstar.github.io/corwebsitev2/industries/family-offices.html</loc><priority>0.8</priority></url>
+  <url><loc>https://mlopezcorstar.github.io/corwebsitev2/industries/financial-services.html</loc><priority>0.8</priority></url>
+  <url><loc>https://mlopezcorstar.github.io/corwebsitev2/industries/insurance.html</loc><priority>0.8</priority></url>
+  <url><loc>https://mlopezcorstar.github.io/corwebsitev2/industries/professional-services.html</loc><priority>0.8</priority></url>
+  <url><loc>https://mlopezcorstar.github.io/corwebsitev2/industries/real-estate.html</loc><priority>0.8</priority></url>
+  <url><loc>https://mlopezcorstar.github.io/corwebsitev2/services/backup-data-recovery.html</loc><priority>0.8</priority></url>
+  <url><loc>https://mlopezcorstar.github.io/corwebsitev2/services/compliance.html</loc><priority>0.8</priority></url>
+  <url><loc>https://mlopezcorstar.github.io/corwebsitev2/services/cybersecurity.html</loc><priority>0.8</priority></url>
+  <url><loc>https://mlopezcorstar.github.io/corwebsitev2/services/penetration-vulnerability-testing.html</loc><priority>0.8</priority></url>
+  <url><loc>https://mlopezcorstar.github.io/corwebsitev2/services/ai-security.html</loc><priority>0.8</priority></url>
 </urlset>
