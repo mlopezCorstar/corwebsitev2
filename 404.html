@@ -5,25 +5,33 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <link rel="icon" type="image/svg+xml" href="assets/images/favico.svg">
 
-  <!-- Google tag (gtag.js) -->
-  <script async src="https://www.googletagmanager.com/gtag/js?id=G-KRHBHXTBMJ"></script>
+  <!-- Google Analytics — Consent Mode defaults only. Nothing is requested
+       from Google here: assets/js/consent.js injects gtag.js after the visitor
+       allows analytics, and flips these to granted at the same time. -->
   <script>
     window.dataLayer = window.dataLayer || [];
     function gtag(){dataLayer.push(arguments);}
-    gtag('js', new Date());
-
-    gtag('config', 'G-KRHBHXTBMJ');
+    gtag('consent', 'default', {
+      ad_storage: 'denied',
+      ad_user_data: 'denied',
+      ad_personalization: 'denied',
+      analytics_storage: 'denied',
+      wait_for_update: 500
+    });
   </script>
   <title>Page Not Found — Corstar Communications</title>
   <meta name="description" content="Page not found. Return to Corstar Communications, Westchester County's trusted IT Managed Service Provider since 1970, for support and security.">
   <meta name="robots" content="noindex">
-  <link rel="preconnect" href="https://fonts.googleapis.com">
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;600;700&family=IBM+Plex+Sans:wght@400;500;600;700&family=IBM+Plex+Mono:wght@400;600&display=swap" rel="stylesheet">
-  <link rel="stylesheet" href="assets/css/variables.css?v=20260729b">
-  <link rel="stylesheet" href="assets/css/base.css?v=20260729b">
-  <link rel="stylesheet" href="assets/css/layout.css?v=20260729b">
-  <link rel="stylesheet" href="assets/css/components.css?v=20260729b">
+  <!-- Fonts: self-hosted, so a page view contacts no third party -->
+  <link rel="preload" as="font" type="font/woff2" crossorigin
+        href="assets/fonts/ibm-plex-sans-400-latin.woff2">
+  <link rel="preload" as="font" type="font/woff2" crossorigin
+        href="assets/fonts/space-grotesk-700-latin.woff2">
+  <link rel="stylesheet" href="assets/css/fonts.css?v=20260729e">
+  <link rel="stylesheet" href="assets/css/variables.css?v=20260729g">
+  <link rel="stylesheet" href="assets/css/base.css?v=20260729e">
+  <link rel="stylesheet" href="assets/css/layout.css?v=20260729g">
+  <link rel="stylesheet" href="assets/css/components.css?v=20260729g">
   <style>
     .error-page { min-height: calc(100vh - 64px); display: flex; align-items: center; padding-top: 64px; background: var(--c-forest-dark); color: var(--c-white); }
     .error-code { font-family: var(--font-mono); font-size: clamp(6rem, 20vw, 14rem); font-weight: 700; color: var(--c-royal); line-height: 1; opacity: 0.3; margin-bottom: var(--sp-4); letter-spacing: -0.04em; }
@@ -62,10 +70,11 @@
             <button class="nav__dropdown-toggle" aria-expanded="false" aria-haspopup="true">Services <span class="nav__caret" aria-hidden="true">&#9662;</span></button>
             <ul class="nav__dropdown">
               <li><a class="nav__dropdown-lead" href="services/index.html">All Services</a></li>
-              <li><a href="services/ai-security.html">AI Management</a></li>
-              <li><a href="services/cloud-solutions.html">Cloud & Network Solutions</a></li>
-              <li><a href="services/cybersecurity.html">Cybersecurity + Compliance</a></li>
-              <li><a href="services/it-support.html">IT Support Services</a></li>
+              <li><a href="services/ai-security.html">AI Deployment &amp; Management</a></li>
+              <li><a href="services/cloud-solutions.html">Cloud &amp; Network Solutions</a></li>
+              <li><a href="services/cybersecurity.html">Cybersecurity</a></li>
+              <li><a href="services/it-support.html">IT Project Management &amp; Implementation</a></li>
+              <li><a href="services/remote-office-support.html">Remote Office Support</a></li>
               <li><a href="services/it-solutions-small-business.html">Small Business</a></li>
               <li><a href="services/structured-cabling.html">Structured Cabling</a></li>
             </ul>
@@ -104,6 +113,8 @@
     </section>
   </main>
 
-  <script src="assets/js/main.js?v=20260729b" defer></script>
+  <script src="assets/js/main.js?v=20260729f" defer></script>
+  <script src="assets/js/consent.js?v=20260729e" defer></script>
+
 </body>
 </html>

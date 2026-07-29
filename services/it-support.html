@@ -5,17 +5,22 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <link rel="icon" type="image/svg+xml" href="../assets/images/favico.svg">
 
-  <!-- Google tag (gtag.js) -->
-  <script async src="https://www.googletagmanager.com/gtag/js?id=G-KRHBHXTBMJ"></script>
+  <!-- Google Analytics — Consent Mode defaults only. Nothing is requested
+       from Google here: assets/js/consent.js injects gtag.js after the visitor
+       allows analytics, and flips these to granted at the same time. -->
   <script>
     window.dataLayer = window.dataLayer || [];
     function gtag(){dataLayer.push(arguments);}
-    gtag('js', new Date());
-
-    gtag('config', 'G-KRHBHXTBMJ');
+    gtag('consent', 'default', {
+      ad_storage: 'denied',
+      ad_user_data: 'denied',
+      ad_personalization: 'denied',
+      analytics_storage: 'denied',
+      wait_for_update: 500
+    });
   </script>
-  <title>IT Support & Help Desk — Westchester NY | Corstar</title>
-  <meta name="description" content="Responsive IT support & help desk in Westchester County. Remote and on-site tech support from Corstar Communications — real people who answer the phone.">
+  <title>IT Project Management &amp; Implementation | Corstar</title>
+  <meta name="description" content="IT project management and implementation for Westchester businesses, including planning, deployment, coordination, documentation, and handoff.">
   <link rel="canonical" href="https://mlopezcorstar.github.io/corwebsitev2/services/it-support.html">
   <!-- JSON-LD structured data (static; schema.js adds FAQ markup from the DOM) -->
   <script type="application/ld+json">
@@ -170,7 +175,7 @@
         {
           "@type": "ListItem",
           "position": 3,
-          "name": "IT Support & Help Desk — Westchester NY",
+          "name": "IT Project Management & Implementation",
           "item": "https://mlopezcorstar.github.io/corwebsitev2/services/it-support.html"
         }
       ]
@@ -178,9 +183,9 @@
     {
       "@type": "Service",
       "@id": "https://mlopezcorstar.github.io/corwebsitev2/services/it-support.html#service",
-      "name": "IT Support & Help Desk — Westchester NY",
-      "serviceType": "IT Support & Help Desk — Westchester NY",
-      "description": "Responsive IT support & help desk in Westchester County. Remote and on-site tech support from Corstar Communications — real people who answer the phone.",
+      "name": "IT Project Management & Implementation",
+      "serviceType": "IT Project Management & Implementation",
+      "description": "IT project management and implementation for Westchester businesses, including planning, deployment, coordination, documentation, and handoff.",
       "url": "https://mlopezcorstar.github.io/corwebsitev2/services/it-support.html",
       "provider": {
         "@id": "https://mlopezcorstar.github.io/corwebsitev2/#localbusiness"
@@ -211,8 +216,8 @@
       ],
       "@id": "https://mlopezcorstar.github.io/corwebsitev2/services/it-support.html#webpage",
       "url": "https://mlopezcorstar.github.io/corwebsitev2/services/it-support.html",
-      "name": "IT Support & Help Desk — Westchester NY | Corstar",
-      "description": "Responsive IT support & help desk in Westchester County. Remote and on-site tech support from Corstar Communications — real people who answer the phone.",
+      "name": "IT Project Management & Implementation | Corstar",
+      "description": "IT project management and implementation for Westchester businesses, including planning, deployment, coordination, documentation, and handoff.",
       "isPartOf": {
         "@id": "https://mlopezcorstar.github.io/corwebsitev2/#website"
       },
@@ -227,21 +232,24 @@
   ]
 }
   </script>
-  <link rel="preconnect" href="https://fonts.googleapis.com">
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;600;700&family=IBM+Plex+Sans:wght@400;500;600;700&family=IBM+Plex+Mono:wght@400;600&display=swap" rel="stylesheet">
-  <link rel="stylesheet" href="../assets/css/variables.css?v=20260729b">
-  <link rel="stylesheet" href="../assets/css/base.css?v=20260729b">
-  <link rel="stylesheet" href="../assets/css/layout.css?v=20260729b">
-  <link rel="stylesheet" href="../assets/css/components.css?v=20260729b">
-  <link rel="stylesheet" href="../assets/css/animations.css?v=20260729b">
+  <!-- Fonts: self-hosted, so a page view contacts no third party -->
+  <link rel="preload" as="font" type="font/woff2" crossorigin
+        href="../assets/fonts/ibm-plex-sans-400-latin.woff2">
+  <link rel="preload" as="font" type="font/woff2" crossorigin
+        href="../assets/fonts/space-grotesk-700-latin.woff2">
+  <link rel="stylesheet" href="../assets/css/fonts.css?v=20260729e">
+  <link rel="stylesheet" href="../assets/css/variables.css?v=20260729g">
+  <link rel="stylesheet" href="../assets/css/base.css?v=20260729e">
+  <link rel="stylesheet" href="../assets/css/layout.css?v=20260729g">
+  <link rel="stylesheet" href="../assets/css/components.css?v=20260729g">
+  <link rel="stylesheet" href="../assets/css/animations.css?v=20260729e">
   <style>
     .includes-list { list-style: none; padding: 0; margin: 0; }
     .includes-list li { padding: var(--sp-3) 0; border-bottom: 1px solid var(--c-gray-100); display: flex; gap: var(--sp-3); align-items: flex-start; }
     .includes-list li::before { content: '✓'; color: var(--c-royal); font-weight: 700; flex-shrink: 0; margin-top: 2px; }
   </style>
 </head>
-<body data-page="service" data-service-name="IT Support & Help Desk" data-service-desc="Remote and on-site IT support for Westchester County businesses with fast response times.">
+<body data-page="service" data-service-name="IT Project Management &amp; Implementation" data-service-desc="Structured planning and implementation for business technology projects.">
 
   <a class="skip-link" href="#main-content">Skip to main content</a>
 
@@ -272,10 +280,11 @@
             <button class="nav__dropdown-toggle" aria-expanded="false" aria-haspopup="true">Services <span class="nav__caret" aria-hidden="true">&#9662;</span></button>
             <ul class="nav__dropdown">
               <li><a class="nav__dropdown-lead" href="../services/index.html">All Services</a></li>
-              <li><a href="../services/ai-security.html">AI Management</a></li>
-              <li><a href="../services/cloud-solutions.html">Cloud & Network Solutions</a></li>
-              <li><a href="../services/cybersecurity.html">Cybersecurity + Compliance</a></li>
-              <li><a href="../services/it-support.html">IT Support Services</a></li>
+              <li><a href="../services/ai-security.html">AI Deployment &amp; Management</a></li>
+              <li><a href="../services/cloud-solutions.html">Cloud &amp; Network Solutions</a></li>
+              <li><a href="../services/cybersecurity.html">Cybersecurity</a></li>
+              <li><a href="../services/it-support.html">IT Project Management &amp; Implementation</a></li>
+              <li><a href="../services/remote-office-support.html">Remote Office Support</a></li>
               <li><a href="../services/it-solutions-small-business.html">Small Business</a></li>
               <li><a href="../services/structured-cabling.html">Structured Cabling</a></li>
             </ul>
@@ -304,11 +313,11 @@
 
     <section class="page-hero">
       <div class="container">
-        <p class="breadcrumb"><a href="../index.html">Home</a> / <a href="index.html">Services</a> / IT Support</p>
-        <h1>IT Support & Help Desk —<br>Westchester NY</h1>
-        <p>When something breaks, you need a real person — not a ticketing system. Our Westchester-based help desk is staffed by Engineers who know your environment.</p>
+        <p class="breadcrumb"><a href="../index.html">Home</a> / <a href="index.html">Services</a> / IT Project Management &amp; Implementation</p>
+        <h1>IT Project Management &amp;<br>Implementation</h1>
+        <p>Move technology projects from idea to completion with a clear plan, accountable coordination, and experienced implementation.</p>
         <div class="flex flex-wrap gap-4 mt-8">
-          <a href="../contact.html" class="btn btn--primary btn--lg">Talk to an Engineer</a>
+          <a href="../contact.html" class="btn btn--primary btn--lg">Discuss Your Project</a>
           <a href="tel:+19143472700" class="btn btn--ghost btn--lg">Call Now</a>
         </div>
       </div>
@@ -318,25 +327,20 @@
       <div class="container">
         <div class="grid grid--2" style="gap: var(--sp-16); align-items: start;">
           <div>
-            <span class="section-label">Support That Actually Supports You</span>
-            <h2>IT Support Built for Westchester Businesses</h2>
-            <p>The difference between good IT support and bad IT support comes down to one question: Does someone who knows your business pick up the phone when you call?</p>
-            <p>At Corstar, your support requests go to a small team of engineers who are assigned to your account. They know your systems, your history, and your quirks. You won't spend 20 minutes explaining your setup every time you call.</p>
-            <p>We resolve most issues remotely in under an hour. When physical presence is required, we dispatch a Engineer to your Westchester location — typically the same or next business day.</p>
+            <span class="section-label">From Plan to Handoff</span>
+            <h2>Technology Projects with Clear Ownership</h2>
+            <p>Corstar coordinates scope, schedules, vendors, technical requirements, and user communication so your project keeps moving without disrupting daily operations.</p>
+            <p>Our engineers manage the implementation, test the result, document the environment, and provide a clear handoff to your team.</p>
           </div>
           <div>
-            <h3>What We Support</h3>
+            <h3>Projects We Deliver</h3>
             <ul class="includes-list">
-              <li>Windows and Mac workstations and laptops</li>
-              <li>Windows Server administration</li>
-              <li>Microsoft 365 — Outlook, Teams, SharePoint, OneDrive</li>
-              <li>Printers, scanners, and peripherals</li>
-              <li>VoIP phone systems</li>
-              <li>Line-of-business software (EHR, practice management, ERP, CRM)</li>
-              <li>Network connectivity troubleshooting</li>
-              <li>Password resets and account management</li>
-              <li>New employee setup and onboarding</li>
-              <li>Hardware procurement and deployment</li>
+              <li>Office moves and technology buildouts</li>
+              <li>Server, network, and wireless upgrades</li>
+              <li>Microsoft 365 and cloud implementations</li>
+              <li>Hardware refreshes and user deployments</li>
+              <li>Vendor and line-of-business system coordination</li>
+              <li>Security and compliance technology rollouts</li>
             </ul>
           </div>
         </div>
@@ -346,48 +350,24 @@
     <section class="section section--royal">
       <div class="container">
         <div class="section-header text-center">
-          <span class="section-label">Response Times</span>
-          <h2>How Fast We Respond</h2>
+          <span class="section-label">A Managed Process</span>
+          <h2>How We Keep Projects on Track</h2>
         </div>
         <div class="grid grid--3 animate-stagger" style="color: var(--c-white);">
-          <div class="card card--dark animate card--center">
-            <div class="card__stat">&lt;1hr</div>
-            <h3>Priority 1</h3>
-            <p>Complete outage, ransomware, or data breach. Immediate escalation.</p>
-          </div>
-          <div class="card card--dark animate card--center">
-            <div class="card__stat">30min</div>
-            <h3>Priority 2</h3>
-            <p>Significant impact to operations — a user can't work or a system is degraded.</p>
-          </div>
-          <div class="card card--dark animate card--center">
-            <div class="card__stat">1 Day</div>
-            <h3>Priority 3</h3>
-            <p>Routine requests — software questions, hardware setup, account changes.</p>
-          </div>
-        </div>
-      </div>
-    </section>
-
-    <section class="section">
-      <div class="container" style="max-width: 720px;">
-        <span class="section-label">Also Consider</span>
-        <h2>Combine Support with Full Managed IT</h2>
-        <p>IT support alone is reactive. Our <a href="managed-it-services.html">Managed IT Services</a> package combines help desk support with proactive monitoring, security, and maintenance — so you spend less time calling us because we've already caught the problem.</p>
-        <div class="flex gap-4 flex-wrap mt-8">
-          <a href="managed-it-services.html" class="btn btn--primary btn--lg">See Managed IT Plans</a>
-          <a href="../contact.html" class="btn btn--secondary">Contact Us</a>
+          <div class="card card--dark animate card--center"><div class="card__icon" aria-hidden="true">🗺️</div><h3>Plan</h3><p>Define scope, dependencies, responsibilities, timing, and success criteria.</p></div>
+          <div class="card card--dark animate card--center"><div class="card__icon" aria-hidden="true">🛠️</div><h3>Implement</h3><p>Coordinate the work, communicate progress, and resolve technical blockers.</p></div>
+          <div class="card card--dark animate card--center"><div class="card__icon" aria-hidden="true">✅</div><h3>Validate</h3><p>Test the solution, document changes, and complete a practical handoff.</p></div>
         </div>
       </div>
     </section>
 
     <section class="cta-band">
       <div class="container">
-        <h2>IT Problem Right Now?</h2>
-        <p>Call our help desk. A real Westchester-based Engineer will pick up.</p>
+        <h2>Have an IT Project in Mind?</h2>
+        <p>Tell us what needs to change. We will help define the path from planning through implementation.</p>
         <div class="cta-band__actions">
+          <a href="../contact.html" class="btn btn--ghost btn--lg">Discuss Your Project</a>
           <a href="tel:+19143472700" class="btn btn--ghost btn--lg">Call (914) 347-2700</a>
-          <a href="../contact.html" class="btn btn--ghost btn--lg">Open a Support Request</a>
         </div>
       </div>
     </section>
@@ -403,28 +383,26 @@
           <a class="btn btn--ghost btn--sm footer__remote-support-link" href="../remote-support.html">Remote Support</a>
         </div>
         <div class="footer__col">
-          <div class="footer__title">Services</div>
+          <div class="footer__title"><a href="../services/index.html">Services</a></div>
           <ul>
           <li><a href="../services/index.html">All Services</a></li>
-          <li><a href="../services/managed-it-services.html">Managed IT Services</a></li>
-          <li><a href="../services/it-support.html">IT Support</a></li>
-          <li><a href="../services/network-security.html">Network Security</a></li>
-          <li><a href="../services/managed-security.html">Managed Security</a></li>
-          <li><a href="../services/cloud-solutions.html">Cloud Solutions</a></li>
+          <li><a href="../services/ai-security.html">AI Deployment &amp; Management</a></li>
+          <li><a href="../services/backup-data-recovery.html">Backup Management</a></li>
+          <li><a href="../services/business-continuity.html">Disaster Recovery (BCDR)</a></li>
           <li><a href="../services/cloud-migration.html">Cloud Migration</a></li>
-          <li><a href="../services/microsoft-365-support.html">Microsoft 365 Support</a></li>
+          <li><a href="../services/compliance.html">Compliance</a></li>
+          <li><a href="../services/cybersecurity.html">Cybersecurity</a></li>
           <li><a href="../services/data-compliance.html">Data Compliance</a></li>
-          <li><a href="../services/business-continuity.html">Business Continuity</a></li>
+          <li><a href="../services/it-support.html">IT Project Management</a></li>
+          <li><a href="../services/managed-it-services.html">Managed IT Services</a></li>
+          <li><a href="../services/network-security.html">Network Assesments</a></li>
+          <li><a href="../services/remote-office-support.html">Remote Office Support</a></li>
           <li><a href="../services/it-solutions-small-business.html">Small Business IT</a></li>
           <li><a href="../services/structured-cabling.html">Structured Cabling</a></li>
-          <li><a href="../services/ai-security.html">AI Management</a></li>
-          <li><a href="../services/compliance.html">Compliance</a></li>
-          <li><a href="../services/backup-data-recovery.html">Backup & Data Recovery</a></li>
-          <li><a href="../services/penetration-vulnerability-testing.html">Penetration & Vulnerability Testing</a></li>
           </ul>
         </div>
         <div class="footer__col">
-          <div class="footer__title">Industries</div>
+          <div class="footer__title"><a href="../industries/index.html">Industries</a></div>
           <ul>
           <li><a href="../industries/index.html">All Industries</a></li>
           <li><a href="../industries/construction-firms.html">Architecture + Construction</a></li>
@@ -458,7 +436,9 @@
       </div>
       <div class="footer__legal">
         <a href="../privacy-policy.html">Privacy Policy</a>
+        <a href="../cookie-policy.html">Cookie Policy</a>
         <a href="../terms-of-service.html">Terms of Service</a>
+        <button type="button" class="footer__legal-btn" data-consent-settings hidden>Cookie Settings</button>
       </div>
       <div class="footer__bottom">
         <p>&copy; 2026 Corstar Communications. All rights reserved.</p>
@@ -467,9 +447,11 @@
     </div>
   </footer>
 
-  <script src="../assets/js/schema.js?v=20260729b" defer></script>
-  <script src="../assets/js/main.js?v=20260729b" defer></script>
-  <script src="../assets/js/animations.js?v=20260729b" defer></script>
-  <script src="../assets/js/microinteractions.js?v=20260729b" defer></script>
+  <script src="../assets/js/schema.js?v=20260729e" defer></script>
+  <script src="../assets/js/main.js?v=20260729f" defer></script>
+  <script src="../assets/js/animations.js?v=20260729e" defer></script>
+  <script src="../assets/js/microinteractions.js?v=20260729e" defer></script>
+  <script src="../assets/js/consent.js?v=20260729e" defer></script>
+
 </body>
 </html>

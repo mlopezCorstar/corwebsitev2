@@ -14,11 +14,11 @@
   padding-block: var(--section-pad);
 }
 .section--dark {
-  background: var(--c-forest);
+  background: var(--bg-industry-card);
   color: var(--c-white);
 }
 .section--alt {
-  background: var(--c-off-white);
+  background: var(--c-section-alt);
 }
 .section--olive {
   background: var(--c-olive);

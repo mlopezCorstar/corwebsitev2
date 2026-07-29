@@ -5,14 +5,19 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <link rel="icon" type="image/svg+xml" href="../assets/images/favico.svg">
 
-  <!-- Google tag (gtag.js) -->
-  <script async src="https://www.googletagmanager.com/gtag/js?id=G-KRHBHXTBMJ"></script>
+  <!-- Google Analytics — Consent Mode defaults only. Nothing is requested
+       from Google here: assets/js/consent.js injects gtag.js after the visitor
+       allows analytics, and flips these to granted at the same time. -->
   <script>
     window.dataLayer = window.dataLayer || [];
     function gtag(){dataLayer.push(arguments);}
-    gtag('js', new Date());
-
-    gtag('config', 'G-KRHBHXTBMJ');
+    gtag('consent', 'default', {
+      ad_storage: 'denied',
+      ad_user_data: 'denied',
+      ad_personalization: 'denied',
+      analytics_storage: 'denied',
+      wait_for_update: 500
+    });
   </script>
   <title>Managed IT Services Westchester NY | Corstar MSP</title>
   <meta name="description" content="Managed IT services in Westchester County since 1970. Proactive monitoring, cybersecurity, help desk, and compliance — all for one flat monthly fee.">
@@ -227,21 +232,24 @@
   ]
 }
   </script>
-  <link rel="preconnect" href="https://fonts.googleapis.com">
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;600;700&family=IBM+Plex+Sans:wght@400;500;600;700&family=IBM+Plex+Mono:wght@400;600&display=swap" rel="stylesheet">
-  <link rel="stylesheet" href="../assets/css/variables.css?v=20260729b">
-  <link rel="stylesheet" href="../assets/css/base.css?v=20260729b">
-  <link rel="stylesheet" href="../assets/css/layout.css?v=20260729b">
-  <link rel="stylesheet" href="../assets/css/components.css?v=20260729b">
-  <link rel="stylesheet" href="../assets/css/animations.css?v=20260729b">
+  <!-- Fonts: self-hosted, so a page view contacts no third party -->
+  <link rel="preload" as="font" type="font/woff2" crossorigin
+        href="../assets/fonts/ibm-plex-sans-400-latin.woff2">
+  <link rel="preload" as="font" type="font/woff2" crossorigin
+        href="../assets/fonts/space-grotesk-700-latin.woff2">
+  <link rel="stylesheet" href="../assets/css/fonts.css?v=20260729e">
+  <link rel="stylesheet" href="../assets/css/variables.css?v=20260729g">
+  <link rel="stylesheet" href="../assets/css/base.css?v=20260729e">
+  <link rel="stylesheet" href="../assets/css/layout.css?v=20260729g">
+  <link rel="stylesheet" href="../assets/css/components.css?v=20260729g">
+  <link rel="stylesheet" href="../assets/css/animations.css?v=20260729e">
   <style>
     .service-detail-grid { display: grid; grid-template-columns: 1fr 1fr; gap: var(--sp-16); align-items: start; }
     @media (max-width: 800px) { .service-detail-grid { grid-template-columns: 1fr; } }
     .includes-list { list-style: none; padding: 0; margin: 0; }
     .includes-list li { padding: var(--sp-3) 0; border-bottom: 1px solid var(--c-gray-100); display: flex; gap: var(--sp-3); align-items: flex-start; font-size: var(--text-base); }
     .includes-list li::before { content: '✓'; color: var(--c-royal); font-weight: 700; flex-shrink: 0; margin-top: 2px; }
-    .stat-box { background: var(--c-forest); color: var(--c-white); border: 2px solid var(--c-royal); border-radius: var(--radius); padding: var(--sp-8); box-shadow: var(--shadow-royal); text-align: center; }
+    .stat-box { background: var(--bg-industry-card); color: var(--c-white); border: 2px solid var(--c-royal); border-radius: var(--radius); padding: var(--sp-8); box-shadow: var(--shadow-royal); text-align: center; }
     .stat-box .number { font-family: var(--font-head); font-size: var(--text-5xl); font-weight: 700; color: var(--c-steel); line-height: 1; }
     .stat-box .label { font-size: var(--text-sm); color: var(--c-gray-300); margin-top: var(--sp-2); text-transform: uppercase; letter-spacing: 0.08em; }
     .compliance-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: var(--sp-4); }
@@ -279,10 +287,11 @@
             <button class="nav__dropdown-toggle" aria-expanded="false" aria-haspopup="true">Services <span class="nav__caret" aria-hidden="true">&#9662;</span></button>
             <ul class="nav__dropdown">
               <li><a class="nav__dropdown-lead" href="../services/index.html">All Services</a></li>
-              <li><a href="../services/ai-security.html">AI Management</a></li>
-              <li><a href="../services/cloud-solutions.html">Cloud & Network Solutions</a></li>
-              <li><a href="../services/cybersecurity.html">Cybersecurity + Compliance</a></li>
-              <li><a href="../services/it-support.html">IT Support Services</a></li>
+              <li><a href="../services/ai-security.html">AI Deployment &amp; Management</a></li>
+              <li><a href="../services/cloud-solutions.html">Cloud &amp; Network Solutions</a></li>
+              <li><a href="../services/cybersecurity.html">Cybersecurity</a></li>
+              <li><a href="../services/it-support.html">IT Project Management &amp; Implementation</a></li>
+              <li><a href="../services/remote-office-support.html">Remote Office Support</a></li>
               <li><a href="../services/it-solutions-small-business.html">Small Business</a></li>
               <li><a href="../services/structured-cabling.html">Structured Cabling</a></li>
             </ul>
@@ -583,8 +592,8 @@
         <div class="grid grid--3 animate-stagger">
           <div class="card animate">
             <div class="card__icon" aria-hidden="true">🌐</div>
-            <h3>Network Security</h3>
-            <p>Advanced threat protection, firewall management, and security assessments for Westchester businesses.</p>
+            <h3>Network Assesment and Optimization</h3>
+            <p>Network performance, wireless coverage, documentation, and prioritized improvements for Westchester businesses.</p>
             <a href="network-security.html" class="card__link">Learn more</a>
           </div>
           <div class="card animate">
@@ -595,8 +604,8 @@
           </div>
           <div class="card animate">
             <div class="card__icon" aria-hidden="true">🔧</div>
-            <h3>IT Support</h3>
-            <p>Day-to-day help desk, device support, and on-site Engineer services for your team.</p>
+            <h3>IT Project Management &amp; Implementation</h3>
+            <p>Structured planning and hands-on delivery for business technology projects.</p>
             <a href="it-support.html" class="card__link">Learn more</a>
           </div>
         </div>
@@ -625,28 +634,26 @@
           <a class="btn btn--ghost btn--sm footer__remote-support-link" href="../remote-support.html">Remote Support</a>
         </div>
         <div class="footer__col">
-          <div class="footer__title">Services</div>
+          <div class="footer__title"><a href="../services/index.html">Services</a></div>
           <ul>
           <li><a href="../services/index.html">All Services</a></li>
-          <li><a href="../services/managed-it-services.html">Managed IT Services</a></li>
-          <li><a href="../services/it-support.html">IT Support</a></li>
-          <li><a href="../services/network-security.html">Network Security</a></li>
-          <li><a href="../services/managed-security.html">Managed Security</a></li>
-          <li><a href="../services/cloud-solutions.html">Cloud Solutions</a></li>
+          <li><a href="../services/ai-security.html">AI Deployment &amp; Management</a></li>
+          <li><a href="../services/backup-data-recovery.html">Backup Management</a></li>
+          <li><a href="../services/business-continuity.html">Disaster Recovery (BCDR)</a></li>
           <li><a href="../services/cloud-migration.html">Cloud Migration</a></li>
-          <li><a href="../services/microsoft-365-support.html">Microsoft 365 Support</a></li>
+          <li><a href="../services/compliance.html">Compliance</a></li>
+          <li><a href="../services/cybersecurity.html">Cybersecurity</a></li>
           <li><a href="../services/data-compliance.html">Data Compliance</a></li>
-          <li><a href="../services/business-continuity.html">Business Continuity</a></li>
+          <li><a href="../services/it-support.html">IT Project Management</a></li>
+          <li><a href="../services/managed-it-services.html">Managed IT Services</a></li>
+          <li><a href="../services/network-security.html">Network Assesments</a></li>
+          <li><a href="../services/remote-office-support.html">Remote Office Support</a></li>
           <li><a href="../services/it-solutions-small-business.html">Small Business IT</a></li>
           <li><a href="../services/structured-cabling.html">Structured Cabling</a></li>
-          <li><a href="../services/ai-security.html">AI Management</a></li>
-          <li><a href="../services/compliance.html">Compliance</a></li>
-          <li><a href="../services/backup-data-recovery.html">Backup & Data Recovery</a></li>
-          <li><a href="../services/penetration-vulnerability-testing.html">Penetration & Vulnerability Testing</a></li>
           </ul>
         </div>
         <div class="footer__col">
-          <div class="footer__title">Industries</div>
+          <div class="footer__title"><a href="../industries/index.html">Industries</a></div>
           <ul>
           <li><a href="../industries/index.html">All Industries</a></li>
           <li><a href="../industries/construction-firms.html">Architecture + Construction</a></li>
@@ -680,7 +687,9 @@
       </div>
       <div class="footer__legal">
         <a href="../privacy-policy.html">Privacy Policy</a>
+        <a href="../cookie-policy.html">Cookie Policy</a>
         <a href="../terms-of-service.html">Terms of Service</a>
+        <button type="button" class="footer__legal-btn" data-consent-settings hidden>Cookie Settings</button>
       </div>
       <div class="footer__bottom">
         <p>&copy; 2026 Corstar Communications. All rights reserved.</p>
@@ -689,9 +698,11 @@
     </div>
   </footer>
 
-  <script src="../assets/js/schema.js?v=20260729b" defer></script>
-  <script src="../assets/js/main.js?v=20260729b" defer></script>
-  <script src="../assets/js/animations.js?v=20260729b" defer></script>
-  <script src="../assets/js/microinteractions.js?v=20260729b" defer></script>
+  <script src="../assets/js/schema.js?v=20260729e" defer></script>
+  <script src="../assets/js/main.js?v=20260729f" defer></script>
+  <script src="../assets/js/animations.js?v=20260729e" defer></script>
+  <script src="../assets/js/microinteractions.js?v=20260729e" defer></script>
+  <script src="../assets/js/consent.js?v=20260729e" defer></script>
+
 </body>
 </html>

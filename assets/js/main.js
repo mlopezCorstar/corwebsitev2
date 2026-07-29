@@ -4,9 +4,10 @@
 
   function initSiteMenus() {
     const services = [
-      ['AI Management', 'ai-security.html'], ['Cloud & Network Solutions', 'cloud-solutions.html'],
-      ['Cybersecurity + Compliance', 'cybersecurity.html'], ['IT Support Services', 'it-support.html'],
-      ['Small Business', 'it-solutions-small-business.html'], ['Structured Cabling', 'structured-cabling.html']
+      ['AI Deployment & Management', 'ai-security.html'], ['Cloud & Network Solutions', 'cloud-solutions.html'],
+      ['Cybersecurity', 'cybersecurity.html'], ['IT Project Management & Implementation', 'it-support.html'],
+      ['Remote Office Support', 'remote-office-support.html'], ['Small Business', 'it-solutions-small-business.html'],
+      ['Structured Cabling', 'structured-cabling.html']
     ];
     const industries = [
       ['Architecture + Construction', 'construction-firms.html'], ['Financial Services', 'financial-services.html'],
@@ -14,14 +15,13 @@
       ['Legal Services', 'legal.html'], ['Professional Services', 'professional-services.html']
     ];
     const footerServices = [
-      ['AI Management', 'ai-security.html'], ['Backup and Data Recovery', 'backup-data-recovery.html'],
-      ['Business Continuity', 'business-continuity.html'], ['Cloud Migration', 'cloud-migration.html'],
-      ['Cloud Solutions', 'cloud-solutions.html'], ['Compliance', 'compliance.html'],
-      ['Cybersecurity', 'cybersecurity.html'], ['Data Compliance', 'data-compliance.html'],
-      ['IT Support', 'it-support.html'], ['Managed IT Services', 'managed-it-services.html'],
-      ['Managed Security', 'managed-security.html'], ['Microsoft 365 Support', 'microsoft-365-support.html'],
-      ['Network Security', 'network-security.html'], ['Penetration & Vulnerability Testing', 'penetration-vulnerability-testing.html'],
-      ['Small Business IT', 'it-solutions-small-business.html'], ['Structured Cabling', 'structured-cabling.html']
+      ['AI Deployment & Management', 'ai-security.html'], ['Backup Management', 'backup-data-recovery.html'],
+      ['Disaster Recovery (BCDR)', 'business-continuity.html'], ['Cloud Migration', 'cloud-migration.html'],
+      ['Compliance', 'compliance.html'], ['Cybersecurity', 'cybersecurity.html'],
+      ['Data Compliance', 'data-compliance.html'], ['IT Project Management', 'it-support.html'],
+      ['Managed IT Services', 'managed-it-services.html'], ['Network Assesments', 'network-security.html'],
+      ['Remote Office Support', 'remote-office-support.html'], ['Small Business IT', 'it-solutions-small-business.html'],
+      ['Structured Cabling', 'structured-cabling.html']
     ];
     const footerIndustries = [
       ['Architecture + Construction', 'construction-firms.html'], ['Family Offices', 'family-offices.html'],
@@ -30,10 +30,6 @@
       ['Professional Services', 'professional-services.html'], ['Real Estate', 'real-estate.html']
     ];
     const base = /\/(services|industries|resources)\//.test(window.location.pathname) ? '../' : '';
-    const footerResources = [
-      ['What Is an IT MSP?', `${base}resources/what-is-it-msp.html`], ['IT FAQ', `${base}faq.html`],
-      ['About Us', `${base}about.html`], ['Contact', `${base}contact.html`]
-    ];
     const links = (items, section) => `<li><a class="nav__dropdown-lead" href="${base}${section}/index.html">All ${section[0].toUpperCase() + section.slice(1)}</a></li>` + items.map(([label, file]) => `<li><a href="${base}${section}/${file}">${label}</a></li>`).join('');
     document.querySelectorAll('.nav__dropdown-toggle').forEach((toggle) => {
       const name = toggle.textContent.trim().toLowerCase();
@@ -62,10 +58,21 @@
     if (grid) {
       const brand = grid.querySelector('.footer__brand');
       const cols = [...grid.querySelectorAll('.footer__col')];
-      const contact = cols.find((col) => col.querySelector('.footer__title')?.textContent.trim() === 'Contact');
-      const servicesCol = cols.find((col) => col.querySelector('.footer__title')?.textContent.trim() === 'Services');
-      const industriesCol = cols.find((col) => col.querySelector('.footer__title')?.textContent.trim() === 'Industries');
-      [brand, contact, servicesCol, industriesCol].filter(Boolean).forEach((item) => grid.appendChild(item));
+      const titleOf = (col) => col.querySelector('.footer__title')?.textContent.trim();
+      const contact = cols.find((col) => titleOf(col) === 'Contact');
+      const servicesCol = cols.find((col) => titleOf(col) === 'Services');
+      const industriesCol = cols.find((col) => titleOf(col) === 'Industries');
+      const servicesTitle = servicesCol?.querySelector('.footer__title');
+      const industriesTitle = industriesCol?.querySelector('.footer__title');
+      if (servicesTitle) servicesTitle.innerHTML = `<a href="${base}services/index.html">Services</a>`;
+      if (industriesTitle) industriesTitle.innerHTML = `<a href="${base}industries/index.html">Industries</a>`;
+      // Contact reads last: it carries the address and then the Resources list.
+      [brand, servicesCol, industriesCol, contact].filter(Boolean).forEach((item) => grid.appendChild(item));
+      // Only the Services and Industries lists are regenerated here. The
+      // Resources list under the Contact address, the Remote Support button in
+      // the brand column, and `.footer__legal` (which sits outside this grid
+      // and holds the legal links plus the Cookie Settings control) are all
+      // left exactly as the page markup wrote them.
       const setList = (column, items, section) => {
         if (!column) return null;
         const list = column.querySelector('ul') || column.appendChild(document.createElement('ul'));
@@ -75,23 +82,9 @@
       };
       setList(servicesCol, [['All Services', 'index.html'], ...footerServices], 'services');
       setList(industriesCol, [['All Industries', 'index.html'], ...footerIndustries], 'industries');
-      const resourceLists = industriesCol ? industriesCol.querySelectorAll('ul') : [];
-      const resourcesList = resourceLists[1] || (industriesCol ? industriesCol.appendChild(document.createElement('ul')) : null);
-      if (resourcesList) {
-        resourcesList.innerHTML = footerResources.map(([label, href]) => `<li><a href="${href}">${label}</a></li>`).join('');
-      }
-      grid.querySelectorAll('.footer__remote-support-link').forEach((link) => link.closest('li')?.remove());
-      const remoteCol = industriesCol || servicesCol || contact;
-      if (remoteCol) {
-        const remoteItem = document.createElement('li');
-        const remoteLink = document.createElement('a');
-        remoteLink.className = 'btn btn--ghost btn--sm footer__remote-support-link';
-        remoteLink.href = /\/(services|industries|resources)\//.test(window.location.pathname) ? '../remote-support.html' : 'remote-support.html';
-        remoteLink.textContent = 'Remote Support';
-        remoteItem.appendChild(remoteLink);
-        const list = remoteCol.querySelector('ul:last-of-type') || remoteCol.appendChild(document.createElement('ul'));
-        list.appendChild(remoteItem);
-      }
+      grid.querySelectorAll('.footer__remote-support-link').forEach((link) => {
+        link.href = `${base}remote-support.html`;
+      });
       const bottom = document.querySelector('.footer__bottom');
       if (bottom) {
         const paragraphs = bottom.querySelectorAll('p');

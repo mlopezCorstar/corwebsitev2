@@ -519,6 +519,11 @@
   gap: var(--sp-8);
   grid-template-columns: repeat(3, minmax(0, 1fr));
 }
+.services-layout > .card .card__icon {
+  width: calc(var(--icon-tile) * var(--card-scale, 1) * 1.15);
+  height: calc(var(--icon-tile) * var(--card-scale, 1) * 1.15);
+  font-size: calc(var(--text-glyph-sm) * var(--card-scale, 1) * 1.15);
+}
 .services-layout__media {
   grid-column: 1 / -1;
   aspect-ratio: 16 / 9;
@@ -531,16 +536,17 @@
 }
 
 @media (min-width: 1001px) {
-  /* Two card columns plus a photo rail. Cards are pinned to columns 1 and 2 by
-     parity, so auto-placement walks them down the rows two at a time: card n
-     lands on row ceil(n/2). The photos claim column 3 on the rows that put them
-     beside the cards they belong to. */
+  /* The first photo sits in the left rail beside rows 1–3. Those six cards use
+     columns 2 and 3; later cards return to columns 1 and 2 so the second photo
+     can sit in the right rail. */
   .services-layout {
     grid-template-columns: minmax(0, 1fr) minmax(0, 1fr) clamp(260px, 26vw, 380px);
     column-gap: var(--sp-10);
   }
   .services-layout > .card:nth-child(odd)  { grid-column: 1; }
   .services-layout > .card:nth-child(even) { grid-column: 2; }
+  .services-layout > .card:nth-child(-n+6):nth-child(odd)  { grid-column: 2; }
+  .services-layout > .card:nth-child(-n+6):nth-child(even) { grid-column: 3; }
 
   .services-layout__media {
     grid-column: 3;
@@ -563,10 +569,19 @@
     -webkit-mask-composite: source-in;
     mask-composite: intersect;
   }
-  /* Rows 1–3: ends level with the bottom of the Cybersecurity & Compliance card. */
-  .services-layout__media--a { grid-row: 1 / span 3; }
-  /* Rows 5–8: starts beside Managed IT Services, ends level with Structured Cabling. */
-  .services-layout__media--b { grid-row: 5 / span 4; }
+  /* Rows 1–3: left of the first six service cards. */
+  .services-layout__media--a {
+    grid-column: 1;
+    grid-row: 1 / span 3;
+  }
+  /* Rows 5–7: right of the final six service cards. */
+  .services-layout__media--b { grid-row: 5 / span 3; }
+}
+
+.footer__col .footer__title > a {
+  color: inherit;
+  text-decoration: underline;
+  text-underline-offset: 0.2em;
 }
 
 
@@ -600,7 +615,7 @@
    TRUST STRIP — dark anchor band
 ══════════════════════════════════════════ */
 .trust-strip {
-  background: var(--c-forest);
+  background: var(--bg-industry-card);
   padding-block: var(--sp-12);
 }
 .trust-strip__inner {
@@ -707,6 +722,9 @@
   background: var(--c-forest-light);
   color: var(--c-white);
   border-color: var(--on-dark-border);
+}
+.home-cabling .card--dark {
+  background: var(--c-cabling-card);
 }
 .card--dark:hover {
   border-color: var(--c-steel-light);
@@ -1216,6 +1234,252 @@
 
 
 /* ══════════════════════════════════════════
+   CONSENT — banner, preference dialog, gated embeds
+══════════════════════════════════════════ */
+/* The banner sits below the nav in stacking order on purpose: it must never
+   cover the site menu, because a visitor has to be able to keep browsing
+   without answering it. */
+.consent-banner {
+  position: fixed;
+  inset-inline: 0;
+  bottom: 0;
+  z-index: calc(var(--z-nav) - 1);
+  background: var(--c-white);
+  color: var(--c-gray-900);
+  border-top: 3px solid var(--c-royal);
+  box-shadow: 0 -6px 24px rgba(27, 27, 32, 0.16);
+  padding: var(--sp-4) var(--gutter);
+  /* Keeps the bar clear of the home indicator on notched phones. */
+  padding-bottom: calc(var(--sp-4) + env(safe-area-inset-bottom, 0px));
+  animation: consentRise var(--t-base) var(--ease-out);
+}
+/* Deliberately a short rise rather than a full slide from off-screen: a
+   keyframe starting at translateY(100%) leaves the banner completely out of
+   view for as long as the animation is stalled — a background tab pauses
+   animations at frame 0 — and an unreachable consent banner is worse than an
+   unanimated one. At 14px the start frame is still on screen and readable. */
+@keyframes consentRise {
+  from { transform: translateY(14px); opacity: 0; }
+  to   { transform: translateY(0); opacity: 1; }
+}
+.consent-banner__inner {
+  max-width: var(--container-wide);
+  margin-inline: auto;
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: space-between;
+  gap: var(--sp-3) var(--sp-8);
+}
+.consent-banner__copy { flex: 1 1 30ch; min-width: 0; }
+.consent-banner__title {
+  font-family: var(--font-head);
+  font-weight: 700;
+  font-size: var(--text-base);
+  margin-bottom: var(--sp-1);
+}
+.consent-banner__text {
+  font-size: var(--text-sm);
+  line-height: 1.55;
+  color: var(--c-gray-600);
+  max-width: 72ch;
+}
+.consent-banner__text a { color: var(--c-royal); }
+.consent-banner__actions {
+  display: flex;
+  flex-wrap: wrap;
+  gap: var(--sp-3);
+  align-items: center;
+}
+/* Accept and reject are the same component at the same size — neither is
+   styled to be the easier answer. */
+.consent-banner__actions .btn { min-height: 44px; }
+.consent-banner__actions [data-consent="accept"],
+.consent-banner__actions [data-consent="reject"] { min-width: 10.5rem; }
+
+/* Reserve the strip the banner covers so it never sits on top of footer
+   content while a visitor is still deciding. */
+body.has-consent-banner {
+  padding-bottom: var(--consent-banner-height, 0px);
+}
+
+@media (max-width: 720px) {
+  .consent-banner__actions { width: 100%; }
+  .consent-banner__actions .btn { flex: 1 1 100%; width: 100%; }
+}
+@media (prefers-reduced-motion: reduce) {
+  .consent-banner { animation: none; }
+}
+
+/* ── Preference dialog ── */
+.consent-dialog {
+  position: fixed;
+  inset: 0;
+  z-index: var(--z-modal);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: var(--sp-4);
+}
+.consent-dialog__backdrop {
+  position: absolute;
+  inset: 0;
+  background: rgba(27, 27, 32, 0.55);
+}
+.consent-dialog__panel {
+  position: relative;
+  background: var(--c-white);
+  color: var(--c-gray-900);
+  border-radius: var(--radius-lg);
+  box-shadow: var(--shadow-lg);
+  padding: var(--sp-8);
+  width: min(46rem, 100%);
+  /* Long category text and 200% zoom both need the panel to scroll rather
+     than push its buttons off-screen. */
+  max-height: min(85vh, 48rem);
+  overflow-y: auto;
+}
+.consent-dialog__title {
+  font-size: var(--text-2xl);
+  margin-bottom: var(--sp-3);
+  padding-right: var(--sp-8);
+}
+.consent-dialog__title:focus-visible { outline: 3px solid var(--c-royal); outline-offset: 4px; }
+.consent-dialog__desc {
+  font-size: var(--text-sm);
+  color: var(--c-gray-600);
+  margin-bottom: var(--sp-6);
+}
+.consent-dialog__close {
+  position: absolute;
+  top: var(--sp-3);
+  right: var(--sp-3);
+  width: 44px;
+  height: 44px;
+  font-size: 1.5rem;
+  line-height: 1;
+  color: var(--c-gray-500);
+  border-radius: var(--radius);
+}
+.consent-dialog__close:hover { color: var(--c-gray-900); background: var(--c-surface); }
+.consent-dialog__actions {
+  display: flex;
+  flex-wrap: wrap;
+  gap: var(--sp-3);
+  margin-top: var(--sp-8);
+}
+.consent-dialog__actions .btn { min-height: 44px; }
+@media (max-width: 560px) {
+  .consent-dialog__panel { padding: var(--sp-6); }
+  .consent-dialog__actions .btn { flex: 1 1 100%; width: 100%; }
+}
+
+/* ── Category rows ── */
+.consent-category {
+  border: 1px solid var(--c-outline-variant);
+  border-radius: var(--radius);
+  padding: var(--sp-4);
+}
+.consent-category + .consent-category { margin-top: var(--sp-3); }
+.consent-category--locked { background: var(--c-surface); }
+.consent-toggle {
+  display: flex;
+  align-items: center;
+  gap: var(--sp-3);
+  cursor: pointer;
+  min-height: 44px;
+}
+.consent-category--locked .consent-toggle { cursor: default; }
+.consent-toggle input {
+  width: 20px;
+  height: 20px;
+  flex-shrink: 0;
+  accent-color: var(--c-royal);
+}
+.consent-toggle__label {
+  font-family: var(--font-head);
+  font-weight: 700;
+  font-size: var(--text-base);
+}
+/* The state is spelled out, so it does not rely on the checkbox tint alone. */
+.consent-toggle__state {
+  margin-left: auto;
+  font-family: var(--font-mono);
+  font-size: var(--text-xs);
+  letter-spacing: 0.05em;
+  text-transform: uppercase;
+  color: var(--c-gray-500);
+}
+.consent-category__desc {
+  font-size: var(--text-sm);
+  line-height: 1.6;
+  color: var(--c-gray-600);
+  margin-top: var(--sp-2);
+  max-width: none;
+}
+
+/* ── Gated embed placeholder ── */
+.consent-embed__placeholder {
+  border: 1px dashed var(--c-outline-variant);
+  border-radius: var(--radius);
+  background: var(--c-surface);
+  padding: var(--sp-8);
+  text-align: center;
+}
+.consent-embed__title {
+  font-family: var(--font-head);
+  font-weight: 700;
+  font-size: var(--text-xl);
+  margin-bottom: var(--sp-3);
+}
+.consent-embed__text {
+  font-size: var(--text-base);
+  color: var(--c-gray-600);
+  margin-inline: auto;
+  margin-bottom: var(--sp-6);
+  max-width: 56ch;
+}
+.consent-embed__actions {
+  display: flex;
+  flex-wrap: wrap;
+  gap: var(--sp-3);
+  justify-content: center;
+}
+.consent-embed__actions .btn { min-height: 44px; }
+.consent-embed__fallback {
+  display: block;
+  margin-top: var(--sp-6);
+  font-size: var(--text-sm);
+  color: var(--c-gray-500);
+}
+.consent-embed__frame:empty { display: none; }
+
+/* Sits under the submit button on every Web3Forms form, so the privacy terms
+   are next to the point of collection rather than only in the footer. */
+.form__privacy-note {
+  margin-top: var(--sp-3);
+  font-size: var(--text-sm);
+  line-height: 1.55;
+  color: var(--c-gray-500);
+  max-width: none;
+}
+.form__privacy-note a { color: var(--c-royal); }
+
+/* ── Footer settings control ── */
+.footer__legal button.footer__legal-btn {
+  color: var(--c-gray-300);
+  font-family: var(--font-body);
+  font-size: var(--text-sm);
+  text-decoration: underline;
+  text-underline-offset: 3px;
+  padding: 0;
+  min-height: 44px;
+  transition: color var(--t-fast);
+}
+.footer__legal button.footer__legal-btn:hover { color: var(--c-white); }
+
+
+/* ══════════════════════════════════════════
    LEGAL PROSE — privacy policy, terms of service
 ══════════════════════════════════════════ */
 /* Long-form running text. Headings are stepped well down from the display
@@ -1270,7 +1534,7 @@
   overflow: hidden;
   text-decoration: none;
   color: var(--c-white);
-  background: linear-gradient(155deg, var(--c-royal-light) 0%, var(--c-forest) 90%);
+  background: var(--bg-industry-card);
   border: 1px solid var(--c-outline-variant);
   transition: transform var(--t-base) var(--ease-out),
               box-shadow var(--t-base) var(--ease-out);
@@ -1320,6 +1584,15 @@
   margin-bottom: calc(var(--sp-2) * var(--card-scale, 1));
 }
 .industry-card p  { font-size: var(--text-sm); color: var(--on-dark-text); }
+
+.industries-grid .industry-card {
+  min-height: calc(288px * var(--card-scale, 1));
+}
+.industries-grid .industry-card__icon {
+  width: calc(var(--icon-tile) * var(--card-scale, 1) * 1.2);
+  height: calc(var(--icon-tile) * var(--card-scale, 1) * 1.2);
+  font-size: calc(var(--text-glyph-sm) * var(--card-scale, 1) * 1.2);
+}
 
 
 /* ══════════════════════════════════════════

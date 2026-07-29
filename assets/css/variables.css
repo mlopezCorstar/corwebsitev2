@@ -26,6 +26,9 @@
   --c-surface-alt:       #f8f9fa;
   --c-surface-container: #efedf4;
   --c-icon-tile:         #dfe4f2;
+  --c-section-alt:       #E9F2F7;
+  --c-cabling-card:      #24284D;
+  --bg-industry-card:    linear-gradient(155deg, var(--c-royal-light) 0%, var(--c-forest) 90%);
   --c-surface-blur:      rgba(var(--c-surface-rgb), 0.85);
   --c-surface-elevated:  rgba(var(--c-white-rgb), 0.97);
 

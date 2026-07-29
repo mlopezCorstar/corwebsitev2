@@ -5,18 +5,23 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <link rel="icon" type="image/svg+xml" href="../assets/images/favico.svg">
 
-  <!-- Google tag (gtag.js) -->
-  <script async src="https://www.googletagmanager.com/gtag/js?id=G-KRHBHXTBMJ"></script>
+  <!-- Google Analytics — Consent Mode defaults only. Nothing is requested
+       from Google here: assets/js/consent.js injects gtag.js after the visitor
+       allows analytics, and flips these to granted at the same time. -->
   <script>
     window.dataLayer = window.dataLayer || [];
     function gtag(){dataLayer.push(arguments);}
-    gtag('js', new Date());
-
-    gtag('config', 'G-KRHBHXTBMJ');
+    gtag('consent', 'default', {
+      ad_storage: 'denied',
+      ad_user_data: 'denied',
+      ad_personalization: 'denied',
+      analytics_storage: 'denied',
+      wait_for_update: 500
+    });
   </script>
-  <title>Backup and Data Recovery Westchester NY | Corstar</title>
+  <title>Backup &amp; Storage Management Westchester NY | Corstar</title>
   <meta name="description" content="Backup, recovery testing, and data restoration services for Westchester businesses.">
-  <link rel="canonical" href="https://mlopezcorstar.github.io/corwebsitev2/services/network-security.html">
+  <link rel="canonical" href="https://mlopezcorstar.github.io/corwebsitev2/services/backup-data-recovery.html">
   <!-- JSON-LD structured data (static; schema.js adds FAQ markup from the DOM) -->
   <script type="application/ld+json">
 {
@@ -153,7 +158,7 @@
     },
     {
       "@type": "BreadcrumbList",
-      "@id": "https://mlopezcorstar.github.io/corwebsitev2/services/network-security.html#breadcrumb",
+      "@id": "https://mlopezcorstar.github.io/corwebsitev2/services/backup-data-recovery.html#breadcrumb",
       "itemListElement": [
         {
           "@type": "ListItem",
@@ -170,18 +175,18 @@
         {
           "@type": "ListItem",
           "position": 3,
-          "name": "Backup and Data Recovery",
-          "item": "https://mlopezcorstar.github.io/corwebsitev2/services/network-security.html"
+          "name": "Backup & Storage Management",
+          "item": "https://mlopezcorstar.github.io/corwebsitev2/services/backup-data-recovery.html"
         }
       ]
     },
     {
       "@type": "Service",
-      "@id": "https://mlopezcorstar.github.io/corwebsitev2/services/network-security.html#service",
-      "name": "Backup and Data Recovery",
-      "serviceType": "Backup and Data Recovery",
+      "@id": "https://mlopezcorstar.github.io/corwebsitev2/services/backup-data-recovery.html#service",
+      "name": "Backup & Storage Management",
+      "serviceType": "Backup & Storage Management",
       "description": "Backup, recovery testing, and data restoration services for Westchester businesses.",
-      "url": "https://mlopezcorstar.github.io/corwebsitev2/services/network-security.html",
+      "url": "https://mlopezcorstar.github.io/corwebsitev2/services/backup-data-recovery.html",
       "provider": {
         "@id": "https://mlopezcorstar.github.io/corwebsitev2/#localbusiness"
       },
@@ -209,9 +214,9 @@
         "WebPage",
         "ItemPage"
       ],
-      "@id": "https://mlopezcorstar.github.io/corwebsitev2/services/network-security.html#webpage",
-      "url": "https://mlopezcorstar.github.io/corwebsitev2/services/network-security.html",
-      "name": "Backup and Data Recovery Westchester NY | Corstar",
+      "@id": "https://mlopezcorstar.github.io/corwebsitev2/services/backup-data-recovery.html#webpage",
+      "url": "https://mlopezcorstar.github.io/corwebsitev2/services/backup-data-recovery.html",
+      "name": "Backup & Storage Management Westchester NY | Corstar",
       "description": "Backup, recovery testing, and data restoration services for Westchester businesses.",
       "isPartOf": {
         "@id": "https://mlopezcorstar.github.io/corwebsitev2/#website"
@@ -221,27 +226,30 @@
       },
       "inLanguage": "en-US",
       "breadcrumb": {
-        "@id": "https://mlopezcorstar.github.io/corwebsitev2/services/network-security.html#breadcrumb"
+        "@id": "https://mlopezcorstar.github.io/corwebsitev2/services/backup-data-recovery.html#breadcrumb"
       }
     }
   ]
 }
   </script>
-  <link rel="preconnect" href="https://fonts.googleapis.com">
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;600;700&family=IBM+Plex+Sans:wght@400;500;600;700&family=IBM+Plex+Mono:wght@400;600&display=swap" rel="stylesheet">
-  <link rel="stylesheet" href="../assets/css/variables.css?v=20260729b">
-  <link rel="stylesheet" href="../assets/css/base.css?v=20260729b">
-  <link rel="stylesheet" href="../assets/css/layout.css?v=20260729b">
-  <link rel="stylesheet" href="../assets/css/components.css?v=20260729b">
-  <link rel="stylesheet" href="../assets/css/animations.css?v=20260729b">
+  <!-- Fonts: self-hosted, so a page view contacts no third party -->
+  <link rel="preload" as="font" type="font/woff2" crossorigin
+        href="../assets/fonts/ibm-plex-sans-400-latin.woff2">
+  <link rel="preload" as="font" type="font/woff2" crossorigin
+        href="../assets/fonts/space-grotesk-700-latin.woff2">
+  <link rel="stylesheet" href="../assets/css/fonts.css?v=20260729e">
+  <link rel="stylesheet" href="../assets/css/variables.css?v=20260729g">
+  <link rel="stylesheet" href="../assets/css/base.css?v=20260729e">
+  <link rel="stylesheet" href="../assets/css/layout.css?v=20260729g">
+  <link rel="stylesheet" href="../assets/css/components.css?v=20260729g">
+  <link rel="stylesheet" href="../assets/css/animations.css?v=20260729e">
   <style>
     .includes-list { list-style: none; padding: 0; margin: 0; }
     .includes-list li { padding: var(--sp-3) 0; border-bottom: 1px solid var(--c-gray-100); display: flex; gap: var(--sp-3); align-items: flex-start; }
     .includes-list li::before { content: '✓'; color: var(--c-royal); font-weight: 700; flex-shrink: 0; margin-top: 2px; }
   </style>
 </head>
-<body data-page="service" data-service-name="Network Security Services" data-service-desc="Multi-layer cybersecurity protection for Westchester County businesses.">
+<body data-page="service" data-service-name="Backup &amp; Storage Management" data-service-desc="Managed backups, storage, and recovery planning for Westchester County businesses.">
 
   <a class="skip-link" href="#main-content">Skip to main content</a>
 
@@ -272,10 +280,11 @@
             <button class="nav__dropdown-toggle" aria-expanded="false" aria-haspopup="true">Services <span class="nav__caret" aria-hidden="true">&#9662;</span></button>
             <ul class="nav__dropdown">
               <li><a class="nav__dropdown-lead" href="../services/index.html">All Services</a></li>
-              <li><a href="../services/ai-security.html">AI Management</a></li>
-              <li><a href="../services/cloud-solutions.html">Cloud & Network Solutions</a></li>
-              <li><a href="../services/cybersecurity.html">Cybersecurity + Compliance</a></li>
-              <li><a href="../services/it-support.html">IT Support Services</a></li>
+              <li><a href="../services/ai-security.html">AI Deployment &amp; Management</a></li>
+              <li><a href="../services/cloud-solutions.html">Cloud &amp; Network Solutions</a></li>
+              <li><a href="../services/cybersecurity.html">Cybersecurity</a></li>
+              <li><a href="../services/it-support.html">IT Project Management &amp; Implementation</a></li>
+              <li><a href="../services/remote-office-support.html">Remote Office Support</a></li>
               <li><a href="../services/it-solutions-small-business.html">Small Business</a></li>
               <li><a href="../services/structured-cabling.html">Structured Cabling</a></li>
             </ul>
@@ -300,7 +309,7 @@
     </div>
   </header>
 
-  <main id="main-content"><section class="page-hero"><div class="container"><p class="breadcrumb"><a href="../index.html">Home</a> / <a href="index.html">Services</a> / Backup and Data Recovery</p><h1>Backup and Data Recovery</h1><p>Protect important business information with tested backups and a recovery plan your team can trust.</p><a href="../contact.html" class="btn btn--primary btn--lg">Talk To Our Experts</a></div></section><section class="section"><div class="container"><div class="grid grid--2" style="gap:var(--sp-16);align-items:start"><div><span class="section-label">Backup and Data Recovery</span><h2>Technology Should Support the Way You Work</h2><p>Corstar brings structure, security, and accountability to technology environments across New York, New Jersey, and Connecticut. We combine practical guidance with responsive support so your team can focus on the work that moves the business forward.</p><p>Our approach starts with understanding your priorities, documenting the environment, and identifying changes that reduce risk and improve reliability.</p><p>With 56 years in business and a local team that answers the phone, Corstar provides a steady technology partner for organizations that need dependable support.</p></div><div class="grid grid--1 gap-4"><div class="card card--dark animate"><div class="card__icon" aria-hidden="true">🎯</div><h2>Clear Priorities</h2><p>We identify the systems, risks, and workflows that matter most to your organization.</p></div><div class="card card--dark animate"><div class="card__icon" aria-hidden="true">🛡️</div><h2>Practical Protection</h2><p>We recommend controls that strengthen security and reliability without creating unnecessary complexity.</p></div><div class="card card--dark animate"><div class="card__icon" aria-hidden="true">✅</div><h2>Reliable Follow-Through</h2><p>We document the plan, communicate clearly, and stay accountable for the next steps.</p></div></div></div></div></section><section class="section section--alt"><div class="container"><h2>Ready for More Reliable Technology?</h2><p>Schedule an IT assessment and get a clear view of the opportunities and risks in your environment.</p><a href="../contact.html" class="btn btn--primary btn--lg">Talk To Our Experts</a></div></section></main>  <footer class="footer" role="contentinfo">
+  <main id="main-content"><section class="page-hero"><div class="container"><p class="breadcrumb"><a href="../index.html">Home</a> / <a href="index.html">Services</a> / Backup &amp; Storage Management</p><h1>Backup &amp; Storage Management</h1><p>Protect important business information with managed storage, tested backups, and a recovery plan your team can trust.</p><a href="../contact.html" class="btn btn--primary btn--lg">Talk To Our Experts</a></div></section><section class="section"><div class="container"><div class="grid grid--2" style="gap:var(--sp-16);align-items:start"><div><span class="section-label">Backup &amp; Storage Management</span><h2>Technology Should Support the Way You Work</h2><p>Corstar brings structure, security, and accountability to technology environments across New York, New Jersey, and Connecticut. We combine practical guidance with responsive support so your team can focus on the work that moves the business forward.</p><p>Our approach starts with understanding your priorities, documenting the environment, and identifying changes that reduce risk and improve reliability.</p><p>With 56 years in business and a local team that answers the phone, Corstar provides a steady technology partner for organizations that need dependable support.</p></div><div class="grid grid--1 gap-4"><div class="card card--dark animate"><div class="card__icon" aria-hidden="true">🎯</div><h2>Clear Priorities</h2><p>We identify the systems, risks, and workflows that matter most to your organization.</p></div><div class="card card--dark animate"><div class="card__icon" aria-hidden="true">🛡️</div><h2>Practical Protection</h2><p>We recommend controls that strengthen security and reliability without creating unnecessary complexity.</p></div><div class="card card--dark animate"><div class="card__icon" aria-hidden="true">✅</div><h2>Reliable Follow-Through</h2><p>We document the plan, communicate clearly, and stay accountable for the next steps.</p></div></div></div></div></section><section class="section section--alt"><div class="container"><h2>Ready for More Reliable Technology?</h2><p>Schedule an IT assessment and get a clear view of the opportunities and risks in your environment.</p><a href="../contact.html" class="btn btn--primary btn--lg">Talk To Our Experts</a></div></section></main>  <footer class="footer" role="contentinfo">
     <div class="container">
       <div class="footer__grid">
         <div class="footer__brand">
@@ -309,28 +318,26 @@
           <a class="btn btn--ghost btn--sm footer__remote-support-link" href="../remote-support.html">Remote Support</a>
         </div>
         <div class="footer__col">
-          <div class="footer__title">Services</div>
+          <div class="footer__title"><a href="../services/index.html">Services</a></div>
           <ul>
           <li><a href="../services/index.html">All Services</a></li>
-          <li><a href="../services/managed-it-services.html">Managed IT Services</a></li>
-          <li><a href="../services/it-support.html">IT Support</a></li>
-          <li><a href="../services/network-security.html">Network Security</a></li>
-          <li><a href="../services/managed-security.html">Managed Security</a></li>
-          <li><a href="../services/cloud-solutions.html">Cloud Solutions</a></li>
+          <li><a href="../services/ai-security.html">AI Deployment &amp; Management</a></li>
+          <li><a href="../services/backup-data-recovery.html">Backup Management</a></li>
+          <li><a href="../services/business-continuity.html">Disaster Recovery (BCDR)</a></li>
           <li><a href="../services/cloud-migration.html">Cloud Migration</a></li>
-          <li><a href="../services/microsoft-365-support.html">Microsoft 365 Support</a></li>
+          <li><a href="../services/compliance.html">Compliance</a></li>
+          <li><a href="../services/cybersecurity.html">Cybersecurity</a></li>
           <li><a href="../services/data-compliance.html">Data Compliance</a></li>
-          <li><a href="../services/business-continuity.html">Business Continuity</a></li>
+          <li><a href="../services/it-support.html">IT Project Management</a></li>
+          <li><a href="../services/managed-it-services.html">Managed IT Services</a></li>
+          <li><a href="../services/network-security.html">Network Assesments</a></li>
+          <li><a href="../services/remote-office-support.html">Remote Office Support</a></li>
           <li><a href="../services/it-solutions-small-business.html">Small Business IT</a></li>
           <li><a href="../services/structured-cabling.html">Structured Cabling</a></li>
-          <li><a href="../services/ai-security.html">AI Management</a></li>
-          <li><a href="../services/compliance.html">Compliance</a></li>
-          <li><a href="../services/backup-data-recovery.html">Backup & Data Recovery</a></li>
-          <li><a href="../services/penetration-vulnerability-testing.html">Penetration & Vulnerability Testing</a></li>
           </ul>
         </div>
         <div class="footer__col">
-          <div class="footer__title">Industries</div>
+          <div class="footer__title"><a href="../industries/index.html">Industries</a></div>
           <ul>
           <li><a href="../industries/index.html">All Industries</a></li>
           <li><a href="../industries/construction-firms.html">Architecture + Construction</a></li>
@@ -364,7 +371,9 @@
       </div>
       <div class="footer__legal">
         <a href="../privacy-policy.html">Privacy Policy</a>
+        <a href="../cookie-policy.html">Cookie Policy</a>
         <a href="../terms-of-service.html">Terms of Service</a>
+        <button type="button" class="footer__legal-btn" data-consent-settings hidden>Cookie Settings</button>
       </div>
       <div class="footer__bottom">
         <p>&copy; 2026 Corstar Communications. All rights reserved.</p>
@@ -373,9 +382,11 @@
     </div>
   </footer>
 
-  <script src="../assets/js/schema.js?v=20260729b" defer></script>
-  <script src="../assets/js/main.js?v=20260729b" defer></script>
-  <script src="../assets/js/animations.js?v=20260729b" defer></script>
-  <script src="../assets/js/microinteractions.js?v=20260729b" defer></script>
+  <script src="../assets/js/schema.js?v=20260729e" defer></script>
+  <script src="../assets/js/main.js?v=20260729f" defer></script>
+  <script src="../assets/js/animations.js?v=20260729e" defer></script>
+  <script src="../assets/js/microinteractions.js?v=20260729e" defer></script>
+  <script src="../assets/js/consent.js?v=20260729e" defer></script>
+
 </body>
 </html>

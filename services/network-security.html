@@ -5,17 +5,22 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <link rel="icon" type="image/svg+xml" href="../assets/images/favico.svg">
 
-  <!-- Google tag (gtag.js) -->
-  <script async src="https://www.googletagmanager.com/gtag/js?id=G-KRHBHXTBMJ"></script>
+  <!-- Google Analytics — Consent Mode defaults only. Nothing is requested
+       from Google here: assets/js/consent.js injects gtag.js after the visitor
+       allows analytics, and flips these to granted at the same time. -->
   <script>
     window.dataLayer = window.dataLayer || [];
     function gtag(){dataLayer.push(arguments);}
-    gtag('js', new Date());
-
-    gtag('config', 'G-KRHBHXTBMJ');
+    gtag('consent', 'default', {
+      ad_storage: 'denied',
+      ad_user_data: 'denied',
+      ad_personalization: 'denied',
+      analytics_storage: 'denied',
+      wait_for_update: 500
+    });
   </script>
-  <title>Network Security Services — Westchester NY IT MSP | Corstar</title>
-  <meta name="description" content="Multi-layer network security for Westchester businesses. Firewalls, endpoint protection, threat detection, and security training from Corstar Communications.">
+  <title>Network Assesment and Optimization | Corstar</title>
+  <meta name="description" content="Network assesment and optimization for Westchester businesses, including performance reviews, coverage analysis, documentation, and practical improvements.">
   <link rel="canonical" href="https://mlopezcorstar.github.io/corwebsitev2/services/network-security.html">
   <!-- JSON-LD structured data (static; schema.js adds FAQ markup from the DOM) -->
   <script type="application/ld+json">
@@ -170,7 +175,7 @@
         {
           "@type": "ListItem",
           "position": 3,
-          "name": "Network Security Services — Westchester NY MSP",
+          "name": "Network Assesment and Optimization",
           "item": "https://mlopezcorstar.github.io/corwebsitev2/services/network-security.html"
         }
       ]
@@ -178,9 +183,9 @@
     {
       "@type": "Service",
       "@id": "https://mlopezcorstar.github.io/corwebsitev2/services/network-security.html#service",
-      "name": "Network Security Services — Westchester NY MSP",
-      "serviceType": "Network Security Services — Westchester NY MSP",
-      "description": "Multi-layer network security for Westchester businesses. Firewalls, endpoint protection, threat detection, and security training from Corstar Communications.",
+      "name": "Network Assesment and Optimization",
+      "serviceType": "Network Assesment and Optimization",
+      "description": "Network assesment and optimization for Westchester businesses, including performance reviews, coverage analysis, documentation, and practical improvements.",
       "url": "https://mlopezcorstar.github.io/corwebsitev2/services/network-security.html",
       "provider": {
         "@id": "https://mlopezcorstar.github.io/corwebsitev2/#localbusiness"
@@ -211,8 +216,8 @@
       ],
       "@id": "https://mlopezcorstar.github.io/corwebsitev2/services/network-security.html#webpage",
       "url": "https://mlopezcorstar.github.io/corwebsitev2/services/network-security.html",
-      "name": "Network Security Services — Westchester NY IT MSP | Corstar",
-      "description": "Multi-layer network security for Westchester businesses. Firewalls, endpoint protection, threat detection, and security training from Corstar Communications.",
+      "name": "Network Assesment and Optimization | Corstar",
+      "description": "Network assesment and optimization for Westchester businesses, including performance reviews, coverage analysis, documentation, and practical improvements.",
       "isPartOf": {
         "@id": "https://mlopezcorstar.github.io/corwebsitev2/#website"
       },
@@ -227,21 +232,24 @@
   ]
 }
   </script>
-  <link rel="preconnect" href="https://fonts.googleapis.com">
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;600;700&family=IBM+Plex+Sans:wght@400;500;600;700&family=IBM+Plex+Mono:wght@400;600&display=swap" rel="stylesheet">
-  <link rel="stylesheet" href="../assets/css/variables.css?v=20260729b">
-  <link rel="stylesheet" href="../assets/css/base.css?v=20260729b">
-  <link rel="stylesheet" href="../assets/css/layout.css?v=20260729b">
-  <link rel="stylesheet" href="../assets/css/components.css?v=20260729b">
-  <link rel="stylesheet" href="../assets/css/animations.css?v=20260729b">
+  <!-- Fonts: self-hosted, so a page view contacts no third party -->
+  <link rel="preload" as="font" type="font/woff2" crossorigin
+        href="../assets/fonts/ibm-plex-sans-400-latin.woff2">
+  <link rel="preload" as="font" type="font/woff2" crossorigin
+        href="../assets/fonts/space-grotesk-700-latin.woff2">
+  <link rel="stylesheet" href="../assets/css/fonts.css?v=20260729e">
+  <link rel="stylesheet" href="../assets/css/variables.css?v=20260729g">
+  <link rel="stylesheet" href="../assets/css/base.css?v=20260729e">
+  <link rel="stylesheet" href="../assets/css/layout.css?v=20260729g">
+  <link rel="stylesheet" href="../assets/css/components.css?v=20260729g">
+  <link rel="stylesheet" href="../assets/css/animations.css?v=20260729e">
   <style>
     .includes-list { list-style: none; padding: 0; margin: 0; }
     .includes-list li { padding: var(--sp-3) 0; border-bottom: 1px solid var(--c-gray-100); display: flex; gap: var(--sp-3); align-items: flex-start; }
     .includes-list li::before { content: '✓'; color: var(--c-royal); font-weight: 700; flex-shrink: 0; margin-top: 2px; }
   </style>
 </head>
-<body data-page="service" data-service-name="Network Security Services" data-service-desc="Multi-layer cybersecurity protection for Westchester County businesses.">
+<body data-page="service" data-service-name="Network Assesment and Optimization" data-service-desc="Network performance, coverage, and reliability improvements for Westchester County businesses.">
 
   <a class="skip-link" href="#main-content">Skip to main content</a>
 
@@ -272,10 +280,11 @@
             <button class="nav__dropdown-toggle" aria-expanded="false" aria-haspopup="true">Services <span class="nav__caret" aria-hidden="true">&#9662;</span></button>
             <ul class="nav__dropdown">
               <li><a class="nav__dropdown-lead" href="../services/index.html">All Services</a></li>
-              <li><a href="../services/ai-security.html">AI Management</a></li>
-              <li><a href="../services/cloud-solutions.html">Cloud & Network Solutions</a></li>
-              <li><a href="../services/cybersecurity.html">Cybersecurity + Compliance</a></li>
-              <li><a href="../services/it-support.html">IT Support Services</a></li>
+              <li><a href="../services/ai-security.html">AI Deployment &amp; Management</a></li>
+              <li><a href="../services/cloud-solutions.html">Cloud &amp; Network Solutions</a></li>
+              <li><a href="../services/cybersecurity.html">Cybersecurity</a></li>
+              <li><a href="../services/it-support.html">IT Project Management &amp; Implementation</a></li>
+              <li><a href="../services/remote-office-support.html">Remote Office Support</a></li>
               <li><a href="../services/it-solutions-small-business.html">Small Business</a></li>
               <li><a href="../services/structured-cabling.html">Structured Cabling</a></li>
             </ul>
@@ -304,11 +313,11 @@
 
     <section class="page-hero">
       <div class="container">
-        <p class="breadcrumb"><a href="../index.html">Home</a> / <a href="index.html">Services</a> / Network Security</p>
-        <h1>Network Security Services —<br>Westchester NY MSP</h1>
-        <p>Cyberattacks don't target only large companies. Small and mid-size businesses are the #1 target. We build the defenses that protect yours.</p>
+        <p class="breadcrumb"><a href="../index.html">Home</a> / <a href="index.html">Services</a> / Network Assesment and Optimization</p>
+        <h1>Network Assesment and<br>Optimization</h1>
+        <p>Find the bottlenecks, coverage gaps, and configuration issues that slow your team down, then put a practical improvement plan in place.</p>
         <div class="flex flex-wrap gap-4 mt-8">
-          <a href="../contact.html" class="btn btn--primary btn--lg">Get a Security Assessment</a>
+          <a href="../contact.html" class="btn btn--primary btn--lg">Schedule a Network Assesment</a>
         </div>
       </div>
     </section>
@@ -316,28 +325,21 @@
     <section class="section">
       <div class="container">
         <div class="grid grid--2" style="gap: var(--sp-16); align-items: start;">
-          <div class="stack">
-            <div>
-              <span class="section-label">The Threat Is Real</span>
-              <h2>Westchester Businesses Are Being Targeted</h2>
-              <p>Ransomware, phishing, and business email compromise are not abstract threats — they hit Westchester businesses every week. The average ransomware attack costs a small business over $200,000. Most never fully recover.</p>
-              <p>The problem is not that small businesses are careless. It's that cybercriminals know small businesses often lack the layered defenses that enterprises have. We change that equation.</p>
-              <p>Corstar's network security services give your business enterprise-grade protection at a price built for local businesses. We monitor, respond, and adapt so you don't have to.</p>
-            </div>
+          <div>
+            <span class="section-label">See the Whole Network</span>
+            <h2>Turn Network Friction into a Clear Action Plan</h2>
+            <p>Corstar reviews how your network is designed, configured, documented, and experienced by users. We identify the changes that will make the biggest difference to reliability and performance.</p>
+            <p>The result is a prioritized roadmap—not a list of products you do not need.</p>
           </div>
-          <div class="stack">
-            <h3>What's Covered</h3>
+          <div>
+            <h3>What We Review</h3>
             <ul class="includes-list">
-              <li>Managed next-generation firewall (NGFW) configuration and monitoring</li>
-              <li>Endpoint Detection and Response (EDR) — advanced antivirus replacement</li>
-              <li>Email security — anti-phishing, anti-spam, and impersonation protection</li>
-              <li>DNS filtering — block malicious sites before they load</li>
-              <li>Multi-factor authentication (MFA) deployment across all accounts</li>
-              <li>Privileged access management — restrict who can do what on your network</li>
-              <li>Dark web credential monitoring — alerts if your passwords are leaked</li>
-              <li>Security awareness training — phishing simulations and follow-up training to help employees spot phishing attacks</li>
-              <li>Vulnerability scanning — identify weaknesses before attackers do</li>
-              <li>Security incident response — rapid containment if a breach occurs</li>
+              <li>Internet, switching, routing, and firewall performance</li>
+              <li>Wireless coverage, capacity, and interference</li>
+              <li>Network diagrams, configurations, and documentation</li>
+              <li>Bandwidth use, bottlenecks, and recurring connectivity issues</li>
+              <li>Redundancy, failover, and growth requirements</li>
+              <li>Prioritized recommendations and implementation options</li>
             </ul>
           </div>
         </div>
@@ -347,75 +349,23 @@
     <section class="section section--dark">
       <div class="container">
         <div class="section-header text-center">
-          <span class="section-label">Our Approach</span>
-          <h2>Layered Security — Not a Single Silver Bullet</h2>
-          <p>No single tool stops every threat. We build defenses in layers so that if one fails, others catch what it missed.</p>
+          <span class="section-label">A Practical Process</span>
+          <h2>Assess, Prioritize, Optimize</h2>
         </div>
-        <div class="grid grid--4 animate-stagger">
-          <div class="card card--dark animate card--center">
-            <div class="card__icon" aria-hidden="true">🛡️</div>
-            <h3>Perimeter</h3>
-            <p>Next-gen firewalls and intrusion prevention at the network edge.</p>
-          </div>
-          <div class="card card--dark animate card--center">
-            <div class="card__icon" aria-hidden="true">💻</div>
-            <h3>Endpoint</h3>
-            <p>EDR on every device — laptops, desktops, servers, and mobile.</p>
-          </div>
-          <div class="card card--dark animate card--center">
-            <div class="card__icon" aria-hidden="true">🪪</div>
-            <h3>Identity</h3>
-            <p>MFA, SSO, and email authentication stop credential theft cold.</p>
-          </div>
-          <div class="card card--dark animate card--center">
-            <div class="card__icon" aria-hidden="true">🧠</div>
-            <h3>Human Layer</h3>
-            <p>Regular employee security training — because people are the last line of defense.</p>
-          </div>
-        </div>
-      </div>
-    </section>
-
-    <section class="section">
-      <div class="container">
-        <div class="grid grid--2" style="gap: var(--sp-16); align-items: center;">
-          <div>
-            <span class="section-label">Compliance</span>
-            <h2>Security That Satisfies Auditors</h2>
-            <p>Our security stack is built to align with major compliance frameworks. Whether you need to pass a HIPAA audit, satisfy your cyber insurance carrier, or meet NY DFS Cybersecurity Regulation requirements, our controls map to your obligations.</p>
-            <p>We document every control, generate audit-ready reports, and walk with you through compliance reviews.</p>
-            <div class="flex gap-4 flex-wrap mt-8">
-              <span class="badge">HIPAA</span>
-              <span class="badge">NY DFS 23 NYCRR 500</span>
-              <span class="badge">Cyber Insurance Ready</span>
-              <span class="badge">PCI DSS</span>
-            </div>
-          </div>
-          <div>
-            <h3>Related Services</h3>
-            <div class="stack--sm">
-              <a href="managed-it-services.html" class="card" style="display:block; text-decoration:none;">
-                <div class="card__icon" aria-hidden="true">🖥️</div>
-                <h4 style="color: var(--c-royal);">Managed IT Services →</h4>
-                <p>Full-environment monitoring and management with security built in.</p>
-              </a>
-              <a href="../industries/healthcare.html" class="card" style="display:block; text-decoration:none;">
-                <div class="card__icon" aria-hidden="true">🏥</div>
-                <h4 style="color: var(--c-royal);">Healthcare IT →</h4>
-                <p>HIPAA-compliant security for medical practices in Westchester.</p>
-              </a>
-            </div>
-          </div>
+        <div class="grid grid--3 animate-stagger">
+          <div class="card card--dark animate card--center"><div class="card__icon" aria-hidden="true">🔎</div><h3>Assess</h3><p>Review the environment, user experience, performance data, and known trouble spots.</p></div>
+          <div class="card card--dark animate card--center"><div class="card__icon" aria-hidden="true">📋</div><h3>Prioritize</h3><p>Separate urgent reliability issues from longer-term improvements and growth needs.</p></div>
+          <div class="card card--dark animate card--center"><div class="card__icon" aria-hidden="true">⚡</div><h3>Optimize</h3><p>Implement approved changes, validate performance, and update documentation.</p></div>
         </div>
       </div>
     </section>
 
     <section class="cta-band">
       <div class="container">
-        <h2>How Secure Is Your Network?</h2>
-        <p>We offer a free security assessment for Westchester businesses. We'll show you exactly where your vulnerabilities are — no strings attached.</p>
+        <h2>Is Your Network Holding Your Team Back?</h2>
+        <p>Start with a clear view of what is working, what is not, and what to improve first.</p>
         <div class="cta-band__actions">
-          <a href="../contact.html" class="btn btn--ghost btn--lg">Get a Free Security Assessment</a>
+          <a href="../contact.html" class="btn btn--ghost btn--lg">Schedule a Network Assesment</a>
           <a href="tel:+19143472700" class="btn btn--ghost btn--lg">Call (914) 347-2700</a>
         </div>
       </div>
@@ -432,28 +382,26 @@
           <a class="btn btn--ghost btn--sm footer__remote-support-link" href="../remote-support.html">Remote Support</a>
         </div>
         <div class="footer__col">
-          <div class="footer__title">Services</div>
+          <div class="footer__title"><a href="../services/index.html">Services</a></div>
           <ul>
           <li><a href="../services/index.html">All Services</a></li>
-          <li><a href="../services/managed-it-services.html">Managed IT Services</a></li>
-          <li><a href="../services/it-support.html">IT Support</a></li>
-          <li><a href="../services/network-security.html">Network Security</a></li>
-          <li><a href="../services/managed-security.html">Managed Security</a></li>
-          <li><a href="../services/cloud-solutions.html">Cloud Solutions</a></li>
+          <li><a href="../services/ai-security.html">AI Deployment &amp; Management</a></li>
+          <li><a href="../services/backup-data-recovery.html">Backup Management</a></li>
+          <li><a href="../services/business-continuity.html">Disaster Recovery (BCDR)</a></li>
           <li><a href="../services/cloud-migration.html">Cloud Migration</a></li>
-          <li><a href="../services/microsoft-365-support.html">Microsoft 365 Support</a></li>
+          <li><a href="../services/compliance.html">Compliance</a></li>
+          <li><a href="../services/cybersecurity.html">Cybersecurity</a></li>
           <li><a href="../services/data-compliance.html">Data Compliance</a></li>
-          <li><a href="../services/business-continuity.html">Business Continuity</a></li>
+          <li><a href="../services/it-support.html">IT Project Management</a></li>
+          <li><a href="../services/managed-it-services.html">Managed IT Services</a></li>
+          <li><a href="../services/network-security.html">Network Assesments</a></li>
+          <li><a href="../services/remote-office-support.html">Remote Office Support</a></li>
           <li><a href="../services/it-solutions-small-business.html">Small Business IT</a></li>
           <li><a href="../services/structured-cabling.html">Structured Cabling</a></li>
-          <li><a href="../services/ai-security.html">AI Management</a></li>
-          <li><a href="../services/compliance.html">Compliance</a></li>
-          <li><a href="../services/backup-data-recovery.html">Backup & Data Recovery</a></li>
-          <li><a href="../services/penetration-vulnerability-testing.html">Penetration & Vulnerability Testing</a></li>
           </ul>
         </div>
         <div class="footer__col">
-          <div class="footer__title">Industries</div>
+          <div class="footer__title"><a href="../industries/index.html">Industries</a></div>
           <ul>
           <li><a href="../industries/index.html">All Industries</a></li>
           <li><a href="../industries/construction-firms.html">Architecture + Construction</a></li>
@@ -487,7 +435,9 @@
       </div>
       <div class="footer__legal">
         <a href="../privacy-policy.html">Privacy Policy</a>
+        <a href="../cookie-policy.html">Cookie Policy</a>
         <a href="../terms-of-service.html">Terms of Service</a>
+        <button type="button" class="footer__legal-btn" data-consent-settings hidden>Cookie Settings</button>
       </div>
       <div class="footer__bottom">
         <p>&copy; 2026 Corstar Communications. All rights reserved.</p>
@@ -496,9 +446,11 @@
     </div>
   </footer>
 
-  <script src="../assets/js/schema.js?v=20260729b" defer></script>
-  <script src="../assets/js/main.js?v=20260729b" defer></script>
-  <script src="../assets/js/animations.js?v=20260729b" defer></script>
-  <script src="../assets/js/microinteractions.js?v=20260729b" defer></script>
+  <script src="../assets/js/schema.js?v=20260729e" defer></script>
+  <script src="../assets/js/main.js?v=20260729f" defer></script>
+  <script src="../assets/js/animations.js?v=20260729e" defer></script>
+  <script src="../assets/js/microinteractions.js?v=20260729e" defer></script>
+  <script src="../assets/js/consent.js?v=20260729e" defer></script>
+
 </body>
 </html>

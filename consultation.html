@@ -5,14 +5,19 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <link rel="icon" type="image/svg+xml" href="assets/images/favico.svg">
 
-  <!-- Google tag (gtag.js) -->
-  <script async src="https://www.googletagmanager.com/gtag/js?id=G-KRHBHXTBMJ"></script>
+  <!-- Google Analytics — Consent Mode defaults only. Nothing is requested
+       from Google here: assets/js/consent.js injects gtag.js after the visitor
+       allows analytics, and flips these to granted at the same time. -->
   <script>
     window.dataLayer = window.dataLayer || [];
     function gtag(){dataLayer.push(arguments);}
-    gtag('js', new Date());
-
-    gtag('config', 'G-KRHBHXTBMJ');
+    gtag('consent', 'default', {
+      ad_storage: 'denied',
+      ad_user_data: 'denied',
+      ad_personalization: 'denied',
+      analytics_storage: 'denied',
+      wait_for_update: 500
+    });
   </script>
   <title>Consultation | Corstar Communications</title>
   <meta name="description" content="Schedule a consultation with Corstar Communications to discuss your IT infrastructure, security, compliance, and technology goals.">
@@ -189,16 +194,22 @@
   ]
 }
   </script>
-  <link rel="preconnect" href="https://fonts.googleapis.com">
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;600;700&family=IBM+Plex+Sans:wght@400;500;600;700&family=IBM+Plex+Mono:wght@400;600&display=swap" rel="stylesheet">
-  <link rel="stylesheet" href="assets/css/variables.css?v=20260729b">
-  <link rel="stylesheet" href="assets/css/base.css?v=20260729b">
-  <link rel="stylesheet" href="assets/css/layout.css?v=20260729b">
-  <link rel="stylesheet" href="assets/css/components.css?v=20260729b">
-  <link rel="stylesheet" href="assets/css/animations.css?v=20260729b">
+  <!-- Fonts: self-hosted, so a page view contacts no third party -->
+  <link rel="preload" as="font" type="font/woff2" crossorigin
+        href="assets/fonts/ibm-plex-sans-400-latin.woff2">
+  <link rel="preload" as="font" type="font/woff2" crossorigin
+        href="assets/fonts/space-grotesk-700-latin.woff2">
+  <link rel="stylesheet" href="assets/css/fonts.css?v=20260729e">
+  <link rel="stylesheet" href="assets/css/variables.css?v=20260729g">
+  <link rel="stylesheet" href="assets/css/base.css?v=20260729e">
+  <link rel="stylesheet" href="assets/css/layout.css?v=20260729g">
+  <link rel="stylesheet" href="assets/css/components.css?v=20260729g">
+  <link rel="stylesheet" href="assets/css/animations.css?v=20260729e">
   <style>
-    .consultation-frame { min-height: 760px; overflow: hidden; border: 1px solid var(--c-outline-variant); border-radius: var(--radius); background: var(--c-white); }
+    /* Only the loaded scheduler needs the tall frame — reserving 760px around
+       the consent placeholder would leave most of the page empty. */
+    .consultation-frame { overflow: hidden; border-radius: var(--radius); }
+    .consultation-frame.is-loaded { min-height: 760px; border: 1px solid var(--c-outline-variant); background: var(--c-white); }
     .consultation-frame iframe { display: block; width: 100%; height: 100%; min-height: 760px; border: 0; }
   </style>
 </head>
@@ -227,10 +238,11 @@
             <button class="nav__dropdown-toggle" aria-expanded="false" aria-haspopup="true">Services <span class="nav__caret" aria-hidden="true">&#9662;</span></button>
             <ul class="nav__dropdown">
               <li><a class="nav__dropdown-lead" href="services/index.html">All Services</a></li>
-              <li><a href="services/ai-security.html">AI Management</a></li>
+              <li><a href="services/ai-security.html">AI Deployment &amp; Management</a></li>
               <li><a href="services/cloud-solutions.html">Cloud &amp; Network Solutions</a></li>
-              <li><a href="services/cybersecurity.html">Cybersecurity + Compliance</a></li>
-              <li><a href="services/it-support.html">IT Support Services</a></li>
+              <li><a href="services/cybersecurity.html">Cybersecurity</a></li>
+              <li><a href="services/it-support.html">IT Project Management &amp; Implementation</a></li>
+              <li><a href="services/remote-office-support.html">Remote Office Support</a></li>
               <li><a href="services/it-solutions-small-business.html">Small Business</a></li>
               <li><a href="services/structured-cabling.html">Structured Cabling</a></li>
             </ul>
@@ -266,8 +278,24 @@
           <h2>Let's Talk About Your Technology</h2>
           <p>Pick a time that works for you. We’ll listen first, understand your priorities, and outline practical next steps.</p>
         </div>
-        <div class="consultation-frame">
-          <iframe src="https://outlook.office.com/book/MeetwithMarcelofromCorstar@corstar.com/?ismsaljsauthenabled" width="100%" height="100%" scrolling="yes" style="border:0" title="Schedule a consultation with Corstar Communications"></iframe>
+        <!-- The Microsoft URL is held in data-src, never in an active src, so
+             the browser cannot request it before a consent decision.
+             assets/js/consent.js loads it when Appointment Scheduling is
+             allowed, or when the visitor asks for a one-time load below. -->
+        <div class="consultation-frame consent-embed"
+             data-consent-embed="appointmentScheduling"
+             data-src="https://outlook.office.com/book/MeetwithMarcelofromCorstar@corstar.com/?ismsaljsauthenabled"
+             data-title="Schedule a consultation with Corstar Communications">
+          <div class="consent-embed__placeholder">
+            <p class="consent-embed__title">Schedule a consultation</p>
+            <p class="consent-embed__text">The appointment scheduler is provided by Microsoft and may use cookies. You can load it when you're ready.</p>
+            <div class="consent-embed__actions">
+              <button type="button" class="btn btn--primary" data-consent="load-once">Load Appointment Scheduler</button>
+              <button type="button" class="btn btn--secondary" data-consent="settings">Review Cookie Settings</button>
+            </div>
+            <span class="consent-embed__fallback">Loading it here applies to this visit only and does not change your saved choice. Prefer not to? <a href="mailto:info@corstar.com?subject=Consultation%20request">Email us</a> or call <a href="tel:+19143472700">(914) 347-2700</a> and we'll book a time for you.</span>
+          </div>
+          <div class="consent-embed__frame"></div>
         </div>
       </div>
     </section>
@@ -280,6 +308,40 @@
           <a class="nav__logo" href="index.html"><img src="assets/images/corstar%20logo%20transparent.png" alt="Corstar Communications" width="1472" height="460"></a>
           <p>Westchester County's trusted IT Consulting and IT Managed Service Provider. Delivering reliable and comprehensive support to New York, New Jersey, and Connecticut Businesses since 1970.</p>
           <a class="btn btn--ghost btn--sm footer__remote-support-link" href="remote-support.html">Remote Support</a>
+        </div>
+        <div class="footer__col">
+          <div class="footer__title"><a href="services/index.html">Services</a></div>
+          <ul>
+          <li><a href="services/index.html">All Services</a></li>
+          <li><a href="services/ai-security.html">AI Deployment &amp; Management</a></li>
+          <li><a href="services/backup-data-recovery.html">Backup Management</a></li>
+          <li><a href="services/business-continuity.html">Disaster Recovery (BCDR)</a></li>
+          <li><a href="services/cloud-migration.html">Cloud Migration</a></li>
+          <li><a href="services/compliance.html">Compliance</a></li>
+          <li><a href="services/cybersecurity.html">Cybersecurity</a></li>
+          <li><a href="services/data-compliance.html">Data Compliance</a></li>
+          <li><a href="services/it-support.html">IT Project Management</a></li>
+          <li><a href="services/managed-it-services.html">Managed IT Services</a></li>
+          <li><a href="services/network-security.html">Network Assesments</a></li>
+          <li><a href="services/remote-office-support.html">Remote Office Support</a></li>
+          <li><a href="services/it-solutions-small-business.html">Small Business IT</a></li>
+          <li><a href="services/structured-cabling.html">Structured Cabling</a></li>
+          </ul>
+        </div>
+        <div class="footer__col">
+          <div class="footer__title"><a href="industries/index.html">Industries</a></div>
+          <ul>
+          <li><a href="industries/index.html">All Industries</a></li>
+          <li><a href="industries/construction-firms.html">Architecture + Construction</a></li>
+          <li><a href="industries/family-offices.html">Family Offices</a></li>
+          <li><a href="industries/financial-services.html">Financial Services</a></li>
+          <li><a href="industries/healthcare.html">Healthcare</a></li>
+          <li><a href="industries/insurance.html">Insurance</a></li>
+          <li><a href="industries/legal.html">Legal</a></li>
+          <li><a href="industries/owner-operator-businesses.html">Owner Operator Businesses</a></li>
+          <li><a href="industries/professional-services.html">Professional Services</a></li>
+          <li><a href="industries/real-estate.html">Real Estate</a></li>
+          </ul>
         </div>
         <div class="footer__col">
           <div class="footer__title">Contact</div>
@@ -301,7 +363,9 @@
       </div>
       <div class="footer__legal">
         <a href="privacy-policy.html">Privacy Policy</a>
+        <a href="cookie-policy.html">Cookie Policy</a>
         <a href="terms-of-service.html">Terms of Service</a>
+        <button type="button" class="footer__legal-btn" data-consent-settings hidden>Cookie Settings</button>
       </div>
       <div class="footer__bottom">
         <p>&copy; 2026 Corstar Communications. All rights reserved.</p>
@@ -310,9 +374,11 @@
     </div>
   </footer>
 
-  <script src="assets/js/schema.js?v=20260729b" defer></script>
-  <script src="assets/js/main.js?v=20260729b" defer></script>
-  <script src="assets/js/animations.js?v=20260729b" defer></script>
-  <script src="assets/js/microinteractions.js?v=20260729b" defer></script>
+  <script src="assets/js/schema.js?v=20260729e" defer></script>
+  <script src="assets/js/main.js?v=20260729f" defer></script>
+  <script src="assets/js/animations.js?v=20260729e" defer></script>
+  <script src="assets/js/microinteractions.js?v=20260729e" defer></script>
+  <script src="assets/js/consent.js?v=20260729e" defer></script>
+
 </body>
 </html>
