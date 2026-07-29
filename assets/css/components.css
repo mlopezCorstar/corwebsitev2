@@ -581,6 +581,13 @@
 .card__link::after { content: '→'; }
 .card:hover .card__link { gap: var(--sp-4); }
 
+.services-by-industry {
+  margin-top: var(--sp-8);
+}
+@media (max-width: 800px) {
+  .services-by-industry { margin-top: var(--sp-4); }
+}
+
 
 /* ══════════════════════════════════════════
    TESTIMONIALS — glass cards on dark band
