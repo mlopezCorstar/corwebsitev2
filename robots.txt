@@ -18,6 +18,12 @@ Allow: /
 User-agent: ChatGPT-User
 Allow: /
 
+User-agent: Claude-User
+Allow: /
+
+User-agent: Claude-SearchBot
+Allow: /
+
 User-agent: PerplexityBot
 Allow: /
 
@@ -25,6 +31,12 @@ Allow: /
 # Disallowed under section 3 of our Terms of Service (/terms-of-service.html),
 # which prohibits use of site content to train or fine-tune AI models.
 User-agent: GPTBot
+Disallow: /
+
+User-agent: ClaudeBot
+Disallow: /
+
+User-agent: anthropic-ai
 Disallow: /
 
 User-agent: Google-Extended

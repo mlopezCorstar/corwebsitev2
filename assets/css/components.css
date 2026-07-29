@@ -564,10 +564,20 @@
     -webkit-mask-composite: source-in;
     mask-composite: intersect;
   }
-  /* Rows 1–3: left of the first six service cards. */
+  /* Rows 1–3: left of the first six service cards. Sits in the left rail
+     with the cards to its right, so the fade flips to dissolve toward the
+     right edge instead of the left. */
   .services-layout__media--a {
     grid-column: 1;
     grid-row: 1 / span 3;
+    -webkit-mask-image:
+      linear-gradient(to left, transparent 0%, var(--c-gray-900) 26%),
+      linear-gradient(to bottom, transparent 0%, var(--c-gray-900) 9%,
+                      var(--c-gray-900) 91%, transparent 100%);
+    mask-image:
+      linear-gradient(to left, transparent 0%, var(--c-gray-900) 26%),
+      linear-gradient(to bottom, transparent 0%, var(--c-gray-900) 9%,
+                      var(--c-gray-900) 91%, transparent 100%);
   }
   /* Rows 5–7: right of the final six service cards. */
   .services-layout__media--b { grid-row: 5 / span 3; }
@@ -583,9 +593,9 @@
 /* ══════════════════════════════════════════
    BADGE STRIP — certifications & partner marks
 ══════════════════════════════════════════ */
-/* The Women-Owned mark is the primary affiliation. The partner mark beside it
-   stays secondary, and the band remains close in height to the statistics
-   strip above it. */
+/* The center Women-Owned mark is the primary affiliation. The surrounding
+   partner marks stay secondary, held off it by a hairline on each side, and the
+   band remains close in height to the statistics strip above it. */
 .badge-strip {
   background: var(--c-surface);
   padding-block: var(--sp-10);
@@ -596,41 +606,59 @@
   flex-wrap: nowrap;
   align-items: center;
   justify-content: center;
-  gap: var(--sp-6) clamp(var(--sp-6), 4vw, var(--sp-12));
+  gap: var(--sp-6) clamp(var(--sp-5), 2.5vw, var(--sp-8));
 }
+/* Height drives each mark and width follows its own ratio, so no box is wider
+   than the art inside it. Fixed widths letterboxed each logo by a different
+   amount, which threw the hairlines off-centre. max-width still reins them in
+   as the strip narrows. */
 .badge-strip__logo {
-  width: min(30vw, 340px);
+  width: auto;
+  max-width: min(30vw, 340px);
   height: 54px;
   object-fit: contain;
   display: block;
   flex: none;
 }
 .badge-strip__logo--featured {
-  width: min(22vw, 230px);
+  max-width: min(22vw, 230px);
   height: 80px;
   filter: drop-shadow(0 8px 14px rgba(var(--c-royal-rgb), 0.2));
 }
+/* 22px keeps this very wide, flat lockup at the ~220px it already rendered. */
 .badge-strip__logo--compact {
-  width: min(20vw, 220px);
-  height: 34px;
+  max-width: min(24vw, 240px);
+  height: 22px;
+}
+/* Kept shorter than the mark it flanks so it reads as a tick between logos
+   rather than a full column rule. */
+.badge-strip__rule {
+  width: 1px;
+  height: 48px;
+  flex: none;
+  background: var(--c-outline-variant);
 }
 @media (max-width: 700px) {
   .badge-strip__inner {
     display: grid;
-    grid-template-columns: minmax(112px, 1.25fr) minmax(0, 1fr);
+    grid-template-columns: minmax(0, 1fr) auto minmax(112px, 1.25fr) auto minmax(0, 1fr);
     gap: var(--sp-3);
   }
+  /* The grid columns set the proportions here, so each mark fills its own
+     column and max-width must not fight it. */
   .badge-strip__logo {
     width: 100%;
+    max-width: 100%;
     height: 40px;
   }
   .badge-strip__logo--featured {
-    width: 100%;
     height: 64px;
   }
   .badge-strip__logo--compact {
-    width: 100%;
     height: 26px;
+  }
+  .badge-strip__rule {
+    height: 32px;
   }
 }
 
