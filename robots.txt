@@ -1,10 +1,65 @@
 # robots.txt for Corstar Communications
-# Allow all reputable crawlers full access
+# https://mlopezcorstar.github.io/corwebsitev2/
+
+# ── Search engines: full access ──
 User-agent: *
 Allow: /
 
-# Block the custom 404 page from being indexed as content
+# Redirect stubs and the error page carry no content of their own.
 Disallow: /404.html
+Disallow: /ai-security.html
+Disallow: /ai-security/
+Disallow: /consultation/
 
-# Point crawlers to the sitemap
+# ── AI assistants that read pages to answer and cite ──
+# Explicitly welcome. See /llms.txt for a curated map of the site.
+User-agent: OAI-SearchBot
+Allow: /
+
+User-agent: ChatGPT-User
+Allow: /
+
+User-agent: Claude-User
+Allow: /
+
+User-agent: Claude-SearchBot
+Allow: /
+
+User-agent: PerplexityBot
+Allow: /
+
+# ── Crawlers that collect content for model training ──
+# Disallowed under section 3 of our Terms of Service (/terms-of-service.html),
+# which prohibits use of site content to train or fine-tune AI models.
+User-agent: GPTBot
+Disallow: /
+
+User-agent: ClaudeBot
+Disallow: /
+
+User-agent: anthropic-ai
+Disallow: /
+
+User-agent: Google-Extended
+Disallow: /
+
+User-agent: Applebot-Extended
+Disallow: /
+
+User-agent: Meta-ExternalAgent
+Disallow: /
+
+User-agent: FacebookBot
+Disallow: /
+
+User-agent: CCBot
+Disallow: /
+
+User-agent: Bytespider
+Disallow: /
+
+User-agent: Omgilibot
+Disallow: /
+
+# ── Sitemap ──
 Sitemap: https://mlopezcorstar.github.io/corwebsitev2/sitemap.xml

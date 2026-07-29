@@ -28,6 +28,15 @@
   background: var(--c-royal);
   color: var(--c-white);
 }
+/* Closes the gap above a section without touching the rhythm below it. */
+.section--tight-top {
+  padding-top: calc(var(--section-pad) * 0.5);
+}
+/* Hairline between two sections that share a background and would otherwise
+   read as one block. */
+.section--divider-top {
+  border-top: 1px solid var(--c-outline-variant);
+}
 
 /* ── Grid ── */
 .grid {
@@ -79,6 +88,9 @@
 /* ── Text alignment ── */
 .text-center { text-align: center; }
 .text-left   { text-align: left; }
+/* `p` carries a 68ch measure, so a centred paragraph needs auto side margins —
+   without them the text is centred inside a box that still sits flush left. */
+.text-center p { margin-inline: auto; }
 
 /* ── Spacing helpers ── */
 .mt-4  { margin-top: var(--sp-4); }

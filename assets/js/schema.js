@@ -101,34 +101,60 @@
     };
   }
 
+  /* Pages now ship a static JSON-LD @graph in <head> — see gen_schema.py's
+     output — which covers Organization, LocalBusiness, WebSite, WebPage,
+     BreadcrumbList and Service. Injecting those again from here would hand
+     crawlers two copies of the same entities, so this only fills the gap on a
+     page that has no static graph. */
+  function hasStaticGraph() {
+    return [...document.querySelectorAll('script[type="application/ld+json"]')]
+      .some((s) => s.textContent.includes('"@graph"'));
+  }
+
   /* ── Dispatch based on data attributes on <body> ── */
   document.addEventListener('DOMContentLoaded', () => {
     const body = document.body;
     const page = body.dataset.page || 'default';
 
-    // Always inject LocalBusiness
-    inject(localBusiness);
+    if (!hasStaticGraph()) {
+      inject(localBusiness);
 
-    if (page === 'home') {
-      inject(organizationSchema());
-      inject(websiteSchema());
+      if (page === 'home') {
+        inject(organizationSchema());
+        inject(websiteSchema());
+      }
+
+      if (page === 'service') {
+        const name = body.dataset.serviceName || '';
+        const desc = body.dataset.serviceDesc || '';
+        const url  = window.location.href;
+        if (name) inject(serviceSchema(name, desc, url));
+      }
     }
 
-    if (page === 'service') {
-      const name = body.dataset.serviceName || '';
-      const desc = body.dataset.serviceDesc || '';
-      const url  = window.location.href;
-      if (name) inject(serviceSchema(name, desc, url));
-    }
-
-    // FAQ schema built from DOM
-    const accordion = document.querySelector('.accordion[data-schema="faq"]');
-    if (accordion) {
+    /* FAQ schema built from the DOM. Pages group their questions into several
+       accordions (faq.html runs one per category), so every marked accordion
+       contributes to a single FAQPage — reading only the first would publish a
+       fraction of the page's questions. */
+    const accordions = document.querySelectorAll('.accordion[data-schema="faq"]');
+    if (accordions.length) {
       const items = [];
-      accordion.querySelectorAll('.accordion__item').forEach((item) => {
-        const q = item.querySelector('.accordion__trigger')?.textContent.trim();
-        const a = item.querySelector('.accordion__panel')?.textContent.trim();
-        if (q && a) items.push({ q, a });
+      accordions.forEach((accordion) => {
+        accordion.querySelectorAll('.accordion__item').forEach((item) => {
+          const trigger = item.querySelector('.accordion__trigger');
+          const panel   = item.querySelector('.accordion__panel');
+          if (!trigger || !panel) return;
+          // The trigger carries a decorative +/- glyph that is not part of the
+          // question, so read the trigger's text without its icon element.
+          const q = [...trigger.childNodes]
+            .filter((n) => !(n.nodeType === 1 && n.classList.contains('accordion__icon')))
+            .map((n) => n.textContent)
+            .join(' ')
+            .replace(/\s+/g, ' ')
+            .trim();
+          const a = panel.textContent.replace(/\s+/g, ' ').trim();
+          if (q && a) items.push({ q, a });
+        });
       });
       if (items.length) inject(faqSchema(items));
     }

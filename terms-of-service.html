@@ -7,16 +7,9 @@
 
   <!-- Google tag (gtag.js) -->
   <script async src="https://www.googletagmanager.com/gtag/js?id=G-KRHBHXTBMJ"></script>
-  <script>
-    window.dataLayer = window.dataLayer || [];
-    function gtag(){dataLayer.push(arguments);}
-    gtag('js', new Date());
-
-    gtag('config', 'G-KRHBHXTBMJ');
-  </script>
-  <title>Contact Corstar | Corstar</title>
-  <meta name="description" content="Contact Corstar Communications for managed IT services, IT support, and cybersecurity in Westchester County, NY.">
-  <link rel="canonical" href="https://mlopezcorstar.github.io/corwebsitev2/contact.html">
+  <title>Terms of Service | Corstar Communications</title>
+  <meta name="description" content="The terms governing use of corstar.com, including permitted use, prohibited uses, intellectual property, and limitation of liability.">
+  <link rel="canonical" href="https://mlopezcorstar.github.io/corwebsitev2/terms-of-service.html">
   <!-- JSON-LD structured data (static; schema.js adds FAQ markup from the DOM) -->
   <script type="application/ld+json">
 {
@@ -153,7 +146,7 @@
     },
     {
       "@type": "BreadcrumbList",
-      "@id": "https://mlopezcorstar.github.io/corwebsitev2/contact.html#breadcrumb",
+      "@id": "https://mlopezcorstar.github.io/corwebsitev2/terms-of-service.html#breadcrumb",
       "itemListElement": [
         {
           "@type": "ListItem",
@@ -164,20 +157,20 @@
         {
           "@type": "ListItem",
           "position": 2,
-          "name": "Contact Corstar",
-          "item": "https://mlopezcorstar.github.io/corwebsitev2/contact.html"
+          "name": "Terms of Service",
+          "item": "https://mlopezcorstar.github.io/corwebsitev2/terms-of-service.html"
         }
       ]
     },
     {
       "@type": [
         "WebPage",
-        "ContactPage"
+        "AboutPage"
       ],
-      "@id": "https://mlopezcorstar.github.io/corwebsitev2/contact.html#webpage",
-      "url": "https://mlopezcorstar.github.io/corwebsitev2/contact.html",
-      "name": "Contact Corstar | Corstar",
-      "description": "Contact Corstar Communications for managed IT services, IT support, and cybersecurity in Westchester County, NY.",
+      "@id": "https://mlopezcorstar.github.io/corwebsitev2/terms-of-service.html#webpage",
+      "url": "https://mlopezcorstar.github.io/corwebsitev2/terms-of-service.html",
+      "name": "Terms of Service | Corstar Communications",
+      "description": "The terms governing use of corstar.com, including permitted use, prohibited uses, intellectual property, and limitation of liability.",
       "isPartOf": {
         "@id": "https://mlopezcorstar.github.io/corwebsitev2/#website"
       },
@@ -186,42 +179,26 @@
       },
       "inLanguage": "en-US",
       "breadcrumb": {
-        "@id": "https://mlopezcorstar.github.io/corwebsitev2/contact.html#breadcrumb"
+        "@id": "https://mlopezcorstar.github.io/corwebsitev2/terms-of-service.html#breadcrumb"
       }
     }
   ]
 }
   </script>
+
+  <!-- Fonts -->
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;600;700&family=IBM+Plex+Sans:wght@400;500;600;700&family=IBM+Plex+Mono:wght@400;600&display=swap" rel="stylesheet">
+
+  <!-- CSS -->
   <link rel="stylesheet" href="assets/css/variables.css?v=20260729b">
   <link rel="stylesheet" href="assets/css/base.css?v=20260729b">
   <link rel="stylesheet" href="assets/css/layout.css?v=20260729b">
   <link rel="stylesheet" href="assets/css/components.css?v=20260729b">
   <link rel="stylesheet" href="assets/css/animations.css?v=20260729b">
-  <style>
-    .contact-layout { display: grid; grid-template-columns: 3fr 2fr; gap: var(--sp-16); align-items: start; }
-    @media (max-width: 800px) { .contact-layout { grid-template-columns: 1fr; } }
-    .nap-block { background: var(--c-forest); color: var(--c-white); padding: var(--sp-8); border: 2px solid var(--c-royal); border-radius: var(--radius); }
-    .nap-block h3 { color: var(--c-white); margin-bottom: var(--sp-6); }
-    .nap-item { display: flex; gap: var(--sp-3); align-items: flex-start; margin-bottom: var(--sp-5); }
-    .nap-item__icon { flex-shrink: 0; margin-top: 2px; color: var(--c-steel-light); }
-    .nap-item__label { font-family: var(--font-mono); font-size: var(--text-xs); color: var(--c-steel); letter-spacing: 0.1em; text-transform: uppercase; display: block; margin-bottom: var(--sp-1); }
-    .nap-item a, .nap-item p { color: var(--c-white); text-decoration: none; font-size: var(--text-base); line-height: 1.5; margin: 0; }
-    .nap-item a:hover { color: var(--c-steel-light); }
-    .response-pledge { background: var(--c-off-white); border-left: 4px solid var(--c-royal); padding: var(--sp-4) var(--sp-6); margin-top: var(--sp-6); font-size: var(--text-sm); color: var(--c-gray-700); }
-    .contact-promise { font-size: var(--text-lg); line-height: 1.6; }
-    .contact-why { margin-top: var(--sp-6); }
-    .contact-why h3 { margin-bottom: var(--sp-4); }
-    .contact-why ul { margin: 0; padding-left: var(--sp-6); color: var(--c-gray-600); }
-    .contact-why li { margin-bottom: var(--sp-2); }
-    .page-hero__tagline { font-family: var(--font-head); font-size: var(--text-2xl) !important; font-weight: 600; color: var(--c-royal) !important; margin-bottom: var(--sp-2) !important; }
-    .contact-steps { padding-left: 1.4rem; margin: var(--sp-6) 0; color: var(--c-gray-500); }
-    .contact-steps li { margin-bottom: var(--sp-3); padding-left: var(--sp-2); }
-  </style>
 </head>
-<body>
+<body data-page="legal">
 
   <a class="skip-link" href="#main-content">Skip to main content</a>
 
@@ -284,122 +261,54 @@
 
     <section class="page-hero">
       <div class="container">
-        <h1>Contact Corstar</h1>
-        <p class="page-hero__tagline">Ready to transform your IT infrastructure? Let's Connect</p>
+        <p class="breadcrumb"><a href="index.html">Home</a> / Terms of Service</p>
+        <h1>Terms of Service</h1>
+        <p class="legal-prose__updated">Last updated: July 29, 2026</p>
       </div>
     </section>
 
     <section class="section">
       <div class="container">
-        <div class="contact-layout">
+        <div class="legal-prose">
+          <p>Welcome to Corstar.com. These Terms of Service ("Terms") govern your use of the website operated by Corstar Communications LLC ("we," "us," or "our"). By accessing or using our website, you agree to be bound by these Terms.</p>
 
-          <!-- Contact Form -->
-          <div>
-            <span class="section-label">Send Us a Message</span>
-            <h2>Schedule An IT Review</h2>
-            <ol class="contact-steps">
-              <li>Fill in our quick form to schedule a call with us.</li>
-              <li>We'll take the time to listen and understand your situation.</li>
-              <li>If we're a good fit to help, we'll let you know the general costs and next steps.</li>
-            </ol>
-            <form class="contact-form mt-8" action="https://api.web3forms.com/submit" method="POST" novalidate>
-              <input type="hidden" name="access_key" value="e22cca9f-3a78-485e-bae7-54c13d8b4e90">
-              <input type="hidden" name="subject" value="New contact form submission from Corstar website">
-              <input type="hidden" name="from_name" value="Corstar website">
-              <input type="checkbox" name="botcheck" tabindex="-1" aria-hidden="true" style="display:none;">
-              <div class="grid grid--2" style="gap: var(--sp-4);">
-                <div class="form__group">
-                  <label class="form__label" for="name">Full Name *</label>
-                  <input class="form__input" type="text" id="name" name="name" required autocomplete="name" data-error-msg="Please enter your name.">
-                  <span class="form__error" role="alert"></span>
-                </div>
-                <div class="form__group">
-                  <label class="form__label" for="company">Company *</label>
-                  <input class="form__input" type="text" id="company" name="company" required data-error-msg="Please enter your company name.">
-                  <span class="form__error" role="alert"></span>
-                </div>
-              </div>
-              <div class="grid grid--2" style="gap: var(--sp-4);">
-                <div class="form__group">
-                  <label class="form__label" for="email">Work Email *</label>
-                  <input class="form__input" type="email" id="email" name="email" required autocomplete="email" data-error-msg="Please enter a valid email address.">
-                  <span class="form__error" role="alert"></span>
-                </div>
-                <div class="form__group">
-                  <label class="form__label" for="phone">Phone</label>
-                  <input class="form__input" type="tel" id="phone" name="phone" autocomplete="tel">
-                </div>
-              </div>
-              <div class="form__group">
-                <label class="form__label" for="employees">Number of Employees</label>
-                <select class="form__input" id="employees" name="employees">
-                  <option value="">Select a range</option>
-                  <option value="1-10">1–10</option>
-                  <option value="11-25">11–25</option>
-                  <option value="26-50">26–50</option>
-                  <option value="51-100">51–100</option>
-                  <option value="100+">100+</option>
-                </select>
-              </div>
-              <div class="form__group">
-                <label class="form__label" for="message">What brings you here?</label>
-                <textarea class="form__textarea" id="message" name="message" rows="5" placeholder="Tell us about your current IT setup, any challenges you're facing, or what you're looking for."></textarea>
-                <span class="form__error" role="alert"></span>
-              </div>
-              <button type="submit" class="btn btn--primary btn--lg" style="width:100%;">Send Message</button>
-              <p class="form__status" role="status" aria-live="polite" hidden></p>
-            </form>
-          </div>
+          <h2>1. Acceptance of Terms</h2>
+          <p>By using this website, you confirm that you have read, understood, and agreed to these Terms. If you do not agree, please do not use our services.</p>
 
-          <!-- NAP + Info -->
-          <div>
-            <div class="nap-block">
-              <h3>Contact Information</h3>
-              <div class="nap-item">
-                <span class="nap-item__icon" aria-hidden="true"><svg class="icon" viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path d="M12 21s7-6.2 7-11a7 7 0 1 0-14 0c0 4.8 7 11 7 11ZM12 13a3 3 0 1 0 0-6 3 3 0 0 0 0 6Z"/></svg></span>
-                <div>
-                  <span class="nap-item__label">Address</span>
-                  <address style="font-style:normal;">
-                    <p>22 Saw Mill River Road, Suite 303<br>Hawthorne, NY 10532</p>
-                  </address>
-                </div>
-              </div>
-              <div class="nap-item">
-                <span class="nap-item__icon" aria-hidden="true"><svg class="icon" viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path d="M6.5 3h-2A1.5 1.5 0 0 0 3 4.6C3 13 11 21 19.4 21a1.5 1.5 0 0 0 1.6-1.5v-2a1 1 0 0 0-.8-1l-3.4-.7a1 1 0 0 0-1 .4l-1 1.4a13 13 0 0 1-5.4-5.4l1.4-1a1 1 0 0 0 .4-1l-.7-3.4a1 1 0 0 0-1-.8Z"/></svg></span>
-                <div>
-                  <span class="nap-item__label">Phone</span>
-                  <a href="tel:+19143472700">(914) 347-2700</a>
-                </div>
-              </div>
-              <div class="nap-item">
-                <span class="nap-item__icon" aria-hidden="true"><svg class="icon" viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path d="M3 6h18v12H3z"/><path d="m3 7 9 6 9-6"/></svg></span>
-                <div>
-                  <span class="nap-item__label">Email</span>
-                  <a href="mailto:info@corstar.com?subject=website%20inquiry">info@corstar.com</a>
-                </div>
-              </div>
-              <div class="nap-item">
-                <span class="nap-item__icon" aria-hidden="true"><svg class="icon" viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path d="M12 21a9 9 0 1 0 0-18 9 9 0 0 0 0 18ZM12 7v5l3.5 2"/></svg></span>
-                <div>
-                  <span class="nap-item__label">Business Hours</span>
-                  <p>Monday–Friday: 8am–6pm<br>Emergency support: 24/7 for Premium clients</p>
-                </div>
-              </div>
-            </div>
-            <div class="response-pledge contact-promise">
-              <strong>Our Promise:</strong> We respond to all inquiries within one business day. Urgent issues are escalated immediately. When you call during business hours, a real engineer picks up.
-            </div>
-            <div class="card contact-why">
-              <h3>Why Choose Corstar?</h3>
-              <ul>
-                <li>Response within 1 business hour</li>
-                <li>Transparent Billing</li>
-                <li>Seamless Communication</li>
-                <li>Serving NY, NJ, and CT businesses</li>
-              </ul>
-            </div>
-          </div>
+          <h2>2. Use of the Website</h2>
+          <p>You agree to use the website only for lawful purposes and in a way that does not infringe the rights of, restrict, or inhibit anyone else's use and enjoyment of the website.</p>
+          <p>This website does not require user accounts or registration.</p>
 
+          <h2>3. Prohibited Uses</h2>
+          <p>You are strictly prohibited from using the website or its content for:</p>
+          <ul>
+            <li><strong>Scraping:</strong> Automated or manual extraction of data, text, or images from this website without express written permission.</li>
+            <li><strong>AI Training:</strong> Using any content from this website to train, fine-tune, or develop artificial intelligence models or machine learning algorithms.</li>
+            <li><strong>Spamming:</strong> Using any contact information provided on the website for unauthorized marketing, solicitation, or bulk messaging.</li>
+            <li><strong>Unlawful Activity:</strong> Any purpose that violates local, state, or federal laws.</li>
+          </ul>
+
+          <h2>4. Intellectual Property</h2>
+          <p>All content on this website, including text, graphics, logos, and images, is the property of Corstar Communications LLC or its content suppliers and is protected by copyright and other intellectual property laws.</p>
+
+          <h2>5. Limitation of Liability</h2>
+          <p>Corstar Communications LLC provides this website on an "as-is" basis and will not be liable for any direct, indirect, incidental, or consequential damages resulting from your use of, or inability to use, the website or its content.</p>
+
+          <h2>6. Governing Law</h2>
+          <p>These Terms shall be governed by and construed in accordance with the laws of the State of New York, without regard to its conflict of law provisions.</p>
+
+          <h2>7. Changes to Terms</h2>
+          <p>We reserve the right to modify these Terms at any time. We will notify users of any changes by updating the "Last Updated" date at the top of this page.</p>
+
+          <h2>8. Contact Us</h2>
+          <p>If you have any questions about these Terms, please contact us at:</p>
+          <address>
+            <strong>Corstar Communications LLC</strong><br>
+            22 Saw Mill River Road, Suite 303<br>
+            Hawthorne, NY 10532<br>
+            <a href="tel:+19143472700">(914) 347-2700</a><br>
+            <a href="mailto:info@corstar.com?subject=Terms%20of%20Service%20inquiry">info@corstar.com</a>
+          </address>
         </div>
       </div>
     </section>
@@ -479,9 +388,11 @@
     </div>
   </footer>
 
+  <!-- JS -->
   <script src="assets/js/schema.js?v=20260729b" defer></script>
   <script src="assets/js/main.js?v=20260729b" defer></script>
   <script src="assets/js/animations.js?v=20260729b" defer></script>
   <script src="assets/js/microinteractions.js?v=20260729b" defer></script>
+
 </body>
 </html>
