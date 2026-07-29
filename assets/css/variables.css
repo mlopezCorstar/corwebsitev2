@@ -73,6 +73,10 @@
   --font-head: 'Space Grotesk', 'Trebuchet MS', sans-serif;
   --font-body: 'IBM Plex Sans', 'Segoe UI', sans-serif;
   --font-mono: 'IBM Plex Mono', 'Courier New', monospace;
+  /* Emoji-first stack for icon glyphs. Without it the glyph is picked up from
+     the body-font fallback chain, which renders some symbols (⚖ 🛡 🖥) in the
+     monochrome text variant on Windows instead of the colour emoji. */
+  --font-emoji: 'Apple Color Emoji', 'Segoe UI Emoji', 'Noto Color Emoji', sans-serif;
 
   /* ── Type scale ── */
   --text-xs:   0.75rem;
@@ -87,6 +91,8 @@
   --text-5xl:  3rem;
   --text-hero: clamp(2.5rem, 6vw, 4rem);
   --text-display: clamp(3rem, 8vw, 5rem);
+  /* Decorative glyph ramp — emoji icon tiles and inline stat figures */
+  --text-glyph-sm: 1.6rem;   /* card + industry-card icon tiles */
   --text-glyph:    2rem;
 
   /* ── Spacing ── */

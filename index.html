@@ -83,6 +83,7 @@
 
     <!-- ══ HERO ══ -->
     <section class="hero" aria-label="Introduction">
+      <img class="hero__media" src="assets/images/home1.jpg" alt="" aria-hidden="true" width="3497" height="5245" fetchpriority="high" decoding="async">
       <div class="container">
         <span class="hero__eyebrow">Westchester County, NY &mdash; Since 1970</span>
         <span class="hero__services">AI &middot; Managed IT &middot; Cybersecurity &middot; Cabling &middot; Project Management</span>
@@ -146,25 +147,25 @@
         </div>
         <div class="grid grid--4 animate-stagger">
           <div class="card animate">
-            <div class="card__icon" aria-hidden="true"><svg class="icon" viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path d="M3 4h18v12H3zM8 20h8M12 16v4"/></svg></div>
+            <div class="card__icon" aria-hidden="true">🖥️</div>
             <h3>Managed IT Services, Support and Project Management</h3>
             <p>Proactive monitoring, maintenance, support, and leadership for your entire IT environment and technology projects.</p>
             <a href="services/managed-it-services.html" class="card__link">Learn more</a>
           </div>
           <div class="card animate">
-            <div class="card__icon" aria-hidden="true"><svg class="icon" viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path d="M5 11h14a1 1 0 0 1 1 1v8a1 1 0 0 1-1 1H5a1 1 0 0 1-1-1v-8a1 1 0 0 1 1-1ZM8 11V7a4 4 0 1 1 8 0v4"/></svg></div>
-            <h3>Compliance and Cybersecurity</h3>
+            <div class="card__icon" aria-hidden="true">🔒</div>
+            <h3>Cybersecurity &amp; Compliance</h3>
             <p>Multi-layer protection, security testing, compliance guidance, and threat detection for your business.</p>
             <a href="services/cybersecurity.html" class="card__link">Learn more</a>
           </div>
           <div class="card animate">
-            <div class="card__icon" aria-hidden="true"><svg class="icon" viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path d="M17.5 19a4.5 4.5 0 0 0 0-9 6 6 0 0 0-11.6 1.5A3.75 3.75 0 0 0 6.5 19Z"/></svg></div>
+            <div class="card__icon" aria-hidden="true">🤖</div>
             <h3>AI Management</h3>
             <p>Practical AI guidance, secure adoption, and ongoing management to help your team work smarter.</p>
             <a href="services/ai-security.html" class="card__link">Learn more</a>
           </div>
           <div class="card animate">
-            <div class="card__icon" aria-hidden="true"><svg class="icon" viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path d="M20.4 4.6a5.5 5.5 0 0 1-7.2 7.2L5.6 19.4a2.2 2.2 0 1 1-3.1-3.1l7.6-7.6a5.5 5.5 0 0 1 7.2-7.2l-3.4 3.4 3.1 3.1z"/></svg></div>
+            <div class="card__icon" aria-hidden="true">🔌</div>
             <h3>Structured Cabling</h3>
             <p>Professional network cabling installations and upgrades for offices, healthcare facilities, and commercial spaces.</p>
             <a href="services/structured-cabling.html" class="card__link">Learn more</a>
@@ -186,23 +187,53 @@
         </div>
         <div class="grid grid--3 animate-stagger">
           <a href="industries/healthcare.html" class="industry-card animate">
-            <div class="industry-card__icon" aria-hidden="true"><svg class="icon" viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path d="M4 21V6a1 1 0 0 1 1-1h14a1 1 0 0 1 1 1v15M3 21h18M12 8v6M9 11h6"/><path d="M9.5 18h5v3h-5z"/></svg></div>
+            <div class="industry-card__icon" aria-hidden="true">🏥</div>
             <h3>Healthcare</h3>
             <p>HIPAA-compliant IT, EHR uptime, and PHI protection for medical practices and healthcare organizations.</p>
           </a>
           <a href="industries/financial-services.html" class="industry-card animate">
-            <div class="industry-card__icon" aria-hidden="true"><svg class="icon" viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path d="M3 8h18v12H3zM9 8V5h6v3M3 13h18"/></svg></div>
+            <div class="industry-card__icon" aria-hidden="true">🏦</div>
             <h3>Financial Services</h3>
             <p>Secure, resilient technology and compliance-aware systems for financial services organizations.</p>
           </a>
           <a href="industries/professional-services.html" class="industry-card animate">
-            <div class="industry-card__icon" aria-hidden="true"><svg class="icon" viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path d="M4 21V4a1 1 0 0 1 1-1h9a1 1 0 0 1 1 1v17M15 9h4a1 1 0 0 1 1 1v11M3 21h18M8 7h3M8 11h3M8 15h3"/></svg></div>
+            <div class="industry-card__icon" aria-hidden="true">🏢</div>
             <h3>Professional Services</h3>
             <p>Reliable systems, secure collaboration, and responsive IT support for professional service firms.</p>
           </a>
         </div>
         <div class="text-center mt-8">
           <a href="industries/index.html" class="btn btn--secondary">View All Industries</a>
+        </div>
+      </div>
+    </section>
+
+    <!-- ══ STRUCTURED CABLING ══ -->
+    <section class="section section--dark" aria-labelledby="cabling-heading">
+      <div class="container">
+        <div class="section-header text-center">
+          <h2 id="cabling-heading">Structured Cabling<span class="section-header__sub">New offices and old office renovations</span></h2>
+          <p>Expert design and installation of high-performance network infrastructure that supports your current needs and adapts to tomorrow's demands</p>
+        </div>
+        <div class="grid grid--3 animate-stagger">
+          <div class="card card--dark animate">
+            <div class="card__icon" aria-hidden="true">📶</div>
+            <h3>Increase Speed and Coverage</h3>
+            <p>Cat6a and fiber installations for maximum speed to new Wireless Equipment</p>
+          </div>
+          <div class="card card--dark animate">
+            <div class="card__icon" aria-hidden="true">🔮</div>
+            <h3>Future-Proof</h3>
+            <p>Infrastructure designed to scale with your growth</p>
+          </div>
+          <div class="card card--dark animate">
+            <div class="card__icon" aria-hidden="true">⏱️</div>
+            <h3>Reliable Performance</h3>
+            <p>Minimal downtime with planned and professional installation</p>
+          </div>
+        </div>
+        <div class="text-center mt-8">
+          <a href="contact.html" class="btn btn--ghost btn--lg">Request a Cabling Quote</a>
         </div>
       </div>
     </section>
@@ -253,8 +284,8 @@
     <section class="section section--alt" aria-labelledby="connect-heading">
       <div class="container">
         <div class="section-header text-center">
-          <h2 id="connect-heading">Let's Connect</h2>
-          <p>Ready to transform your IT infrastructure? Get in touch with our team</p>
+          <h2 id="connect-heading">Ready to Enhance Your Business Operations?</h2>
+          <p>Talk to a Corstar engineer TODAY.<br>No cost. No commitment.</p>
         </div>
         <div class="connect-card animate">
           <div class="connect-card__info">
@@ -334,19 +365,6 @@
             </form>
             <p class="connect-card__note">We respond within one business hour. Your information is never shared.</p>
           </div>
-        </div>
-      </div>
-    </section>
-
-    <!-- ══ CTA BAND ══ -->
-    <section class="cta-band" aria-labelledby="cta-heading">
-      <div class="container">
-        <h2 id="cta-heading">Ready to Enhance Your Business Operations?</h2>
-        <p>Talk to a Corstar engineer TODAY.<br>No cost. No commitment.</p>
-        <div class="cta-band__actions">
-          <a href="contact.html" class="btn btn--ghost btn--lg">SCHEDULE AN IT REVIEW</a>
-          <a href="tel:+19143472700" class="btn btn--ghost btn--lg">Call (914) 347-2700</a>
-          <a href="mailto:info@corstar.com?subject=website%20inquiry" class="btn btn--ghost btn--lg">Email info@corstar.com</a>
         </div>
       </div>
     </section>

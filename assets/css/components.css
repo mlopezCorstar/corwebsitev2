@@ -440,6 +440,62 @@
 .hero__phone-value { display: inline-flex; align-items: center; gap: var(--sp-2); }
 .hero__phone:hover { background: var(--on-light-royal); color: var(--c-royal); }
 
+/* Hero photo — sits behind the copy on the right. Held down by opacity and
+   masked away toward the headline so no line of text lands on busy pixels.
+   `.hero .container` carries z-index:1, which keeps the copy on top. */
+.hero__media {
+  position: absolute;
+  inset-block: 0;
+  right: 0;
+  width: min(46%, 620px);
+  height: 100%;
+  object-fit: cover;
+  opacity: 0.26;
+  pointer-events: none;
+  -webkit-user-select: none;
+  user-select: none;
+  -webkit-mask-image: linear-gradient(to left, var(--c-gray-900) 25%, transparent 95%);
+  mask-image: linear-gradient(to left, var(--c-gray-900) 25%, transparent 95%);
+}
+@media (max-width: 900px) {
+  .hero__media { display: none; }
+}
+
+
+/* ══════════════════════════════════════════
+   MEDIA — inline photography
+══════════════════════════════════════════ */
+.media-block {
+  display: block;
+  width: 100%;
+  object-fit: cover;
+  border: 1px solid var(--c-outline-variant);
+  border-radius: var(--radius);
+}
+.media-block--wide { aspect-ratio: 16 / 10; }
+
+/* Services index: the card list and a standing photo share the row. The photo
+   sticks so it stays in view down a long list. */
+.services-layout {
+  display: grid;
+  gap: var(--sp-12);
+}
+.services-layout__media { aspect-ratio: 16 / 9; }
+@media (min-width: 1001px) {
+  .services-layout {
+    grid-template-columns: minmax(0, 1fr) clamp(240px, 24vw, 340px);
+    align-items: start;
+  }
+  /* Two-up in the narrowed rail keeps each card the same width it had at
+     three-up across the full container. */
+  .services-layout .grid--3 { grid-template-columns: repeat(2, 1fr); }
+  .services-layout__media {
+    position: sticky;
+    top: var(--sp-24);
+    aspect-ratio: 3 / 4;
+  }
+}
+
 
 /* ══════════════════════════════════════════
    BADGE STRIP — certifications & partner marks
@@ -521,6 +577,17 @@
   font-size: var(--text-4xl);
   font-weight: 700;
 }
+/* Second title line that belongs to the h2 but reads a step quieter — same
+   role as `.hero__headline em`, so it breaks to its own line. */
+.section-header__sub {
+  display: block;
+  font-size: var(--text-2xl);
+  font-weight: 600;
+  color: var(--c-gray-500);
+  margin-top: var(--sp-2);
+}
+.section--dark .section-header__sub,
+.section--royal .section-header__sub { color: var(--c-steel-light); }
 .section-header p  { color: var(--c-gray-500); font-size: var(--text-xl); }
 .section--dark .section-header p { color: var(--c-gray-300); }
 
@@ -576,6 +643,8 @@
   margin-right: 0.15em;
 }
 
+/* The glyph is centred by the flex box rather than by line-height, so tall
+   emoji (🏗️) and short ones (💾) sit on the same optical centre. */
 .card__icon {
   width: var(--icon-tile);
   height: var(--icon-tile);
@@ -585,6 +654,9 @@
   display: flex;
   align-items: center;
   justify-content: center;
+  font-family: var(--font-emoji);
+  font-size: var(--text-glyph-sm);
+  line-height: 1;
   margin-bottom: var(--sp-6);
   flex-shrink: 0;
   transition: transform var(--t-base) var(--ease-out);
@@ -1067,6 +1139,9 @@
   display: flex;
   align-items: center;
   justify-content: center;
+  font-family: var(--font-emoji);
+  font-size: var(--text-glyph-sm);
+  line-height: 1;
   flex-shrink: 0;
   margin-bottom: auto;
   color: var(--c-steel-light);
