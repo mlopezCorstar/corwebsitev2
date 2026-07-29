@@ -519,11 +519,6 @@
   gap: var(--sp-8);
   grid-template-columns: repeat(3, minmax(0, 1fr));
 }
-.services-layout > .card .card__icon {
-  width: calc(var(--icon-tile) * var(--card-scale, 1) * 1.15);
-  height: calc(var(--icon-tile) * var(--card-scale, 1) * 1.15);
-  font-size: calc(var(--text-glyph-sm) * var(--card-scale, 1) * 1.15);
-}
 .services-layout__media {
   grid-column: 1 / -1;
   aspect-ratio: 16 / 9;
@@ -588,26 +583,55 @@
 /* ══════════════════════════════════════════
    BADGE STRIP — certifications & partner marks
 ══════════════════════════════════════════ */
-/* Padding matches `.trust-strip` above it, and the marks are sized so the band
-   lands at least as tall as that one — a thinner strip read as an afterthought
-   hanging off the stats. */
+/* The center Women-Owned mark is the primary affiliation. The surrounding
+   partner marks stay secondary, and the band remains close in height to the
+   statistics strip above it. */
 .badge-strip {
   background: var(--c-surface);
-  padding-block: var(--sp-12);
+  padding-block: var(--sp-10);
   border-bottom: 1px solid var(--c-outline-variant);
 }
 .badge-strip__inner {
   display: flex;
-  flex-wrap: wrap;
+  flex-wrap: nowrap;
   align-items: center;
   justify-content: center;
-  gap: var(--sp-6) clamp(var(--sp-8), 6vw, var(--sp-12));
+  gap: var(--sp-6) clamp(var(--sp-6), 4vw, var(--sp-12));
 }
 .badge-strip__logo {
-  height: clamp(44px, 5.5vw, 64px);
-  width: auto;
-  max-width: 100%;
+  width: min(30vw, 340px);
+  height: 54px;
+  object-fit: contain;
   display: block;
+  flex: none;
+}
+.badge-strip__logo--featured {
+  width: min(22vw, 230px);
+  height: 80px;
+  filter: drop-shadow(0 8px 14px rgba(var(--c-royal-rgb), 0.2));
+}
+.badge-strip__logo--compact {
+  width: min(20vw, 220px);
+  height: 34px;
+}
+@media (max-width: 700px) {
+  .badge-strip__inner {
+    display: grid;
+    grid-template-columns: minmax(0, 1fr) minmax(112px, 1.25fr) minmax(0, 1fr);
+    gap: var(--sp-3);
+  }
+  .badge-strip__logo {
+    width: 100%;
+    height: 40px;
+  }
+  .badge-strip__logo--featured {
+    width: 100%;
+    height: 64px;
+  }
+  .badge-strip__logo--compact {
+    width: 100%;
+    height: 26px;
+  }
 }
 
 
@@ -758,8 +782,8 @@
    itself is centred in the card and sized off `--card-scale`, so it stays in
    proportion wherever the card is scaled down. */
 .card__icon {
-  width: calc(var(--icon-tile) * var(--card-scale, 1));
-  height: calc(var(--icon-tile) * var(--card-scale, 1));
+  width: var(--icon-tile);
+  height: var(--icon-tile);
   background: var(--c-icon-tile);
   color: var(--c-royal);
   border-radius: var(--radius);
@@ -767,7 +791,7 @@
   align-items: center;
   justify-content: center;
   font-family: var(--font-emoji);
-  font-size: calc(var(--text-glyph-sm) * var(--card-scale, 1));
+  font-size: var(--text-glyph-sm);
   line-height: 1;
   margin-block-end: calc(var(--sp-6) * var(--card-scale, 1));
   margin-inline: auto;
@@ -801,6 +825,15 @@
 .card:hover h2 { color: var(--c-royal); }
 .card--dark:hover h3,
 .card--dark:hover h2 { color: var(--c-white); }
+.card__title-link,
+.card__title-link:visited {
+  color: var(--c-gray-900);
+  text-decoration: none;
+}
+.card__title-link:hover {
+  color: var(--c-royal);
+  text-decoration: underline;
+}
 /* Body copy deliberately does not scale — it is the readability floor, and a
    card's height is mostly its copy, so shrinking it makes the box jump a whole
    line rather than tightening smoothly. */
@@ -1226,6 +1259,10 @@
   letter-spacing: -0.02em;
   margin-bottom: var(--sp-4);
 }
+@media (max-width: 480px) {
+  :root { --text-4xl: 1.75rem; }
+  .page-hero h1 { font-size: 1.875rem; }
+}
 .page-hero p {
   font-size: var(--text-xl);
   color: var(--c-gray-500);
@@ -1467,9 +1504,12 @@ body.has-consent-banner {
 
 /* ── Footer settings control ── */
 .footer__legal button.footer__legal-btn {
+  display: inline-flex;
+  align-items: center;
   color: var(--c-gray-300);
   font-family: var(--font-body);
   font-size: var(--text-sm);
+  line-height: 1.4;
   text-decoration: underline;
   text-underline-offset: 3px;
   padding: 0;
@@ -1556,13 +1596,13 @@ body.has-consent-banner {
 }
 .industry-card > * { position: relative; z-index: 1; }
 .industry-card__icon {
-  width: calc(var(--icon-tile) * var(--card-scale, 1));
-  height: calc(var(--icon-tile) * var(--card-scale, 1));
+  width: var(--icon-tile);
+  height: var(--icon-tile);
   display: flex;
   align-items: center;
   justify-content: center;
   font-family: var(--font-emoji);
-  font-size: calc(var(--text-glyph-sm) * var(--card-scale, 1));
+  font-size: var(--text-glyph-sm);
   line-height: 1;
   flex-shrink: 0;
   margin-block-end: auto;
@@ -1590,10 +1630,7 @@ body.has-consent-banner {
   min-height: 230px;
 }
 .home-industries .industry-card__icon {
-  width: var(--icon-tile);
-  height: var(--icon-tile);
   margin-block-end: 0;
-  font-size: var(--text-glyph-sm);
 }
 .home-industries .industry-card h3 {
   margin-top: var(--sp-4);
@@ -1602,13 +1639,6 @@ body.has-consent-banner {
 .industries-grid .industry-card {
   min-height: calc(288px * var(--card-scale, 1));
 }
-.industries-grid .industry-card__icon {
-  width: calc(var(--icon-tile) * var(--card-scale, 1) * 1.2);
-  height: calc(var(--icon-tile) * var(--card-scale, 1) * 1.2);
-  font-size: calc(var(--text-glyph-sm) * var(--card-scale, 1) * 1.2);
-}
-
-
 /* ══════════════════════════════════════════
    FOOTER — dark band
 ══════════════════════════════════════════ */
@@ -1673,16 +1703,22 @@ body.has-consent-banner {
 .footer__legal {
   display: flex;
   flex-wrap: wrap;
+  align-items: center;
   gap: var(--sp-3) var(--sp-6);
   margin-bottom: var(--sp-6);
 }
 .footer__legal a {
+  display: inline-flex;
+  align-items: center;
+  min-height: 44px;
   color: var(--c-gray-300);
-  text-decoration: none;
+  text-decoration: underline;
+  text-underline-offset: 3px;
   font-size: var(--text-sm);
+  line-height: 1.4;
   transition: color var(--t-fast);
 }
-.footer__legal a:hover { color: var(--c-white); text-decoration: underline; }
+.footer__legal a:hover { color: var(--c-white); }
 .footer__bottom {
   border-top: 1px solid var(--on-dark-hairline);
   padding-top: var(--sp-6);

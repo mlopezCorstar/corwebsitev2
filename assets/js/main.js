@@ -94,6 +94,44 @@
     }
   }
 
+  /* ── Typography polish ──
+     Keep the final two words together in running marketing copy so headings,
+     card descriptions, and calls to action do not end with a one-word orphan.
+     The visible wording is unchanged; only the final break opportunity moves. */
+  function preventOrphans() {
+    const elements = document.querySelectorAll(
+      'main h1, main h2, main h3, main h4, main p, main li'
+    );
+
+    elements.forEach((element) => {
+      const textNodes = [];
+      const collectTextNodes = (node) => {
+        node.childNodes.forEach((child) => {
+          if (child.nodeType === Node.TEXT_NODE) textNodes.push(child);
+          if (child.nodeType === Node.ELEMENT_NODE) collectTextNodes(child);
+        });
+      };
+
+      collectTextNodes(element);
+      const finalTextNode = [...textNodes].reverse().find((node) =>
+        /\S+\s+\S+\s*$/.test(node.nodeValue || '')
+      );
+      if (!finalTextNode) return;
+
+      const originalValue = finalTextNode.nodeValue;
+      finalTextNode.nodeValue = finalTextNode.nodeValue.replace(
+        /(\S+)\s+(\S+)(\s*)$/,
+        '$1\u00A0$2$3'
+      );
+
+      // Keep the last two words together when space allows, but never create
+      // horizontal overflow on narrow screens or unusually long headings.
+      if (element.scrollWidth > element.clientWidth + 1) {
+        finalTextNode.nodeValue = originalValue;
+      }
+    });
+  }
+
   /* ── Mobile nav ── */
   function initNav() {
     const toggle = document.querySelector('.nav__toggle');
@@ -234,6 +272,7 @@
 
   document.addEventListener('DOMContentLoaded', () => {
     initSiteMenus();
+    preventOrphans();
     initNav();
     initLazyLoad();
     initCounters();

@@ -337,7 +337,7 @@
         '<p class="consent-dialog__desc" id="consent-dialog-desc">Choose which optional ' +
           'technology this site may use. You can change this at any time from the ' +
           '“Cookie Settings” link in the footer. Read our ' +
-          '<a href="' + url('cookie-policy.html') + '">Cookie Policy</a>.</p>' +
+          '<a href="' + url('privacy-policy.html#cookies') + '">Cookie Policy</a>.</p>' +
         '<div class="consent-category consent-category--locked">' +
           '<div class="consent-category__head">' +
             '<label class="consent-toggle" for="consent-necessary">' +
