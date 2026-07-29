@@ -1557,6 +1557,53 @@ body.has-consent-banner {
   text-transform: uppercase;
   color: var(--c-gray-500);
 }
+/* The cookie inventory has seven columns and cannot narrow indefinitely, so it
+   scrolls inside its own box rather than dragging the page sideways. */
+.table-scroll {
+  overflow-x: auto;
+  margin-block: var(--sp-6);
+  border: 1px solid var(--c-outline-variant);
+  border-radius: var(--radius);
+}
+.legal-table {
+  border-collapse: collapse;
+  width: 100%;
+  min-width: 46rem;
+  font-size: var(--text-sm);
+}
+.legal-table th,
+.legal-table td {
+  text-align: left;
+  vertical-align: top;
+  padding: var(--sp-3) var(--sp-4);
+  border-bottom: 1px solid var(--c-outline-variant);
+}
+.legal-table thead th {
+  font-family: var(--font-head);
+  font-size: var(--text-xs);
+  letter-spacing: 0.06em;
+  text-transform: uppercase;
+  color: var(--c-gray-900);
+  background: var(--c-surface);
+  white-space: nowrap;
+}
+.legal-table tbody tr:last-child td { border-bottom: none; }
+.legal-table td { color: var(--c-gray-700); }
+.legal-table code {
+  font-family: var(--font-mono);
+  font-size: 0.92em;
+  overflow-wrap: anywhere;
+}
+.legal-cta {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: var(--sp-3) var(--sp-4);
+  margin-block: var(--sp-6);
+}
+.legal-cta__note { font-size: var(--text-sm); color: var(--c-gray-500); }
+/* Long URLs and addresses must never widen the page. */
+.legal-prose a { overflow-wrap: anywhere; }
 
 
 /* ══════════════════════════════════════════

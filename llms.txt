@@ -60,4 +60,5 @@
 
 ## Legal
 - [Privacy Policy](https://mlopezcorstar.github.io/corwebsitev2/privacy-policy.html): What we collect, how we use it, cookies and Google Analytics, retention, and your rights.
+- [Cookie Policy](https://mlopezcorstar.github.io/corwebsitev2/cookie-policy.html): Exact inventory of cookies and browser storage, which are necessary versus optional, and how to change or withdraw consent.
 - [Terms of Service](https://mlopezcorstar.github.io/corwebsitev2/terms-of-service.html): Permitted use, prohibited uses (scraping, AI training, spamming), intellectual property, and limitation of liability.
