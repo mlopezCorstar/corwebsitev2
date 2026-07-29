@@ -8,7 +8,7 @@
   <link rel="canonical" href="https://mlopezcorstar.github.io/corwebsitev2/contact.html">
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;600;700&family=IBM+Plex+Sans:wght@400;500&family=IBM+Plex+Mono:wght@400;600&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;600;700&family=IBM+Plex+Sans:wght@400;500;600;700&family=IBM+Plex+Mono:wght@400;600&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="assets/css/variables.css">
   <link rel="stylesheet" href="assets/css/base.css">
   <link rel="stylesheet" href="assets/css/layout.css">
@@ -20,11 +20,16 @@
     .nap-block { background: var(--c-forest); color: var(--c-white); padding: var(--sp-8); border: 2px solid var(--c-royal); border-radius: var(--radius); }
     .nap-block h3 { color: var(--c-white); margin-bottom: var(--sp-6); }
     .nap-item { display: flex; gap: var(--sp-3); align-items: flex-start; margin-bottom: var(--sp-5); }
-    .nap-item__icon { font-size: 1.25rem; flex-shrink: 0; margin-top: 2px; }
+    .nap-item__icon { font-size: var(--text-xl); flex-shrink: 0; margin-top: 2px; }
     .nap-item__label { font-family: var(--font-mono); font-size: var(--text-xs); color: var(--c-steel); letter-spacing: 0.1em; text-transform: uppercase; display: block; margin-bottom: var(--sp-1); }
     .nap-item a, .nap-item p { color: var(--c-white); text-decoration: none; font-size: var(--text-base); line-height: 1.5; margin: 0; }
     .nap-item a:hover { color: var(--c-steel-light); }
     .response-pledge { background: var(--c-off-white); border-left: 4px solid var(--c-royal); padding: var(--sp-4) var(--sp-6); margin-top: var(--sp-6); font-size: var(--text-sm); color: var(--c-gray-700); }
+    .contact-promise { font-size: var(--text-lg); line-height: 1.6; }
+    .contact-why { margin-top: var(--sp-6); }
+    .contact-why h3 { margin-bottom: var(--sp-4); }
+    .contact-why ul { margin: 0; padding-left: var(--sp-6); color: var(--c-gray-600); }
+    .contact-why li { margin-bottom: var(--sp-2); }
     .page-hero__tagline { font-family: var(--font-head); font-size: var(--text-2xl) !important; font-weight: 600; color: var(--c-royal) !important; margin-bottom: var(--sp-2) !important; }
     .contact-steps { padding-left: 1.4rem; margin: var(--sp-6) 0; color: var(--c-gray-500); }
     .contact-steps li { margin-bottom: var(--sp-3); padding-left: var(--sp-2); }
@@ -39,41 +44,45 @@
       <a class="nav__logo" href="index.html"><img src="assets/images/corstar%20logo%20transparent.png" alt="Corstar Communications" width="160" height="40"></a>
       <nav aria-label="Primary navigation">
         <ul class="nav__links" id="nav-menu">
-          <li class="nav__item nav__item--has-dropdown">
-            <button class="nav__dropdown-toggle" aria-expanded="false" aria-haspopup="true">Services <span class="nav__caret" aria-hidden="true">&#9662;</span></button>
-            <ul class="nav__dropdown">
-              <li><a class="nav__dropdown-lead" href="services/index.html">All Services</a></li>
-            <li><a href="services/managed-it-services.html">Managed IT Services</a></li>
-            <li><a href="services/it-support.html">IT Support</a></li>
-            <li><a href="services/network-security.html">Network Security</a></li>
-            <li><a href="services/managed-security.html">Managed Security</a></li>
-            <li><a href="services/cloud-solutions.html">Cloud Solutions</a></li>
-            <li><a href="services/cloud-migration.html">Cloud Migration</a></li>
-            <li><a href="services/microsoft-365-support.html">Microsoft 365 Support</a></li>
-            <li><a href="services/data-compliance.html">Data Compliance</a></li>
-            <li><a href="services/business-continuity.html">Business Continuity</a></li>
-            <li><a href="services/it-solutions-small-business.html">Small Business IT</a></li>
-            <li><a href="services/structured-cabling.html">Structured Cabling</a></li>
-            </ul>
-          </li>
-          <li class="nav__item nav__item--has-dropdown">
+
+
+
+
+
+          <li class="nav__item"><a href="about.html">About</a></li>
+<li class="nav__item nav__item--has-dropdown">
             <button class="nav__dropdown-toggle" aria-expanded="false" aria-haspopup="true">Industries <span class="nav__caret" aria-hidden="true">&#9662;</span></button>
             <ul class="nav__dropdown">
               <li><a class="nav__dropdown-lead" href="industries/index.html">All Industries</a></li>
-            <li><a href="industries/healthcare.html">Healthcare</a></li>
-            <li><a href="industries/legal.html">Legal</a></li>
+              <li><a href="industries/construction-firms.html">Architecture + Construction</a></li>
+              <li><a href="industries/financial-services.html">Financial Services</a></li>
+              <li><a href="industries/healthcare.html">Healthcare</a></li>
+              <li><a href="industries/insurance.html">Insurance + Real Estate</a></li>
+              <li><a href="industries/legal.html">Legal Services</a></li>
+              <li><a href="industries/professional-services.html">Professional Services</a></li>
             </ul>
           </li>
-          <li class="nav__item nav__item--has-dropdown">
+<li class="nav__item nav__item--has-dropdown">
+            <button class="nav__dropdown-toggle" aria-expanded="false" aria-haspopup="true">Services <span class="nav__caret" aria-hidden="true">&#9662;</span></button>
+            <ul class="nav__dropdown">
+              <li><a class="nav__dropdown-lead" href="services/index.html">All Services</a></li>
+              <li><a href="services/ai-security.html">AI Management</a></li>
+              <li><a href="services/cloud-solutions.html">Cloud & Network Solutions</a></li>
+              <li><a href="services/cybersecurity.html">Cybersecurity + Compliance</a></li>
+              <li><a href="services/it-support.html">IT Support Services</a></li>
+              <li><a href="services/it-solutions-small-business.html">Small Business</a></li>
+              <li><a href="services/structured-cabling.html">Structured Cabling</a></li>
+            </ul>
+          </li>
+<li class="nav__item nav__item--has-dropdown">
             <button class="nav__dropdown-toggle" aria-expanded="false" aria-haspopup="true">Resources <span class="nav__caret" aria-hidden="true">&#9662;</span></button>
             <ul class="nav__dropdown">
-              <li><a href="resources/what-is-it-msp.html">What Is an IT MSP?</a></li>
-              <li><a href="faq.html">IT FAQ</a></li>
+              <li><a href="faq.html">IT Freq. Asked Questions</a></li>
+              <li><a href="resources/what-is-it-msp.html">What is an IT MSP</a></li>
+
             </ul>
           </li>
-          <li class="nav__item"><a href="about.html">About</a></li>
-          <li class="nav__item"><a href="contact.html">Contact</a></li>
-          <li class="nav__cta-mobile"><a href="remote-support.html" class="btn btn--primary btn--sm">REMOTE SUPPORT</a></li>
+<li class="nav__cta-mobile"><a href="remote-support.html" class="btn btn--primary btn--sm">REMOTE SUPPORT</a></li>
         </ul>
       </nav>
       <div class="nav__cta">
@@ -191,8 +200,17 @@
                 </div>
               </div>
             </div>
-            <div class="response-pledge">
-              <strong>Our promise:</strong> We respond to all inquiries within one business day. Urgent issues are escalated immediately. When you call during business hours, a real engineer picks up.
+            <div class="response-pledge contact-promise">
+              <strong>Our Promise:</strong> We respond to all inquiries within one business day. Urgent issues are escalated immediately. When you call during business hours, a real engineer picks up.
+            </div>
+            <div class="card contact-why">
+              <h3>Why Choose Corstar?</h3>
+              <ul>
+                <li>Response within 1 business hour</li>
+                <li>Transparent Billing</li>
+                <li>Seamless Communication</li>
+                <li>Serving NY, NJ, and CT businesses</li>
+              </ul>
             </div>
           </div>
 
@@ -212,33 +230,45 @@
         <div class="footer__col">
           <div class="footer__title">Services</div>
           <ul>
-            <li><a href="services/index.html">All Services</a></li>
-            <li><a href="services/managed-it-services.html">Managed IT Services</a></li>
-            <li><a href="services/it-support.html">IT Support</a></li>
-            <li><a href="services/network-security.html">Network Security</a></li>
-            <li><a href="services/managed-security.html">Managed Security</a></li>
-            <li><a href="services/cloud-solutions.html">Cloud Solutions</a></li>
-            <li><a href="services/cloud-migration.html">Cloud Migration</a></li>
-            <li><a href="services/microsoft-365-support.html">Microsoft 365 Support</a></li>
-            <li><a href="services/data-compliance.html">Data Compliance</a></li>
-            <li><a href="services/business-continuity.html">Business Continuity</a></li>
-            <li><a href="services/it-solutions-small-business.html">Small Business IT</a></li>
-            <li><a href="services/structured-cabling.html">Structured Cabling</a></li>
+          <li><a href="services/index.html">All Services</a></li>
+          <li><a href="services/managed-it-services.html">Managed IT Services</a></li>
+          <li><a href="services/it-support.html">IT Support</a></li>
+          <li><a href="services/network-security.html">Network Security</a></li>
+          <li><a href="services/managed-security.html">Managed Security</a></li>
+          <li><a href="services/cloud-solutions.html">Cloud Solutions</a></li>
+          <li><a href="services/cloud-migration.html">Cloud Migration</a></li>
+          <li><a href="services/microsoft-365-support.html">Microsoft 365 Support</a></li>
+          <li><a href="services/data-compliance.html">Data Compliance</a></li>
+          <li><a href="services/business-continuity.html">Business Continuity</a></li>
+          <li><a href="services/it-solutions-small-business.html">Small Business IT</a></li>
+          <li><a href="services/structured-cabling.html">Structured Cabling</a></li>
+          <li><a href="services/ai-security.html">AI Management</a></li>
+          <li><a href="services/compliance.html">Compliance</a></li>
+          <li><a href="services/backup-data-recovery.html">Backup & Data Recovery</a></li>
+          <li><a href="services/penetration-vulnerability-testing.html">Penetration & Vulnerability Testing</a></li>
           </ul>
         </div>
         <div class="footer__col">
           <div class="footer__title">Industries</div>
           <ul>
-            <li><a href="industries/index.html">All Industries</a></li>
-            <li><a href="industries/healthcare.html">Healthcare</a></li>
-            <li><a href="industries/legal.html">Legal</a></li>
+          <li><a href="industries/index.html">All Industries</a></li>
+          <li><a href="industries/construction-firms.html">Architecture + Construction</a></li>
+          <li><a href="industries/financial-services.html">Financial Services</a></li>
+          <li><a href="industries/healthcare.html">Healthcare</a></li>
+          <li><a href="industries/insurance.html">Insurance</a></li>
+          <li><a href="industries/real-estate.html">Real Estate</a></li>
+          <li><a href="industries/legal.html">Legal Services</a></li>
+          <li><a href="industries/professional-services.html">Professional Services</a></li>
+          <li><a href="industries/family-offices.html">Family Offices</a></li>
+          <li><a href="industries/owner-operator-businesses.html">Owner Operator Businesses</a></li>
           </ul>
           <div class="footer__title" style="margin-top: var(--sp-6);">Resources</div>
           <ul>
-            <li><a href="resources/what-is-it-msp.html">What Is an IT MSP?</a></li>
-            <li><a href="faq.html">IT FAQ</a></li>
-            <li><a href="about.html">About Us</a></li>
-            <li><a href="contact.html">Contact</a></li>
+          <li><a href="faq.html">IT Freq. Asked Questions</a></li>
+          <li><a href="resources/what-is-it-msp.html">What is an IT MSP</a></li>
+          <li><a href="about.html">About Us</a></li>
+          <li><a href="contact.html">Contact</a></li>
+          <li><a class="btn btn--ghost btn--sm footer__remote-support-link" href="remote-support.html">Remote Support</a></li>
           </ul>
         </div>
         <div class="footer__col">
