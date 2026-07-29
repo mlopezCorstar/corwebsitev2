@@ -2,9 +2,7 @@
 (function () {
   'use strict';
 
-  const isSubdirectory = window.location.pathname.startsWith('/corwebsitev2');
-  const baseFolder = isSubdirectory ? '/corwebsitev2' : '';
-  const siteUrl = window.location.origin + baseFolder;
+  const siteUrl = window.location.origin;
 
   const NAP = {
     name:      'Corstar Communications',

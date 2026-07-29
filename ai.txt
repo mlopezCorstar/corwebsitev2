@@ -1,17 +1,17 @@
 # ai.txt — AI usage policy for Corstar Communications
-# https://mlopezcorstar.github.io/corwebsitev2/
+# https://corstar.com/
 # Last updated: 2026-07-29
 #
 # This file states how the content of this site may be used by automated
 # systems. It restates, in machine-readable form, section 3 of our Terms of
-# Service: https://mlopezcorstar.github.io/corwebsitev2/terms-of-service.html
+# Service: https://corstar.com/terms-of-service.html
 
 Contact: info@corstar.com
 Owner: Corstar Communications LLC
-Terms: https://mlopezcorstar.github.io/corwebsitev2/terms-of-service.html
-Privacy: https://mlopezcorstar.github.io/corwebsitev2/privacy-policy.html
-Sitemap: https://mlopezcorstar.github.io/corwebsitev2/sitemap.xml
-Site-map-for-llms: https://mlopezcorstar.github.io/corwebsitev2/llms.txt
+Terms: https://corstar.com/terms-of-service.html
+Privacy: https://corstar.com/privacy-policy.html
+Sitemap: https://corstar.com/sitemap.xml
+Site-map-for-llms: https://corstar.com/llms.txt
 
 # ── Permitted ──
 # Retrieving pages to answer a user's question, with attribution and a link
