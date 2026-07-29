@@ -49,6 +49,10 @@
           return order.indexOf(label(a)) - order.indexOf(label(b));
         })
         .forEach((item) => menu.appendChild(item));
+      // Re-appending the links leaves the mobile CTA stranded at the top of the
+      // collapsed menu, so move it back to the end.
+      const mobileCta = menu.querySelector(':scope > .nav__cta-mobile');
+      if (mobileCta) menu.appendChild(mobileCta);
     }
     document.querySelectorAll('.nav__cta .btn, .nav__cta-mobile .btn').forEach((button) => {
       button.textContent = 'REMOTE SUPPORT';

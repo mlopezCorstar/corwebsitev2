@@ -349,11 +349,88 @@
           </div>
         </div>
 
-        <div class="card card--dark card--center connect-card mt-12 animate">
-          <div class="card__icon" aria-hidden="true">🤝</div>
+        <div class="section-header text-center mt-12">
           <h2>Let's Connect</h2>
-          <p>Ready to transform your IT infrastructure? Let's Connect</p>
-          <a href="../contact.html" class="btn btn--ghost btn--lg">Talk To Our Experts</a>
+          <p>Ready to transform your IT infrastructure? Get in touch with our team</p>
+        </div>
+        <div class="connect-card animate">
+          <div class="connect-card__info">
+            <h3>Contact Information</h3>
+            <ul class="connect-card__list">
+              <li class="connect-card__item">
+                <span class="connect-card__item-icon" aria-hidden="true"><svg class="icon" viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path d="M6.5 3h-2A1.5 1.5 0 0 0 3 4.6C3 13 11 21 19.4 21a1.5 1.5 0 0 0 1.6-1.5v-2a1 1 0 0 0-.8-1l-3.4-.7a1 1 0 0 0-1 .4l-1 1.4a13 13 0 0 1-5.4-5.4l1.4-1a1 1 0 0 0 .4-1l-.7-3.4a1 1 0 0 0-1-.8Z"/></svg></span>
+                <div>
+                  <span class="connect-card__item-label">Phone</span>
+                  <a href="tel:+19143472700">(914) 347-2700</a>
+                </div>
+              </li>
+              <li class="connect-card__item">
+                <span class="connect-card__item-icon" aria-hidden="true"><svg class="icon" viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path d="M3 6h18v12H3z"/><path d="m3 7 9 6 9-6"/></svg></span>
+                <div>
+                  <span class="connect-card__item-label">Email</span>
+                  <a href="mailto:info@corstar.com?subject=website%20inquiry">info@corstar.com</a>
+                </div>
+              </li>
+              <li class="connect-card__item">
+                <span class="connect-card__item-icon" aria-hidden="true"><svg class="icon" viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path d="M12 21s7-6.2 7-11a7 7 0 1 0-14 0c0 4.8 7 11 7 11ZM12 13a3 3 0 1 0 0-6 3 3 0 0 0 0 6Z"/></svg></span>
+                <div>
+                  <span class="connect-card__item-label">Address</span>
+                  <address>22 Saw Mill River Road<br>Suite 303<br>Hawthorne, NY 10532</address>
+                  <a class="connect-card__directions" href="https://www.google.com/maps/dir/?api=1&amp;destination=22+Saw+Mill+River+Road+Suite+303+Hawthorne+NY+10532" target="_blank" rel="noopener">Get Directions</a>
+                </div>
+              </li>
+            </ul>
+            <div class="connect-card__hours">
+              <span class="connect-card__hours-title"><svg class="icon icon--inline" viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path d="M12 21a9 9 0 1 0 0-18 9 9 0 0 0 0 18ZM12 7v5l3.5 2"/></svg> Business Hours</span>
+              <dl class="connect-card__hours-list">
+                <div class="connect-card__hours-row"><dt>Monday &ndash; Friday</dt><dd>8:00 AM &ndash; 6:00 PM</dd></div>
+                <div class="connect-card__hours-row"><dt>Saturday</dt><dd>9:00 AM &ndash; 2:00 PM</dd></div>
+                <div class="connect-card__hours-row"><dt>24/7 Emergency</dt><dd class="is-accent">Always Available</dd></div>
+              </dl>
+            </div>
+            <a href="../remote-support.html" class="btn btn--ghost btn--lg">Remote Support</a>
+          </div>
+          <div class="connect-card__form">
+            <h3>Send Us a Message</h3>
+            <p>Ready to transform your IT infrastructure? Contact us today for a free consultation.</p>
+            <form class="contact-form" action="https://api.web3forms.com/submit" method="POST" novalidate>
+              <input type="hidden" name="access_key" value="e22cca9f-3a78-485e-bae7-54c13d8b4e90">
+              <input type="hidden" name="subject" value="New Let's Connect submission from Corstar website">
+              <input type="hidden" name="from_name" value="Corstar website">
+              <input type="hidden" name="page" value="What is an IT MSP">
+              <input type="checkbox" name="botcheck" tabindex="-1" aria-hidden="true" style="display:none;">
+              <div class="grid grid--2" style="gap: var(--sp-4);">
+                <div class="form__group">
+                  <label class="form__label" for="connect-name">Name *</label>
+                  <input class="form__input" type="text" id="connect-name" name="name" placeholder="Your name" required autocomplete="name" data-error-msg="Please enter your name.">
+                  <span class="form__error" role="alert"></span>
+                </div>
+                <div class="form__group">
+                  <label class="form__label" for="connect-email">Email *</label>
+                  <input class="form__input" type="email" id="connect-email" name="email" placeholder="you@company.com" required autocomplete="email" data-error-msg="Please enter a valid email address.">
+                  <span class="form__error" role="alert"></span>
+                </div>
+              </div>
+              <div class="grid grid--2" style="gap: var(--sp-4);">
+                <div class="form__group">
+                  <label class="form__label" for="connect-phone">Phone</label>
+                  <input class="form__input" type="tel" id="connect-phone" name="phone" placeholder="(914) 555-0100" autocomplete="tel">
+                </div>
+                <div class="form__group">
+                  <label class="form__label" for="connect-company">Company</label>
+                  <input class="form__input" type="text" id="connect-company" name="company" placeholder="Your business" autocomplete="organization">
+                </div>
+              </div>
+              <div class="form__group">
+                <label class="form__label" for="connect-message">How can we help? *</label>
+                <textarea class="form__textarea" id="connect-message" name="message" rows="4" placeholder="Tell us about your IT needs &mdash; managed services, security, cabling, cloud..." required data-error-msg="Please tell us how we can help."></textarea>
+                <span class="form__error" role="alert"></span>
+              </div>
+              <button type="submit" class="btn btn--primary btn--lg" style="width:100%;">Send Message</button>
+              <p class="form__status" role="status" aria-live="polite" hidden></p>
+            </form>
+            <p class="connect-card__note">We respond within one business hour. Your information is never shared.</p>
+          </div>
         </div>
 
       </div>

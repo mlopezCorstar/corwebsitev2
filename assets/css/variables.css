@@ -73,7 +73,6 @@
   --font-head: 'Space Grotesk', 'Trebuchet MS', sans-serif;
   --font-body: 'IBM Plex Sans', 'Segoe UI', sans-serif;
   --font-mono: 'IBM Plex Mono', 'Courier New', monospace;
-  --font-emoji: 'Apple Color Emoji', 'Segoe UI Emoji', 'Noto Color Emoji', sans-serif;
 
   /* ── Type scale ── */
   --text-xs:   0.75rem;
@@ -88,9 +87,7 @@
   --text-5xl:  3rem;
   --text-hero: clamp(2.5rem, 6vw, 4rem);
   --text-display: clamp(3rem, 8vw, 5rem);
-  --text-glyph-sm: 1.6rem;
   --text-glyph:    2rem;
-  --text-glyph-lg: 2.5rem;
 
   /* ── Spacing ── */
   --sp-1:  0.25rem;
@@ -109,6 +106,7 @@
 
   /* ── Layout ── */
   --icon-tile:      56px;
+  --icon-glyph:     28px;   /* 50% of the tile — optical centre of the square */
   --container:      1280px;
   --container-wide: 1280px;
   --gutter:         clamp(1rem, 4vw, 2rem);
