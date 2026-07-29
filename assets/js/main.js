@@ -190,20 +190,39 @@
 
   /* ── Stats counter ── */
   function initCounters() {
-    const stats = document.querySelectorAll('.trust-stat__number[data-target]');
+    const stats = document.querySelectorAll(
+      '.trust-stat__number[data-target], .trust-stat__number[data-animate-value]'
+    );
     if (!stats.length) return;
+
+    if (window.matchMedia('(prefers-reduced-motion: reduce)').matches) return;
+
     const io = new IntersectionObserver((entries) => {
       entries.forEach((entry) => {
         if (!entry.isIntersecting) return;
         const el     = entry.target;
+        const value  = el.dataset.animateValue || '';
         const target = parseInt(el.dataset.target, 10);
         const suffix = el.dataset.suffix || '';
         const dur    = 1200;
         const start  = performance.now();
+
+        el.setAttribute('data-counted', '');
+
+        /* Text-only values use the same observed entry fade as the counters. */
+        if (value && !/\d/.test(value)) {
+          io.unobserve(el);
+          return;
+        }
+
         function step(now) {
           const elapsed = Math.min((now - start) / dur, 1);
           const ease    = 1 - Math.pow(1 - elapsed, 3);
-          el.textContent = Math.round(ease * target) + suffix;
+          el.textContent = value
+            ? value.replace(/\d+/g, (number) => Math.round(ease * parseInt(number, 10)))
+            : Math.round(ease * target) + suffix;
+
+          if (elapsed === 1 && value) el.textContent = value;
           if (elapsed < 1) requestAnimationFrame(step);
         }
         requestAnimationFrame(step);

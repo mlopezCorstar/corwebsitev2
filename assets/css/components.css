@@ -1585,6 +1585,20 @@ body.has-consent-banner {
 }
 .industry-card p  { font-size: var(--text-sm); color: var(--on-dark-text); }
 
+.home-industries .industry-card {
+  justify-content: flex-start;
+  min-height: 230px;
+}
+.home-industries .industry-card__icon {
+  width: var(--icon-tile);
+  height: var(--icon-tile);
+  margin-block-end: 0;
+  font-size: var(--text-glyph-sm);
+}
+.home-industries .industry-card h3 {
+  margin-top: var(--sp-4);
+}
+
 .industries-grid .industry-card {
   min-height: calc(288px * var(--card-scale, 1));
 }
