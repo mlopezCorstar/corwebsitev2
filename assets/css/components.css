@@ -583,9 +583,9 @@
 /* ══════════════════════════════════════════
    BADGE STRIP — certifications & partner marks
 ══════════════════════════════════════════ */
-/* The center Women-Owned mark is the primary affiliation. The surrounding
-   partner marks stay secondary, and the band remains close in height to the
-   statistics strip above it. */
+/* The Women-Owned mark is the primary affiliation. The partner mark beside it
+   stays secondary, and the band remains close in height to the statistics
+   strip above it. */
 .badge-strip {
   background: var(--c-surface);
   padding-block: var(--sp-10);
@@ -617,7 +617,7 @@
 @media (max-width: 700px) {
   .badge-strip__inner {
     display: grid;
-    grid-template-columns: minmax(0, 1fr) minmax(112px, 1.25fr) minmax(0, 1fr);
+    grid-template-columns: minmax(112px, 1.25fr) minmax(0, 1fr);
     gap: var(--sp-3);
   }
   .badge-strip__logo {
