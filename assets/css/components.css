@@ -908,6 +908,9 @@
   margin-top: var(--sp-2);
   color: var(--c-white) !important;
   border-color: rgba(255,255,255,0.7);
+  display: inline-flex;
+  width: max-content;
+  max-width: 100%;
 }
 .footer__nap { font-style: normal; font-size: var(--text-sm); line-height: 2; color: var(--c-gray-300); }
 .footer__nap a { color: var(--c-gray-300); text-decoration: none; }
@@ -927,6 +930,7 @@
   color: var(--c-gray-500);
 }
 .footer__bottom p { color: var(--c-gray-300); opacity: 0.7; }
+.footer__bottom p:last-child { font-size: 0.75em; }
 
 
 /* ══════════════════════════════════════════

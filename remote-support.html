@@ -4,7 +4,7 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Remote IT Support | Corstar Communications</title>
-  <meta name="description" content="Fast, secure remote assistance from Corstar Communications. Connect with our certified technicians through our secure remote support portal.">
+  <meta name="description" content="Client remote support from Corstar Communications.">
   <link rel="canonical" href="https://mlopezcorstar.github.io/corwebsitev2/remote-support.html">
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -16,18 +16,20 @@
   <link rel="stylesheet" href="assets/css/animations.css">
   <style>
     .remote-hero { background: var(--c-surface); }
-    .remote-hero p { max-width: 58ch; }
+    .remote-hero p { max-width: none; }
     .remote-portal { background: var(--c-forest); color: var(--c-white); border-radius: var(--radius); padding: clamp(2rem, 5vw, 4rem); text-align: center; }
+    .remote-portal--split { display: grid; grid-template-columns: minmax(0, 1fr) minmax(260px, 1fr); gap: clamp(2rem, 5vw, 4rem); align-items: center; text-align: left; }
+    .remote-portal--split > div:first-child { min-width: 0; }
     .remote-portal h2, .remote-portal p { color: var(--c-white); }
-    .remote-portal p { max-width: 54ch; margin-inline: auto; color: var(--c-gray-300); }
+    .remote-portal p { max-width: none; margin-inline: auto; color: var(--c-gray-300); }
     .remote-portal .btn { margin-top: var(--sp-4); }
-    .remote-contact { display: grid; grid-template-columns: repeat(3, 1fr); gap: var(--sp-6); margin-top: var(--sp-8); }
+    .remote-contact { display: grid; grid-template-columns: 1fr; gap: var(--sp-6); margin-top: 0; }
     .remote-contact .card { text-align: center; }
     .remote-contact .card h3 { margin-bottom: var(--sp-2); }
     .remote-contact .card a { color: var(--c-royal); font-weight: 600; }
     .remote-security { display: grid; grid-template-columns: 1fr 1fr; gap: var(--sp-12); align-items: start; }
     .remote-security ul { color: var(--c-gray-500); line-height: 2; }
-    @media (max-width: 700px) { .remote-contact, .remote-security { grid-template-columns: 1fr; } }
+    @media (max-width: 700px) { .remote-portal--split, .remote-security { grid-template-columns: 1fr; } }
   </style>
 </head>
 <body data-page="remote-support">
@@ -65,21 +67,22 @@
       <div class="container">
         <span class="section-label">Corstar Communications</span>
         <h1>Remote Support</h1>
-        <p>Fast, secure remote assistance for your IT issues. Our certified technicians are ready to help.</p>
+        <p>Client</p>
       </div>
     </section>
 
     <section class="section">
       <div class="container">
-        <div class="remote-portal">
-          <h2>Access Remote Support Portal</h2>
-          <p>Connect with our technicians instantly through our secure remote support portal.</p>
-          <a class="btn btn--ghost btn--lg" href="https://corstar.beyondtrustcloud.com/">Launch Remote Support</a>
-        </div>
-        <div class="remote-contact">
-          <div class="card"><h3>Need Immediate Assistance?</h3><p>Call Us Now</p><a href="tel:+19143472700">(914) 347-2700</a></div>
-          <div class="card"><h3>Email Support</h3><p>Reach our support team directly.</p><a href="mailto:info@corstar.com?subject=Website%20Inquiry">info@corstar.com</a></div>
-          <div class="card"><h3>24/7/365 Monitoring</h3><p>Emergency monitoring is available for critical issues.</p></div>
+        <div class="remote-portal remote-portal--split">
+          <div>
+            <h2>Access Remote Support Portal</h2>
+            <p>Connect with our technicians instantly through our secure remote support portal.</p>
+            <a class="btn btn--ghost btn--lg" href="https://corstar.beyondtrustcloud.com/">Launch Remote Support</a>
+          </div>
+          <div class="remote-contact">
+            <div class="card"><h3>Need Immediate Assistance?</h3><p>Call Us Now</p><a href="tel:+19143472700">(914) 347-2700</a></div>
+            <div class="card"><h3>Email Support</h3><p>Reach our support team directly.</p><a href="mailto:info@corstar.com?subject=Website%20Inquiry">info@corstar.com</a></div>
+          </div>
         </div>
       </div>
     </section>
@@ -87,7 +90,6 @@
     <section class="section section--alt">
       <div class="container remote-security">
         <div>
-          <span class="section-label">Secure &amp; Private</span>
           <h2>Support That Keeps You In Control</h2>
           <p>Our remote support sessions use industry-leading encryption and security protocols. You maintain complete control and can end the session at any time.</p>
         </div>
@@ -121,7 +123,7 @@
         <div class="footer__col"><div class="footer__title">Industries</div><ul><li><a href="industries/index.html">All Industries</a></li><li><a href="industries/healthcare.html">Healthcare</a></li><li><a href="industries/financial-services.html">Financial Services</a></li><li><a href="industries/professional-services.html">Professional Services</a></li></ul><div class="footer__title" style="margin-top: var(--sp-6);">Resources</div><ul><li><a href="resources/what-is-it-msp.html">What Is an IT MSP?</a></li><li><a href="faq.html">IT FAQ</a></li><li><a href="about.html">About Us</a></li><li><a href="contact.html">Contact</a></li><li><a class="btn btn--ghost btn--sm footer__remote-support-link" href="remote-support.html">Remote Support</a></li></ul></div>
         <div class="footer__col"><div class="footer__title">Contact</div><address class="footer__nap"><span>Corstar Communications</span><br><span>22 Saw Mill River Road, Suite 303</span><br><span>Hawthorne, NY 10532</span><br><a href="tel:+19143472700">(914) 347-2700</a><br><a href="mailto:info@corstar.com?subject=website%20inquiry">info@corstar.com</a></address></div>
       </div>
-      <div class="footer__bottom"><p>&copy; 2026 Corstar Communications. All rights reserved.</p><p>Serving New York, New Jersey, and Connecticut Businesses Since 1970.</p></div>
+      <div class="footer__bottom"><p>&copy; 2026 Corstar Communications. All rights reserved.</p><p>Website made in part by Logistics Consulting Services</p></div>
     </div>
   </footer>
 
